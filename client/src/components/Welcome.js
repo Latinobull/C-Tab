@@ -1,7 +1,7 @@
 import { Button, Card, Grid, Typography } from '@material-ui/core';
 import React from 'react';
 
-export default function Main() {
+export default function Welcome() {
   return (
     <div>
       {/* <Grid container>
