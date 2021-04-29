@@ -18,6 +18,9 @@ export default function Main() {
         <Typography>
           Welcome to Christian Tabernacle, Choose your Preferred Language
         </Typography>
+        <br />
+        <Typography>Spanish Translation</Typography>
+        <br />
         <Grid xs={12}>
           <Button size="large">English</Button>
           <Button size="large">Spanish</Button>
