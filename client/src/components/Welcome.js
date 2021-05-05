@@ -1,4 +1,4 @@
-import { Button, Card, Grid, Typography } from '@material-ui/core';
+import { Button, Card, Grid, Link, Typography } from '@material-ui/core';
 import React from 'react';
 
 export default function Welcome() {
@@ -13,7 +13,7 @@ export default function Welcome() {
         direction="column"
         alignItems="center"
         justify="center"
-        style={{ minHeight: '90vh' }}
+        style={{ minHeight: '80vh' }}
       >
         <Typography>
           Welcome to Christian Tabernacle, Choose your Preferred Language
@@ -22,8 +22,12 @@ export default function Welcome() {
         <Typography>Spanish Translation</Typography>
         <br />
         <Grid xs={12}>
-          <Button size="large">English</Button>
-          <Button size="large">Spanish</Button>
+          <Button size="large">
+            <Link href="/en">English</Link>
+          </Button>
+          <Button size="large">
+            <Link href="/sp">Spanish</Link>
+          </Button>
         </Grid>
       </Grid>
     </div>
