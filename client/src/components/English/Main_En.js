@@ -38,62 +38,74 @@ export default function Main_En() {
       <Grid container>
         <Grid md="4" sm="12" xs="12">
           <Card className={classes.root}>
-            <CardActionArea />
-            <CardMedia
-              className={classes.media}
-              image="https://via.placeholder.com/250"
-              title="lorem"
-            />
-            <CardContent>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-                component="p"
-                align="center"
-              >
-                lorem latin
-              </Typography>
-            </CardContent>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://via.placeholder.com/250"
+                title="lorem"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Ministry
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  align="center"
+                >
+                  lorem latin
+                </Typography>
+              </CardContent>
+            </CardActionArea>
           </Card>
         </Grid>
         <Grid md="4" sm="12" xs="12">
           <Card className={classes.root}>
-            <CardActionArea />
-            <CardMedia
-              className={classes.media}
-              image="https://via.placeholder.com/250"
-              title="lorem"
-            />
-            <CardContent>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-                component="p"
-                align="center"
-              >
-                lorem latin
-              </Typography>
-            </CardContent>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://via.placeholder.com/250"
+                title="lorem"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Ministry
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  align="center"
+                >
+                  lorem latin
+                </Typography>
+              </CardContent>
+            </CardActionArea>
           </Card>
         </Grid>
         <Grid md="4" sm="12" xs="12">
           <Card className={classes.root}>
-            <CardActionArea />
-            <CardMedia
-              className={classes.media}
-              image="https://via.placeholder.com/250"
-              title="lorem"
-            />
-            <CardContent>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-                component="p"
-                align="center"
-              >
-                lorem latin
-              </Typography>
-            </CardContent>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image="https://via.placeholder.com/250"
+                title="lorem"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Ministry
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  align="center"
+                >
+                  lorem latin
+                </Typography>
+              </CardContent>
+            </CardActionArea>
           </Card>
         </Grid>
       </Grid>
