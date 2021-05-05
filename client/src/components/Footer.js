@@ -3,7 +3,7 @@ import { Container, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(1, 4),
     marginTop: 'auto',
     backgroundColor: 'gray',
     position: 'relative',
