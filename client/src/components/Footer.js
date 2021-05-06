@@ -7,6 +7,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: 'auto',
     backgroundColor: 'gray',
     position: 'relative',
+    textAlign: 'center',
   },
 }));
 export default function Footer() {
@@ -16,7 +17,7 @@ export default function Footer() {
       <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Typography variant="body1">
-            My sticky footer can be found here.
+            Copyright Chirstian Tabernacle Church All Rights Reserved.
           </Typography>
           {/* <Copyright /> */}
         </Container>
