@@ -8,7 +8,9 @@ import {
   Typography,
 } from '@material-ui/core';
 import React from 'react';
-
+import Carousel from 'react-material-ui-carousel';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 const useStyles = makeStyles({
   top: {
     flexGrow: 1,
@@ -20,8 +22,12 @@ const useStyles = makeStyles({
     height: 200,
   },
   headline: {
-    paddingBottom: 100,
+    paddingBottom: 50,
     textAlign: 'center',
+  },
+  carousel: {
+    backgroundColor: 'black',
+    height: 400,
   },
 });
 export default function Main_En() {
@@ -35,8 +41,15 @@ export default function Main_En() {
           </Typography>
         </Grid>
       </Grid>
+      <Carousel
+        NextIcon={<ArrowRightIcon />}
+        PrevIcon={<ArrowLeftIcon />}
+        className={classes.carousel}
+      >
+        hi
+      </Carousel>
       <Grid container>
-        <Grid md="4" sm="12" xs="12">
+        <Grid md="4" sm="6" xs="12">
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -60,7 +73,7 @@ export default function Main_En() {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid md="4" sm="12" xs="12">
+        <Grid md="4" sm="6" xs="12">
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -84,7 +97,7 @@ export default function Main_En() {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid md="4" sm="12" xs="12">
+        <Grid md="4" sm="6" xs="12">
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
