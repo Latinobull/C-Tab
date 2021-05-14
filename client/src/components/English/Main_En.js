@@ -1,4 +1,6 @@
 import {
+  Box,
+  Button,
   Card,
   CardActionArea,
   CardContent,
@@ -17,6 +19,10 @@ const useStyles = makeStyles({
   },
   root: {
     width: 600,
+    maxWidth: '100vw',
+  },
+  cardAction: {
+    justifyContent: 'center',
   },
   media: {
     height: 200,
@@ -29,8 +35,12 @@ const useStyles = makeStyles({
     backgroundColor: 'black',
     height: 500,
     width: 1200,
+    maxWidth: '100vw',
     marginBottom: 150,
     color: 'red',
+  },
+  allCards: {
+    marginBottom: 150,
   },
 });
 export default function Main_En() {
@@ -61,17 +71,22 @@ export default function Main_En() {
           Test everything
         </Carousel>
       </Grid>
-      <Grid container>
+      <Grid container justify="center" className={classes.allCards}>
         <Grid md="4" sm="6" xs="12">
           <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea className={classes.cardAction}>
               <CardMedia
                 className={classes.media}
                 image="https://via.placeholder.com/250"
                 title="lorem"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  align="center"
+                >
                   Ministry
                 </Typography>
                 <Typography
@@ -82,6 +97,9 @@ export default function Main_En() {
                 >
                   lorem latin
                 </Typography>
+                <Box textAlign="center">
+                  <Button variant="contained">Learn More</Button>
+                </Box>
               </CardContent>
             </CardActionArea>
           </Card>
@@ -95,7 +113,12 @@ export default function Main_En() {
                 title="lorem"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  align="center"
+                >
                   Ministry
                 </Typography>
                 <Typography
@@ -106,6 +129,9 @@ export default function Main_En() {
                 >
                   lorem latin
                 </Typography>
+                <Box textAlign="center">
+                  <Button variant="contained">Learn More</Button>
+                </Box>
               </CardContent>
             </CardActionArea>
           </Card>
@@ -119,7 +145,12 @@ export default function Main_En() {
                 title="lorem"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  align="center"
+                >
                   Ministry
                 </Typography>
                 <Typography
@@ -130,6 +161,9 @@ export default function Main_En() {
                 >
                   lorem latin
                 </Typography>
+                <Box textAlign="center">
+                  <Button variant="contained">Learn More</Button>
+                </Box>
               </CardContent>
             </CardActionArea>
           </Card>
