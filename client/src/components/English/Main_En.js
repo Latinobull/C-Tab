@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   root: {
-    maxWidth: 500,
+    width: 600,
   },
   media: {
     height: 200,
@@ -27,7 +27,10 @@ const useStyles = makeStyles({
   },
   carousel: {
     backgroundColor: 'black',
-    height: 400,
+    height: 500,
+    width: 1200,
+    marginBottom: 150,
+    color: 'red',
   },
 });
 export default function Main_En() {
@@ -41,13 +44,23 @@ export default function Main_En() {
           </Typography>
         </Grid>
       </Grid>
-      <Carousel
-        NextIcon={<ArrowRightIcon />}
-        PrevIcon={<ArrowLeftIcon />}
-        className={classes.carousel}
+      <Grid
+        className="pleaseCenter"
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: '30vh' }}
       >
-        hi
-      </Carousel>
+        <Carousel
+          NextIcon={<ArrowRightIcon />}
+          PrevIcon={<ArrowLeftIcon />}
+          className={classes.carousel}
+        >
+          Test everything
+        </Carousel>
+      </Grid>
       <Grid container>
         <Grid md="4" sm="6" xs="12">
           <Card className={classes.root}>
