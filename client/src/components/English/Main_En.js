@@ -87,7 +87,7 @@ export default function Main_En() {
                   component="h2"
                   align="center"
                 >
-                  Ministry
+                  Leadership Team
                 </Typography>
                 <Typography
                   variant="body2"
@@ -151,7 +151,7 @@ export default function Main_En() {
                   component="h2"
                   align="center"
                 >
-                  Ministry
+                  Social
                 </Typography>
                 <Typography
                   variant="body2"
