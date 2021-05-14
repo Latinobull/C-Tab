@@ -6,6 +6,7 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Link,
   makeStyles,
   Typography,
 } from '@material-ui/core';
@@ -41,6 +42,9 @@ const useStyles = makeStyles({
   },
   allCards: {
     marginBottom: 150,
+  },
+  links: {
+    display: 'none',
   },
 });
 export default function Main_En() {
@@ -98,7 +102,9 @@ export default function Main_En() {
                   lorem latin
                 </Typography>
                 <Box textAlign="center">
-                  <Button variant="contained">Learn More</Button>
+                  <Button variant="contained" href="/en/leaders">
+                    Learn More
+                  </Button>
                 </Box>
               </CardContent>
             </CardActionArea>
@@ -119,7 +125,7 @@ export default function Main_En() {
                   component="h2"
                   align="center"
                 >
-                  Ministry
+                  Ministries
                 </Typography>
                 <Typography
                   variant="body2"
@@ -130,7 +136,9 @@ export default function Main_En() {
                   lorem latin
                 </Typography>
                 <Box textAlign="center">
-                  <Button variant="contained">Learn More</Button>
+                  <Button variant="contained" href="/en/ministries">
+                    Learn More
+                  </Button>
                 </Box>
               </CardContent>
             </CardActionArea>
@@ -162,7 +170,9 @@ export default function Main_En() {
                   lorem latin
                 </Typography>
                 <Box textAlign="center">
-                  <Button variant="contained">Learn More</Button>
+                  <Button variant="contained" href="/en/socials">
+                    Learn More
+                  </Button>
                 </Box>
               </CardContent>
             </CardActionArea>
