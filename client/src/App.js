@@ -6,6 +6,9 @@ import Appbar from './components/Appbar';
 import Main_En from './components/English/Main_En';
 import Main_Sp from './components/Spanish/Main_Sp';
 import Footer from './components/Footer';
+import Leaders_En from './components/English/Leaders_En';
+import Ministry_En from './components/English/Ministry_En';
+import Socials_En from './components/English/Socials_En';
 class App extends Component {
   render() {
     return (
@@ -15,6 +18,9 @@ class App extends Component {
           <Router>
             <Route exact path="/" component={Welcome} />
             <Route exact path="/en" component={Main_En} />
+            <Route exact path="/en/leaders" component={Leaders_En} />
+            <Route exact path="/en/ministries" component={Ministry_En} />
+            <Route exact path="/en/socials" component={Socials_En} />
             <Route exact path="/sp" component={Main_Sp} />
           </Router>
         </div>
