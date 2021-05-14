@@ -6,7 +6,6 @@ import {
   CardContent,
   CardMedia,
   Grid,
-  Link,
   makeStyles,
   Typography,
 } from '@material-ui/core';
@@ -42,9 +41,6 @@ const useStyles = makeStyles({
   },
   allCards: {
     marginBottom: 150,
-  },
-  links: {
-    display: 'none',
   },
 });
 export default function Main_En() {
