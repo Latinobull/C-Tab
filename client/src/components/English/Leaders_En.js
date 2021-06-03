@@ -117,7 +117,9 @@ export default function Leaders_En() {
       </Grid>
       <Grid container justify="center">
         <Grid md="6" xs="12">
-          <Typography variant="h3">Deacons</Typography>
+          <Typography variant="h3" align="center">
+            Deacons
+          </Typography>
           <List className={classes.list}>
             <ListItem>
               <ListItemAvatar>
@@ -149,7 +151,9 @@ export default function Leaders_En() {
           </List>
         </Grid>
         <Grid md="6" xs="12">
-          <Typography variant="h3">Prophets</Typography>
+          <Typography variant="h3" align="center">
+            Prophets
+          </Typography>
           <List className={classes.list}>
             <ListItem>
               <ListItemAvatar>
