@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link, Menu, MenuItem } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,6 +21,15 @@ const useStyles = makeStyles(theme => ({
 }));
 export default function Appbar() {
   const classes = useStyles();
+  const [anchorElHome, setAnchorElHome] = useState();
+  const openHome = Boolean(anchorElHome);
+  const handleCloseHome = () => {
+    setAnchorElHome(null);
+  };
+  const handleMenuHome = event => {
+    setAnchorElHome(event.currentTarget);
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -29,9 +39,31 @@ export default function Appbar() {
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
+            onClick={handleMenuHome}
           >
             <MenuIcon />
           </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElHome}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={openHome}
+            onClose={handleCloseHome}
+          >
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/" color="inherit">
+                Home
+              </Link>
+            </MenuItem>
+          </Menu>
           <Typography variant="h6" className={classes.title}>
             Christian Tabernacle Church
           </Typography>
