@@ -60,7 +60,7 @@ export default function Appbar() {
           >
             <MenuItem onClick={handleCloseHome}>
               <Link href="/" color="inherit">
-                Home
+                Welcome
               </Link>
             </MenuItem>
           </Menu>
