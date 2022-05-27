@@ -63,6 +63,16 @@ export default function Appbar() {
                 Welcome
               </Link>
             </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/sp" color="inherit">
+                English Main
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleCloseHome}>
+              <Link href="/sp" color="inherit">
+                Espanol Principal
+              </Link>
+            </MenuItem>
           </Menu>
           <Typography variant="h6" className={classes.title}>
             Christian Tabernacle Church

@@ -18,6 +18,9 @@ export default function Welcome() {
         <Typography>
           Welcome to Christian Tabernacle, Choose your Preferred Language
         </Typography>
+        <Typography variant='h3'>
+          Input Mission statement here
+        </Typography>
         <br />
         <Typography>***Spanish Translation***</Typography>
         <br />
