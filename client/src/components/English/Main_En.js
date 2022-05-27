@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   root: {
-    width: 600,
+    maxWidth: 600,
     maxWidth: '100vw',
   },
   cardAction: {
