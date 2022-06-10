@@ -12,6 +12,10 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     padding: '100px 50px 50px 50px',
   },
+  buttonStyle: {
+    color: 'black',
+    fontSize: '20px'
+  },
 }));
 export default function Welcome() {
   const classes = useStyles();
@@ -19,7 +23,6 @@ export default function Welcome() {
     <div className={classes.background}>
       <Grid
         container
-        spacing={0}
         direction="column"
         alignItems="center"
         justify="center"
@@ -37,12 +40,17 @@ export default function Welcome() {
             Una casa en llamas, dirigida por el espíritu santo
           </Typography>
           <br />
+          <Typography>Pick a language</Typography>
           <Grid item xs={12}>
             <Button size="large">
-              <Link href="/en">English</Link>
+              <Link href="/en" className={classes.buttonStyle}>
+                English
+              </Link>
             </Button>
             <Button size="large">
-              <Link href="/sp">Spanish</Link>
+              <Link href="/sp" className={classes.buttonStyle}>
+                Spanish
+              </Link>
             </Button>
           </Grid>
         </div>
