@@ -4,6 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link, Menu, MenuItem } from '@material-ui/core';
@@ -11,72 +14,68 @@ import { Link, Menu, MenuItem } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
+    backgroundColor: 'black',
   },
   title: {
     flexGrow: 1,
+  },
+  appBarButton: {
+    color: 'white',
+    marginRight: '15px',
+    textDecoration: 'none',
+  },
+  appBar: {
+    paddingBottom: '25px',
+    paddingTop: '25px',
+    backgroundColor: 'transparent',
   },
 }));
 export default function Appbar() {
   const classes = useStyles();
   const [anchorElHome, setAnchorElHome] = useState();
-  const openHome = Boolean(anchorElHome);
-  const handleCloseHome = () => {
-    setAnchorElHome(null);
-  };
-  const handleMenuHome = event => {
-    setAnchorElHome(event.currentTarget);
-  };
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-            onClick={handleMenuHome}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorElHome}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={openHome}
-            onClose={handleCloseHome}
-          >
-            <MenuItem onClick={handleCloseHome}>
-              <Link href="/" color="inherit">
-                Welcome
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleCloseHome}>
-              <Link href="/sp" color="inherit">
-                English Main
-              </Link>
-            </MenuItem>
-            <MenuItem onClick={handleCloseHome}>
-              <Link href="/sp" color="inherit">
-                Espanol Principal
-              </Link>
-            </MenuItem>
-          </Menu>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h4" className={classes.title}>
             Christian Tabernacle Church
           </Typography>
+
+          <Typography variant="h6">
+            <a href="/en" className={classes.appBarButton}>
+              About
+            </a>
+          </Typography>
+          <Typography variant="h6">
+            <a href="/en" className={classes.appBarButton}>
+              Join us
+            </a>
+          </Typography>
+          <Typography variant="h6">
+            <a href="/en" className={classes.appBarButton}>
+              Ministries
+            </a>
+          </Typography>
+          <Typography variant="h6">
+            <a href="/en" className={classes.appBarButton}>
+              Testimonies
+            </a>
+          </Typography>
+          <Typography variant="h6">
+            <a href="/en" className={classes.appBarButton}>
+              Contact
+            </a>
+          </Typography>
+          <a href="/" className={classes.appBarButton}>
+            <FacebookIcon />
+          </a>
+          <a href="/" className={classes.appBarButton}>
+            <MailOutlinedIcon />
+          </a>
+          <a href="/" className={classes.appBarButton}>
+            <InstagramIcon />
+          </a>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
