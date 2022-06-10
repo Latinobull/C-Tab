@@ -18,7 +18,7 @@ export default function Footer() {
     <div>
       <footer className={classes.footer}>
         <Grid container className={classes.text}>
-          <Grid lg={8}>
+          <Grid item lg={8}>
             <Typography variant="h6">
               CHRISTIAN TABERNACLE PENTECOSTAL CHURCH BROOKLYN
             </Typography>
@@ -31,7 +31,7 @@ export default function Footer() {
               (555) 555-5555
             </Typography>
           </Grid>
-          <Grid lg={2}>
+          <Grid item lg={2}>
             <Typography variant="h6">Services/Servicios</Typography>
             <Typography>
               Sunday / Domingo - 7pm
@@ -41,10 +41,12 @@ export default function Footer() {
               Friday / Viernes - 8pm
             </Typography>
           </Grid>
-          <Grid lg={2}>
+          <Grid item lg={2}>
             <Typography variant="h6">Follow Us</Typography>
 
-            <a href="#" style={{color: 'white'}}>Facebook</a>
+            <a href="#" style={{ color: 'white' }}>
+              Facebook
+            </a>
             <Typography>InsertEmail@gmail.com</Typography>
           </Grid>
         </Grid>

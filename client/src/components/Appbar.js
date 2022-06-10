@@ -13,7 +13,6 @@ import { Link, Menu, MenuItem } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
     backgroundColor: 'rgb(168,19,0)',
   },
   title: {
@@ -76,7 +75,7 @@ export default function Appbar() {
           <a href="/" className={classes.appBarButton}>
             <InstagramIcon />
           </a>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">Donate</Button>
         </Toolbar>
       </AppBar>
     </div>

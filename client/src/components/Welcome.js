@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   content: {
     backgroundColor: 'rgb(255,255,255, 0.4)',
     textAlign: 'center',
-    padding: '100px 50px 50px 50px'
+    padding: '100px 50px 50px 50px',
   },
 }));
 export default function Welcome() {
@@ -37,7 +37,7 @@ export default function Welcome() {
             Una casa en llamas, dirigida por el espíritu santo
           </Typography>
           <br />
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <Button size="large">
               <Link href="/en">English</Link>
             </Button>
