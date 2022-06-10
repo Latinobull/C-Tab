@@ -26,15 +26,15 @@ export default function Welcome() {
         style={{ minHeight: '100vh' }}
       >
         <div className={classes.content}>
-          <Typography >
+          {/* <Typography >
             Welcome to Christian Tabernacle, Choose your Preferred Language
-          </Typography>
+          </Typography> */}
           <Typography variant="h3">
-            A house on fire lead by the Holy Spirit
+            A house on fire, led by the Holy Spirit
           </Typography>
           <br />
           <Typography variant="h3">
-            Una casa en llamas dirigida por el espíritu santo
+            Una casa en llamas, dirigida por el espíritu santo
           </Typography>
           <br />
           <Grid xs={12}>

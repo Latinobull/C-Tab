@@ -14,7 +14,7 @@ import { Link, Menu, MenuItem } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'black',
+    backgroundColor: 'rgb(168,19,0)',
   },
   title: {
     flexGrow: 1,
