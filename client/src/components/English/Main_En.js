@@ -10,9 +10,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import React from 'react';
-import Carousel from 'react-material-ui-carousel';
-import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import worshipImage from '../../img/worship.jpg';
 const useStyles = makeStyles({
   top: {
     flexGrow: 1,
@@ -31,46 +29,50 @@ const useStyles = makeStyles({
     paddingBottom: 50,
     textAlign: 'center',
   },
-  carousel: {
-    backgroundColor: 'black',
-    height: 500,
-    width: 1200,
-    maxWidth: '100vw',
-    marginBottom: 150,
-    color: 'red',
+  holder: {
+    backgroundImage: `url(${worshipImage})`,
+    backgroundSize: 'cover',
+    minHeight: '100vh',
   },
-  allCards: {
-    marginBottom: 150,
+  text: {
+    color: 'white',
+    paddingLeft: '200px',
+  },
+  button: {
+    backgroundColor: 'white',
+    color: 'rgb(168,19,0)',
+    padding: '10px 25px',
+    borderRadius: '1px',
   },
 });
 export default function Main_En() {
   const classes = useStyles();
   return (
     <div className={classes.top}>
-      <Grid container>
+      {/* <Grid container>
         <Grid xs="12">
           <Typography variant="h4" className={classes.headline}>
             Welcome to the C-Tab, <br /> Home of the Good News Choir
           </Typography>
         </Grid>
-      </Grid>
+      </Grid> */}
       <Grid
-        className="pleaseCenter"
+        className={classes.holder}
         container
-        spacing={0}
         direction="column"
-        alignItems="center"
         justify="center"
-        style={{ minHeight: '30vh' }}
       >
-        <Carousel
-          NextIcon={<ArrowRightIcon />}
-          PrevIcon={<ArrowLeftIcon />}
-          className={classes.carousel}
-        >
-          Test everything
-        </Carousel>
+        <div className={classes.text}>
+          <Typography style={{ fontSize: '32px' }}>A house on fire,</Typography>
+          <Typography style={{ fontSize: '32px' }}>
+            led by the Holy Spirit
+          </Typography>
+          <Button className={classes.button} variant="contained">
+            Learn More
+          </Button>
+        </div>
       </Grid>
+      <Grid container> </Grid>
       <Grid container justify="center" className={classes.allCards}>
         <Grid md="4" sm="6" xs="12">
           <Card className={classes.root}>

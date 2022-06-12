@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   },
   buttonStyle: {
     color: 'black',
-    fontSize: '20px'
+    fontSize: '20px',
   },
 }));
 export default function Welcome() {
