@@ -7,6 +7,7 @@ import {
   CardMedia,
   Grid,
   makeStyles,
+  TablePagination,
   Typography,
 } from '@material-ui/core';
 import React from 'react';
@@ -44,18 +45,21 @@ const useStyles = makeStyles({
     padding: '10px 25px',
     borderRadius: '1px',
   },
+  mission: {
+    backgroundColor: 'rgb(168,19,0)',
+    color: 'white',
+    justifyContent: 'center',
+    fontSize: '50px',
+  },
+  missionText: {
+    maxWidth: '700px',
+    fontSize: '30px',
+  },
 });
 export default function Main_En() {
   const classes = useStyles();
   return (
     <div className={classes.top}>
-      {/* <Grid container>
-        <Grid xs="12">
-          <Typography variant="h4" className={classes.headline}>
-            Welcome to the C-Tab, <br /> Home of the Good News Choir
-          </Typography>
-        </Grid>
-      </Grid> */}
       <Grid
         className={classes.holder}
         container
@@ -72,7 +76,28 @@ export default function Main_En() {
           </Button>
         </div>
       </Grid>
-      <Grid container> </Grid>
+      <Grid
+        container
+        className={classes.mission}
+        justifyContent="space-around"
+        direction="row"
+        alignItems="center"
+      >
+        <Grid item md={'5'}>
+          {
+            'We are not just a church, but a home and a hospital for the broken.'
+          }
+        </Grid>
+        <Grid item md={'5'}>
+          <Typography className={classes.missionText}>
+            Our mission
+            <br />
+            We believe that we are not just a church but a home and a hospital
+            for the broken. Everything we do is guided by the power of the Holy
+            Spirit and the love that Christ has shown us
+          </Typography>
+        </Grid>
+      </Grid>
       <Grid container justify="center" className={classes.allCards}>
         <Grid md="4" sm="6" xs="12">
           <Card className={classes.root}>
