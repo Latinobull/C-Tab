@@ -1,10 +1,5 @@
 import {
-  Box,
   Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
   Grid,
   makeStyles,
   TablePagination,
@@ -12,6 +7,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 import worshipImage from '../../img/worship.jpg';
+import Option_En from './Options_En';
 const useStyles = makeStyles({
   top: {
     flexGrow: 1,
@@ -51,7 +47,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     fontSize: '50px',
     padding: '50px 0px',
-    marginBottom: '10px'
+    marginBottom: '10px',
   },
   missionText: {
     maxWidth: '700px',
@@ -81,16 +77,16 @@ export default function Main_En() {
       <Grid
         container
         className={classes.mission}
-        justifyContent="space-around"
+        justify="space-around"
         direction="row"
         alignItems="center"
       >
-        <Grid item md={'5'}>
+        <Grid item md={5}>
           {
             'We are not just a church, but a home and a hospital for the broken.'
           }
         </Grid>
-        <Grid item md={'5'}>
+        <Grid item md={5}>
           <Typography className={classes.missionText}>
             Our mission
             <br />
@@ -100,6 +96,7 @@ export default function Main_En() {
           </Typography>
         </Grid>
       </Grid>
+      <Option_En />
     </div>
   );
 }
