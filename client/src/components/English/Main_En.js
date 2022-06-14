@@ -50,6 +50,8 @@ const useStyles = makeStyles({
     color: 'white',
     justifyContent: 'center',
     fontSize: '50px',
+    padding: '50px 0px',
+    marginBottom: '10px'
   },
   missionText: {
     maxWidth: '700px',
@@ -96,110 +98,6 @@ export default function Main_En() {
             for the broken. Everything we do is guided by the power of the Holy
             Spirit and the love that Christ has shown us
           </Typography>
-        </Grid>
-      </Grid>
-      <Grid container justify="center" className={classes.allCards}>
-        <Grid md="4" sm="6" xs="12">
-          <Card className={classes.root}>
-            <CardActionArea className={classes.cardAction}>
-              <CardMedia
-                className={classes.media}
-                image="https://via.placeholder.com/250"
-                title="lorem"
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                  align="center"
-                >
-                  Leadership Team
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  align="center"
-                >
-                  lorem latin
-                </Typography>
-                <Box textAlign="center">
-                  <Button variant="contained" href="/en/leaders">
-                    Learn More
-                  </Button>
-                </Box>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid md="4" sm="6" xs="12">
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="https://via.placeholder.com/250"
-                title="lorem"
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                  align="center"
-                >
-                  Ministries
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  align="center"
-                >
-                  lorem latin
-                </Typography>
-                <Box textAlign="center">
-                  <Button variant="contained" href="/en/ministries">
-                    Learn More
-                  </Button>
-                </Box>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-        <Grid md="4" sm="6" xs="12">
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                className={classes.media}
-                image="https://via.placeholder.com/250"
-                title="lorem"
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                  align="center"
-                >
-                  Social
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  align="center"
-                >
-                  lorem latin
-                </Typography>
-                <Box textAlign="center">
-                  <Button variant="contained" href="/en/socials">
-                    Learn More
-                  </Button>
-                </Box>
-              </CardContent>
-            </CardActionArea>
-          </Card>
         </Grid>
       </Grid>
     </div>
