@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 import worshipImage from '../../img/worship.jpg';
+import crossImg from '../../img/cross.jpg';
 import Option_En from './Options_En';
 const useStyles = makeStyles({
   top: {
@@ -53,6 +54,23 @@ const useStyles = makeStyles({
     maxWidth: '700px',
     fontSize: '30px',
   },
+  quote: {
+    backgroundImage: `url(${crossImg})`,
+    width: '99vw',
+    minHeight: '50vh',
+    backgroundSize: 'cover',
+    marginTop: '100px',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    marginBottom: '50px',
+  },
+  quoteText: {
+    color: 'white',
+    maxWidth: '600px',
+    backgroundColor: 'rgb(168,19,0, 0.5)',
+    borderRadius: '12px',
+  },
 });
 export default function Main_En() {
   const classes = useStyles();
@@ -97,6 +115,16 @@ export default function Main_En() {
         </Grid>
       </Grid>
       <Option_En />
+      <Grid className={classes.quote} container>
+        <Typography variant="h5" className={classes.quoteText}>
+          “24 And let us consider how we may spur one another on toward love and
+          good deeds, 25 not giving up meeting together, as some are in the
+          habit of doing, but encouraging one another—and all the more as you
+          see the Day approaching.”
+          <br />
+          -Hebrews 10:24-25
+        </Typography>
+      </Grid>
     </div>
   );
 }

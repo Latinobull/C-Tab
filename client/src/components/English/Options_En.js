@@ -36,7 +36,11 @@ export default function Option_En() {
             host FB live services every Sunday, Wednesday, and Friday. View our
             virtual services schedule here.
           </Typography>
-          <Button className={classes.button} variant="contained">
+          <Button
+            className={classes.button}
+            variant="contained
+          "
+          >
             Watch
           </Button>
         </Grid>
@@ -54,7 +58,11 @@ export default function Option_En() {
             congregation. Read more about the various ministries we have at
             Christian Tabernacle.
           </Typography>
-          <Button className={classes.button} variant="contained">
+          <Button
+            className={classes.button}
+            variant="contained
+          "
+          >
             Learn More
           </Button>
         </Grid>
@@ -62,7 +70,7 @@ export default function Option_En() {
       {/* Changing the world */}
       <Grid container className={classes.main}>
         <Grid item>
-          <img src={laptopImg} className={classes.img} />
+          <img src={handImg} className={classes.img} />
         </Grid>
         <Grid item style={{ width: '500px' }}>
           <Typography variant="h3">
@@ -73,7 +81,11 @@ export default function Option_En() {
             our church. Anointed and passionate, our team serves under the
             direction of God and the Holy Spirit.
           </Typography>
-          <Button className={classes.button} variant="contained">
+          <Button
+            className={classes.button}
+            variant="contained
+          "
+          >
             Watch
           </Button>
         </Grid>
