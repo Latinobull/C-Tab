@@ -6,10 +6,11 @@ const useStyles = makeStyles(() => ({
     marginTop: 'auto',
     backgroundColor: 'rgb(168,19,0)',
     padding: '50px',
-    paddingLeft: '200px',
   },
   text: {
     color: 'white',
+    justifyContent: 'space-evenly',
+    textAlign: 'center',
   },
 }));
 export default function Footer() {
@@ -18,7 +19,7 @@ export default function Footer() {
     <div>
       <footer className={classes.footer}>
         <Grid container className={classes.text}>
-          <Grid item lg={8}>
+          <Grid item>
             <Typography variant="h6">
               CHRISTIAN TABERNACLE PENTECOSTAL CHURCH BROOKLYN
             </Typography>

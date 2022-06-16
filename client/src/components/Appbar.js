@@ -22,7 +22,7 @@ const Logo = styled('a')`
   color: white;
   marginright: 15px;
   text-decoration: none;
-  padding: 0px 10px;
+  padding: 0px 5px;
 `;
 const AppbarContent = styled('a')`
   color: white;
@@ -47,12 +47,18 @@ export default function Appbar() {
 
   return (
     <div>
-      <MyAppBar >
+      <MyAppBar>
         <Toolbar>
           <Typography variant="h4" sx={{ display: { xs: 'none', md: 'flex' } }}>
             Christian Tabernacle Church
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
+              paddingRight: { xs: '30px', md: '0px' },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -61,7 +67,7 @@ export default function Appbar() {
               onClick={handleOpenHome}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{ paddingRight: { xs: '10px' } }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -94,7 +100,7 @@ export default function Appbar() {
           </Box>
           <Box sx={{ flexGrow: 1 }}>
             <Typography
-              variant="h4"
+              variant="h5"
               sx={{ display: { xs: 'flex', md: 'none' } }}
             >
               Christian Tabernacle Church
@@ -103,7 +109,7 @@ export default function Appbar() {
           <Box sx={{ display: { xs: 'none', md: 'inherit' } }}>
             {pages.map(page => (
               <Typography key={page} variant="h6">
-                <AppbarContent href="/en">{page}</AppbarContent>
+                <AppbarContent href={`/${page}`}>{page}</AppbarContent>
               </Typography>
             ))}
           </Box>
