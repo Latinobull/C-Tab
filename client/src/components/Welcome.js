@@ -1,37 +1,38 @@
-import { Button, Grid, Link, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import worshipImage from '../img/worship.jpg';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 
-const useStyles = makeStyles(theme => ({
-  background: {
-    backgroundImage: `url(${worshipImage})`,
-    backgroundSize: 'cover',
-  },
-  content: {
-    backgroundColor: 'rgb(255,255,255, 0.4)',
-    textAlign: 'center',
-    padding: '100px 50px 50px 50px',
-  },
-  buttonStyle: {
-    color: 'black',
-    fontSize: '20px',
-  },
-}));
+const MyBody = styled('div')`
+  background-image: url(${worshipImage});
+  background-size: cover;
+`;
+
+const MyContent = styled(Grid)`
+  background-color: rgb(255, 255, 255, 0.4);
+  text-align: center;
+  padding: 100px 50px 50px 50px;
+`;
+
+const MyLink = styled(Link)`
+  color: black;
+  font-size: 20px;
+`;
+
 export default function Welcome() {
-  const classes = useStyles();
   return (
-    <div className={classes.background}>
+    <MyBody>
       <Grid
         container
-        direction="column"
+        direction="row"
         alignItems="center"
-        justify="center"
+        justifyContent="center"
         style={{ minHeight: '100vh' }}
       >
-        <div className={classes.content}>
-          {/* <Typography >
-            Welcome to Christian Tabernacle, Choose your Preferred Language
-          </Typography> */}
+        <MyContent>
           <Typography variant="h3">
             A house on fire, led by the Holy Spirit
           </Typography>
@@ -43,18 +44,18 @@ export default function Welcome() {
           <Typography>Pick a language</Typography>
           <Grid item xs={12}>
             <Button size="large">
-              <Link href="/en" className={classes.buttonStyle}>
+              <MyLink href="/en" underline="hover">
                 English
-              </Link>
+              </MyLink>
             </Button>
             <Button size="large">
-              <Link href="/sp" className={classes.buttonStyle}>
+              <MyLink href="/sp" underline="hover">
                 Spanish
-              </Link>
+              </MyLink>
             </Button>
           </Grid>
-        </div>
+        </MyContent>
       </Grid>
-    </div>
+    </MyBody>
   );
 }

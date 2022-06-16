@@ -20,15 +20,14 @@ const MyAppBar = styled(AppBar)`
 `;
 const Logo = styled('a')`
   color: white;
-  marginright: 15px;
+  margin-right: 15px;
   text-decoration: none;
   padding: 0px 5px;
 `;
 const AppbarContent = styled('a')`
   color: white;
-  marginright: 15px;
+  margin-right: 15px;
   text-decoration: none;
-  padding: 0px 20px;
 `;
 const NavContent = styled('a')`
   color: rgb(168, 19, 0);
@@ -47,9 +46,9 @@ export default function Appbar() {
 
   return (
     <div>
-      <MyAppBar>
+      <MyAppBar position="static">
         <Toolbar>
-          <Typography variant="h4" sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Typography variant="h5" sx={{ display: { xs: 'none', md: 'flex' } }}>
             Christian Tabernacle Church
           </Typography>
           <Box
