@@ -36,11 +36,7 @@ export default function Option_En() {
             host FB live services every Sunday, Wednesday, and Friday. View our
             virtual services schedule here.
           </Typography>
-          <Button
-            className={classes.button}
-            variant="contained
-          "
-          >
+          <Button className={classes.button} variant="contained">
             Watch
           </Button>
         </Grid>
