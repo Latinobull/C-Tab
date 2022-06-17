@@ -84,7 +84,7 @@ export default function Main_En() {
           </MissionText>
         </Grid>
       </MissionGrid>
-      {/* <Option_En /> */}
+      <Option_En />
       <MyQuote container>
         <QuoteText variant="h5">
           “24 And let us consider how we may spur one another on toward love and
