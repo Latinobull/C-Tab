@@ -89,7 +89,7 @@ export default function Appbar() {
               {pages.map(page => (
                 <MenuItem key={page}>
                   <Typography textAlign="center">
-                    <NavContent href="/en" onClick={handleCloseHome}>
+                    <NavContent href={`/en/${page}`} onClick={handleCloseHome}>
                       {page}
                     </NavContent>
                   </Typography>
@@ -108,7 +108,7 @@ export default function Appbar() {
           <Box sx={{ display: { xs: 'none', md: 'inherit' } }}>
             {pages.map(page => (
               <Typography key={page} variant="h6">
-                <AppbarContent href={`/${page}`}>{page}</AppbarContent>
+                <AppbarContent href={`/en/${page}`}>{page}</AppbarContent>
               </Typography>
             ))}
           </Box>
