@@ -1,100 +1,70 @@
-import {
-  Button,
-  Grid,
-  makeStyles,
-  TablePagination,
-  Typography,
-} from '@material-ui/core';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 import React from 'react';
 import worshipImage from '../../img/worship.jpg';
 import crossImg from '../../img/cross.jpg';
 import Option_En from './Options_En';
-const useStyles = makeStyles({
-  top: {
-    flexGrow: 1,
-  },
-  root: {
-    maxWidth: 600,
-    maxWidth: '100vw',
-  },
-  cardAction: {
-    justifyContent: 'center',
-  },
-  media: {
-    height: 200,
-  },
-  headline: {
-    paddingBottom: 50,
-    textAlign: 'center',
-  },
-  holder: {
-    backgroundImage: `url(${worshipImage})`,
-    backgroundSize: 'cover',
-    minHeight: '100vh',
-  },
-  text: {
-    color: 'white',
-    paddingLeft: '200px',
-  },
-  button: {
-    backgroundColor: 'white',
-    color: 'rgb(168,19,0)',
-    padding: '10px 25px',
-    borderRadius: '1px',
-  },
-  mission: {
-    backgroundColor: 'rgb(168,19,0)',
-    color: 'white',
-    justifyContent: 'center',
-    fontSize: '50px',
-    padding: '50px 0px',
-    marginBottom: '10px',
-  },
-  missionText: {
-    maxWidth: '700px',
-    fontSize: '30px',
-  },
-  quote: {
-    backgroundImage: `url(${crossImg})`,
-    width: '99vw',
-    minHeight: '50vh',
-    backgroundSize: 'cover',
-    marginTop: '100px',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    marginBottom: '50px',
-  },
-  quoteText: {
-    color: 'white',
-    maxWidth: '600px',
-    backgroundColor: 'rgb(168,19,0, 0.5)',
-    borderRadius: '12px',
-  },
-});
+
+const MainGrid = styled(Grid)`
+  background-image: url(${worshipImage});
+  background-size: cover;
+  min-height: 100vh;
+`;
+const MainText = styled('div')`
+  color: white;
+  padding-left: 200px;
+`;
+const MyButton = styled(Button)`
+  background-color: white;
+  color: rgb(168, 19, 0);
+  padding: 10px 25px;
+  border-radius: 1px;
+`;
+const MissionGrid = styled(Grid)`
+  background-color: rgb(168, 19, 0);
+  color: white;
+  justify-content: center;
+  font-size: 50px;
+  padding: 50px 0px;
+  margin-bottom: 10px;
+`;
+const MissionText = styled(Typography)`
+  max-width: 700px;
+  font-size: 30px;
+`;
+const MyQuote = styled(Grid)`
+  background-image: url(${crossImg});
+  max-width: 99vw;
+  min-height: 50vh;
+  background-size: cover;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+`;
+const QuoteText = styled(Typography)`
+  color: white;
+  max-width: 600px;
+  background-color: rgb(168, 19, 0, 0.5);
+  border-radius: 12px;
+`;
 export default function Main_En() {
-  const classes = useStyles();
   return (
-    <div className={classes.top}>
-      <Grid
-        className={classes.holder}
-        container
-        direction="column"
-        justify="center"
-      >
-        <div className={classes.text}>
+    <div>
+      <MainGrid container direction="row" justify="center" alignItems="center">
+        <MainText>
           <Typography style={{ fontSize: '32px' }}>A house on fire,</Typography>
           <Typography style={{ fontSize: '32px' }}>
             led by the Holy Spirit
           </Typography>
-          <Button className={classes.button} variant="contained">
-            Learn More
-          </Button>
-        </div>
-      </Grid>
-      <Grid
+          <MyButton variant="contained">Learn More</MyButton>
+        </MainText>
+      </MainGrid>
+      <MissionGrid
         container
-        className={classes.mission}
         justify="space-around"
         direction="row"
         alignItems="center"
@@ -105,26 +75,26 @@ export default function Main_En() {
           }
         </Grid>
         <Grid item md={5}>
-          <Typography className={classes.missionText}>
+          <MissionText>
             Our mission
             <br />
             We believe that we are not just a church but a home and a hospital
             for the broken. Everything we do is guided by the power of the Holy
             Spirit and the love that Christ has shown us
-          </Typography>
+          </MissionText>
         </Grid>
-      </Grid>
-      <Option_En />
-      <Grid className={classes.quote} container>
-        <Typography variant="h5" className={classes.quoteText}>
+      </MissionGrid>
+      {/* <Option_En /> */}
+      <MyQuote container>
+        <QuoteText variant="h5">
           “24 And let us consider how we may spur one another on toward love and
           good deeds, 25 not giving up meeting together, as some are in the
           habit of doing, but encouraging one another—and all the more as you
           see the Day approaching.”
           <br />
           -Hebrews 10:24-25
-        </Typography>
-      </Grid>
+        </QuoteText>
+      </MyQuote>
     </div>
   );
 }
