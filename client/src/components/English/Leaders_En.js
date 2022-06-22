@@ -16,32 +16,31 @@ import {
 } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    width: 600,
-    maxWidth: '100vw',
-  },
-  cardAction: {
-    justifyContent: 'center',
-  },
-  media: {
-    height: 400,
-  },
-
-  allCards: {
-    marginBottom: 150,
-  },
-  list: {
-    width: '100%',
-    maxWidth: '700px',
-    backgroundColor: theme.palette.background.paper,
-  },
-  avatar: {
-    width: 200,
-    height: 200,
-  },
-  divider: {
-    backgroundColor: 'black',
-  },
+  // root: {
+  //   width: 600,
+  //   maxWidth: '100vw',
+  // },
+  // cardAction: {
+  //   justifyContent: 'center',
+  // },
+  // media: {
+  //   height: 400,
+  // },
+  // allCards: {
+  //   marginBottom: 150,
+  // },
+  // list: {
+  //   width: '100%',
+  //   maxWidth: '700px',
+  //   backgroundColor: theme.palette.background.paper,
+  // },
+  // avatar: {
+  //   width: 200,
+  //   height: 200,
+  // },
+  // divider: {
+  //   backgroundColor: 'black',
+  // },
 }));
 export default function Leaders_En() {
   const classes = useStyles();
