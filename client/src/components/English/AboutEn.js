@@ -15,7 +15,6 @@ const MainStatement = styled(Typography)`
 `;
 const MissionGrid = styled(Grid)`
   background-color: lightblue;
-  min-height: 40vh;
   justify-content: space-evenly;
 `;
 const MissionText = styled(Typography)`
@@ -36,7 +35,7 @@ export default function AboutEn() {
           established.
         </MainStatement>
       </MainGrid>
-      <MissionGrid container justifyContent="center" alignContent="center">
+      <MissionGrid container>
         <Grid item>
           <div
             style={{
@@ -50,14 +49,10 @@ export default function AboutEn() {
         </Grid>
         <Grid item>
           <StatementText>
-            Our Mission
-            <br /> We believe that we are not just a church but a home and a
-            hospital for the broken. Everything we do is guided by the power of
-            the Holy Spirit and the love that Christ has shown us.
+            The Founder
+            <br /> lorem text about the founder
           </StatementText>
         </Grid>
-
-        <MissionText display="block"></MissionText>
       </MissionGrid>
     </div>
   );

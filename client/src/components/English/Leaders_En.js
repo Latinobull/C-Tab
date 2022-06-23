@@ -1,189 +1,136 @@
+import { Grid, styled, Typography } from '@mui/material';
 import React from 'react';
-import {
-  Avatar,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Divider,
-  Grid,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  makeStyles,
-  Typography,
-} from '@material-ui/core';
+import headImg from '../../img/headShot.jpg';
+const MainGrid = styled(Grid)`
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 120px;
+`;
 
-const useStyles = makeStyles(theme => ({
-  // root: {
-  //   width: 600,
-  //   maxWidth: '100vw',
-  // },
-  // cardAction: {
-  //   justifyContent: 'center',
-  // },
-  // media: {
-  //   height: 400,
-  // },
-  // allCards: {
-  //   marginBottom: 150,
-  // },
-  // list: {
-  //   width: '100%',
-  //   maxWidth: '700px',
-  //   backgroundColor: theme.palette.background.paper,
-  // },
-  // avatar: {
-  //   width: 200,
-  //   height: 200,
-  // },
-  // divider: {
-  //   backgroundColor: 'black',
-  // },
-}));
+const LeaderText = styled(Typography)`
+  text-align: center;
+  max-width: 550px;
+  padding-bottom: 40px;
+`;
+const LeaderImg = styled('img')({});
 export default function Leaders_En() {
-  const classes = useStyles();
   return (
     <div>
-      <Grid container justify="center">
-        <h1> The Pastors of Christian Tabernacle</h1>
-      </Grid>
-      <Grid container justify="center" className={classes.allCards}>
-        <Grid md="4" sm="6" xs="12">
-          <Card className={classes.root}>
-            <CardActionArea className={classes.cardAction}>
-              <CardMedia
-                className={classes.media}
-                image="https://via.placeholder.com/250"
-                title="lorem"
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                  align="center"
-                >
-                  Pastor Damaris Torres
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
+      <Typography variant="h3" align="center" style={{ padding: '100px 0px' }}>
+        Our Leaders
+      </Typography>
+      <MainGrid container>
+        <Grid item>
+          <LeaderImg
+            src={headImg}
+            sx={{
+              width: { xs: '300px', md: '500px' },
+              height: { xs: '400px', md: '600px' },
+            }}
+          />
         </Grid>
-        <Grid md="4" sm="6" xs="12">
-          <Card className={classes.root}>
-            <CardActionArea className={classes.cardAction}>
-              <CardMedia
-                className={classes.media}
-                image="https://via.placeholder.com/250"
-                title="lorem"
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                  align="center"
-                >
-                  Pastor Huey Perez
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
+        <Grid item>
+          <LeaderText variant="h3">Pastor Damaris Torres</LeaderText>
+          <LeaderText variant="h5">
+            It all begins with an idea. Maybe you want to launch a business.
+            Maybe you want to turn a hobby into something more. Or maybe you
+            have a creative project to share with the world. Whatever it is, the
+            way you tell your story online can make all the difference.{' '}
+          </LeaderText>
         </Grid>
-        <Grid md="4" sm="6" xs="12">
-          <Card className={classes.root}>
-            <CardActionArea className={classes.cardAction}>
-              <CardMedia
-                className={classes.media}
-                image="https://via.placeholder.com/250"
-                title="lorem"
-              />
-              <CardContent>
-                <Typography
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                  align="center"
-                >
-                  Co-Pastor Edward Guadalupe
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
+      </MainGrid>
+      <MainGrid container direction="row-reverse">
+        <Grid item>
+          <LeaderImg
+            src={headImg}
+            sx={{
+              width: { xs: '300px', md: '500px' },
+              height: { xs: '400px', md: '600px' },
+            }}
+          />
         </Grid>
-      </Grid>
-      <Grid container justify="center">
-        <Grid md="6" xs="12">
-          <Typography variant="h3" align="center">
-            Deacons
-          </Typography>
-          <List className={classes.list}>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar
-                  alt="placeholder"
-                  src="https://via.placeholder.com/250"
-                  className={classes.avatar}
-                  variant="rounded"
-                />
-              </ListItemAvatar>
-              <ListItemText>
-                <Typography variant="h4">John Doe</Typography>
-              </ListItemText>
-            </ListItem>
-            <Divider className={classes.divider} />
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar
-                  alt="placeholder"
-                  src="https://via.placeholder.com/250"
-                  className={classes.avatar}
-                  variant="rounded"
-                />
-              </ListItemAvatar>
-              <ListItemText>
-                <Typography variant="h4">Bob Ross</Typography>
-              </ListItemText>
-            </ListItem>
-          </List>
+        <Grid item>
+          <LeaderText variant="h3">Pastor Huey Perez</LeaderText>
+          <LeaderText variant="h5">
+            It all begins with an idea. Maybe you want to launch a business.
+            Maybe you want to turn a hobby into something more. Or maybe you
+            have a creative project to share with the world. Whatever it is, the
+            way you tell your story online can make all the difference.{' '}
+          </LeaderText>
         </Grid>
-        <Grid md="6" xs="12">
-          <Typography variant="h3" align="center">
-            Prophets
-          </Typography>
-          <List className={classes.list}>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar
-                  alt="placeholder"
-                  src="https://via.placeholder.com/250"
-                  className={classes.avatar}
-                  variant="rounded"
-                />
-              </ListItemAvatar>
-              <ListItemText>
-                <Typography variant="h4">David Melendez</Typography>
-              </ListItemText>
-            </ListItem>
-            <Divider className={classes.divider} />
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar
-                  alt="placeholder"
-                  src="https://via.placeholder.com/250"
-                  className={classes.avatar}
-                  variant="rounded"
-                />
-              </ListItemAvatar>
-              <ListItemText>
-                <Typography variant="h4">Moriama Rosa</Typography>
-              </ListItemText>
-            </ListItem>
-          </List>
+      </MainGrid>
+      <MainGrid container>
+        <Grid item>
+          <LeaderImg
+            src={headImg}
+            sx={{
+              width: { xs: '300px', md: '500px' },
+              height: { xs: '400px', md: '600px' },
+            }}
+          />
         </Grid>
-      </Grid>
+        <Grid item>
+          <LeaderText variant="h3">
+            Co-Pastor
+            <br /> Edward Guadalupe
+          </LeaderText>
+          <LeaderText variant="h5">
+            It all begins with an idea. Maybe you want to launch a business.
+            Maybe you want to turn a hobby into something more. Or maybe you
+            have a creative project to share with the world. Whatever it is, the
+            way you tell your story online can make all the difference.{' '}
+          </LeaderText>
+        </Grid>
+      </MainGrid>
+      <MainGrid container direction="row-reverse">
+        <Grid item>
+          <LeaderImg
+            src={headImg}
+            sx={{
+              width: { xs: '300px', md: '500px' },
+              height: { xs: '400px', md: '600px' },
+            }}
+          />
+        </Grid>
+        <Grid item>
+          <LeaderText variant="h3">
+            Secretary
+            <br /> Annette Guadalupe
+          </LeaderText>
+          <LeaderText variant="h5">
+            It all begins with an idea. Maybe you want to launch a business.
+            Maybe you want to turn a hobby into something more. Or maybe you
+            have a creative project to share with the world. Whatever it is, the
+            way you tell your story online can make all the difference.{' '}
+          </LeaderText>
+        </Grid>
+      </MainGrid>
+      <MainGrid container>
+        <Grid item>
+          <LeaderImg
+            src={headImg}
+            sx={{
+              width: { xs: '300px', md: '500px' },
+              height: { xs: '400px', md: '600px' },
+            }}
+          />
+        </Grid>
+        <Grid item>
+          <LeaderText variant="h3">
+            Treasurer
+            <br /> Yesenia Rodriquez
+          </LeaderText>
+          <LeaderText variant="h5">
+            It all begins with an idea. Maybe you want to launch a business.
+            Maybe you want to turn a hobby into something more. Or maybe you
+            have a creative project to share with the world. Whatever it is, the
+            way you tell your story online can make all the difference.{' '}
+          </LeaderText>
+        </Grid>
+      </MainGrid>
+      <Typography variant="h4" align="center" style={{ padding: '100px 0px' }}>
+        Decons
+      </Typography>
     </div>
   );
 }
