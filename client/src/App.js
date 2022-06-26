@@ -19,17 +19,19 @@ class App extends Component {
     if (location[3] === 'en') {
       appbar = <Appbar />;
       document.title = 'Christian Tabernacle';
-    } else {
+    } else if (location[3] === 'sp') {
       appbar = <AppbarSp />;
       document.title = 'Tabernaculo Christiano';
+    } else {
+      appbar = <div></div>;
     }
     return (
       <div className="page-container">
         <div className="content-wrap">
           <Router>
+            {appbar}
             <Route exact path="/" component={Welcome} />
             {/* English Routes */}
-            {appbar}
 
             <Route exact path="/en" component={Main_En} />
             <Route exact path="/en/about" component={AboutEn} />
