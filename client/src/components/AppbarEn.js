@@ -117,7 +117,7 @@ export default function Appbar() {
               </Typography>
             ))}
           </Box>
-          <Logo href="/">
+          <Logo href="https://www.facebook.com/christiantabernacle.church.7">
             <FacebookIcon />
           </Logo>
           <Button color="inherit">Donate</Button>

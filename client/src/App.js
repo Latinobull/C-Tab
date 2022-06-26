@@ -13,16 +13,23 @@ import AboutEn from './components/English/AboutEn';
 import AppbarSp from './components/AppbarSp';
 
 let location = window.location.href.split('/');
-console.log(location);
 class App extends Component {
   render() {
+    let appbar;
+    if (location[3] === 'en') {
+      appbar = <Appbar />;
+      document.title = 'Christian Tabernacle';
+    } else {
+      appbar = <AppbarSp />;
+      document.title = 'Tabernaculo Christiano';
+    }
     return (
       <div className="page-container">
         <div className="content-wrap">
           <Router>
             <Route exact path="/" component={Welcome} />
             {/* English Routes */}
-            {location[3] === 'en' ? <Appbar /> : <AppbarSp />}
+            {appbar}
 
             <Route exact path="/en" component={Main_En} />
             <Route exact path="/en/about" component={AboutEn} />

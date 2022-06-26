@@ -106,7 +106,7 @@ export default function Appbar() {
               sx={{ display: { xs: 'flex', md: 'none' } }}
             >
               <AppbarContent href="/sp">
-                Christian Tabernacle Church
+                Iglesia Tabernaculo Cristiano
               </AppbarContent>
             </Typography>
           </Box>
@@ -117,7 +117,7 @@ export default function Appbar() {
               </Typography>
             ))}
           </Box>
-          <Logo href="/">
+          <Logo href="https://www.facebook.com/christiantabernacle.church.7">
             <FacebookIcon />
           </Logo>
           <Button color="inherit">Donación</Button>
