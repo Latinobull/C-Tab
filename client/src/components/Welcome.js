@@ -33,27 +33,30 @@ export default function Welcome() {
         style={{ minHeight: '100vh' }}
       >
         <MyContent>
+          <Typography variant="h2">Welcome to Cristian Tabernacle</Typography>
+
           <Typography variant="h3">
             A house on fire, led by the Holy Spirit
           </Typography>
+          <Typography>Join Us in English</Typography>
+          <Button size="large">
+            <MyLink href="/en" underline="hover">
+              English
+            </MyLink>
+          </Button>
           <br />
+          <Typography variant="h2">
+            Beinvenidos a Tabernaculo Cristiano
+          </Typography>
           <Typography variant="h3">
             Una casa en llamas, dirigida por el espíritu santo
           </Typography>
-          <br />
-          <Typography>Pick a language</Typography>
-          <Grid item xs={12}>
-            <Button size="large">
-              <MyLink href="/en" underline="hover">
-                English
-              </MyLink>
-            </Button>
-            <Button size="large">
-              <MyLink href="/sp" underline="hover">
-                Spanish
-              </MyLink>
-            </Button>
-          </Grid>
+          <Typography>Unete en Espanol</Typography>
+          <Button size="large">
+            <MyLink href="/sp" underline="hover">
+              Spanish
+            </MyLink>
+          </Button>
         </MyContent>
       </Grid>
     </MyBody>

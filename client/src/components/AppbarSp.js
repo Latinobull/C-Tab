@@ -113,7 +113,7 @@ export default function Appbar() {
           <Box sx={{ display: { xs: 'none', md: 'inherit' } }}>
             {pages.map(page => (
               <Typography key={page} variant="h6">
-                <AppbarContent href={`/en/${page}`}>{page}</AppbarContent>
+                <AppbarContent href={`/sp/${page}`}>{page}</AppbarContent>
               </Typography>
             ))}
           </Box>
