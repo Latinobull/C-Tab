@@ -19,7 +19,7 @@ export default function Footer() {
             <FooterText variant="h6">
               CHRISTIAN TABERNACLE PENTECOSTAL CHURCH BROOKLYN
             </FooterText>
-            <FooterText variant="h6">IGELSIA TABERNACULO CRISTIANO</FooterText>
+            <FooterText variant="h6">IGLESIA TABERNACULO CRISTIANO</FooterText>
             <FooterText>
               616 JAMAICA AVENUE
               <br />

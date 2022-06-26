@@ -120,7 +120,7 @@ export default function Leaders_En() {
         </div>
       ))}
       <Typography variant="h4" align="center" style={{ padding: '50px 0px' }}>
-        Decons
+        Deacons
       </Typography>
       <Grid container spacing={2} justifyContent="space-evenly">
         {Decons.map(decon => (

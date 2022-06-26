@@ -15,6 +15,7 @@ const MainGrid = styled(Grid)`
 const MainText = styled('div')`
   color: white;
   padding-left: 200px;
+  text-align: center;
 `;
 const MyButton = styled(Button)`
   background-color: white;
@@ -33,6 +34,7 @@ const MissionGrid = styled(Grid)`
 const MissionText = styled(Typography)`
   max-width: 700px;
   font-size: 30px;
+  text-align: center;
 `;
 const MyQuote = styled(Grid)`
   background-image: url(${crossImg});
@@ -63,18 +65,15 @@ export default function Main_En() {
           <MyButton variant="contained">Learn More</MyButton>
         </MainText>
       </MainGrid>
-      <MissionGrid
-        container
-        justify="space-around"
-        direction="row"
-        alignItems="center"
-      >
-        <Grid item md={5}>
-          {
-            'We are not just a church, but a home and a hospital for the broken.'
-          }
+      <MissionGrid container justify="" direction="row" alignItems="center">
+        <Grid item>
+          <MissionText>
+            'We are not just a church, but a home and a hospital for the
+            broken.'
+          </MissionText>
         </Grid>
-        <Grid item md={5}>
+        <br />
+        <Grid item>
           <MissionText>
             Our mission
             <br />

@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['About', 'Join us', 'Ministries', 'Testimonies', 'Contact'];
+const pages = ['About', 'Join us', 'Ministries', 'Leaders'];
 const MyAppBar = styled(AppBar)`
   padding: 25px 0px;
   background-color: rgb(168, 19, 0);
@@ -28,6 +28,7 @@ const AppbarContent = styled('a')`
   color: white;
   margin-right: 15px;
   text-decoration: none;
+  text-align: center;
 `;
 const NavContent = styled('a')`
   color: rgb(168, 19, 0);
@@ -49,7 +50,9 @@ export default function Appbar() {
       <MyAppBar position="static">
         <Toolbar>
           <Typography variant="h5" sx={{ display: { xs: 'none', md: 'flex' } }}>
-            Christian Tabernacle Church
+            <AppbarContent href="/en">
+              Christian Tabernacle Church
+            </AppbarContent>
           </Typography>
           <Box
             sx={{
@@ -102,7 +105,9 @@ export default function Appbar() {
               variant="h5"
               sx={{ display: { xs: 'flex', md: 'none' } }}
             >
-              Christian Tabernacle Church
+              <AppbarContent href="/en">
+                Christian Tabernacle Church
+              </AppbarContent>
             </Typography>
           </Box>
           <Box sx={{ display: { xs: 'none', md: 'inherit' } }}>
@@ -114,12 +119,6 @@ export default function Appbar() {
           </Box>
           <Logo href="/">
             <FacebookIcon />
-          </Logo>
-          <Logo href="/">
-            <MailOutlinedIcon />
-          </Logo>
-          <Logo href="/">
-            <InstagramIcon />
           </Logo>
           <Button color="inherit">Donate</Button>
         </Toolbar>

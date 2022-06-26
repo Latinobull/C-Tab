@@ -1,5 +1,4 @@
 import { Grid, styled, Typography } from '@mui/material';
-import churchBuilding from '../../img/churchBuilding.jpg';
 import React from 'react';
 
 const MainGrid = styled(Grid)`
@@ -9,9 +8,9 @@ const MainGrid = styled(Grid)`
 `;
 const MainStatement = styled(Typography)`
   color: black;
-  padding-left: 250px;
   font-size: 50px;
   max-width: 700px;
+  text-align: center;
 `;
 const MissionGrid = styled(Grid)`
   background-color: lightblue;
