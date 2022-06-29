@@ -11,19 +11,23 @@ import Ministry_En from './components/English/Ministry_En';
 import Socials_En from './components/English/Socials_En';
 import AboutEn from './components/English/AboutEn';
 import AppbarSp from './components/AppbarSp';
-
+import FooterSp from './components/FooterSp';
 let location = window.location.href.split('/');
 class App extends Component {
   render() {
     let appbar;
+    let footer;
     if (location[3] === 'en') {
       appbar = <Appbar />;
       document.title = 'Christian Tabernacle';
+      footer = <Footer />;
     } else if (location[3] === 'sp') {
       appbar = <AppbarSp />;
       document.title = 'Tabernaculo Christiano';
+      footer = <FooterSp />;
     } else {
       appbar = <div></div>;
+      footer = <div></div>;
     }
     return (
       <div className="page-container">
@@ -42,7 +46,7 @@ class App extends Component {
             <Route exact path="/sp" component={Main_Sp} />
           </Router>
         </div>
-        <Footer />
+        {footer}
       </div>
     );
   }

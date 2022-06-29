@@ -32,7 +32,7 @@ export default function Welcome() {
         justifyContent="center"
         style={{ minHeight: '100vh' }}
       >
-        <MyContent>
+        <MyContent sx={{ minWidth: { xs: 'none', md: '1300px' } }}>
           <Typography variant="h2">Welcome to Cristian Tabernacle</Typography>
 
           <Typography variant="h3">
@@ -46,7 +46,7 @@ export default function Welcome() {
           </Button>
           <br />
         </MyContent>
-        <MyContent>
+        <MyContent sx={{ minWidth: { xs: 'none', md: '1300px' } }}>
           <Typography variant="h2">
             Beinvenidos a Tabernaculo Cristiano
           </Typography>
