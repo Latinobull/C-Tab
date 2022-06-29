@@ -14,29 +14,25 @@ export default function Footer() {
       <MyFooter>
         <Grid container justifyContent="space-evenly" textAlign="center">
           <Grid item marginBottom="30px">
-            <FooterText variant="h6">
-              CHRISTIAN TABERNACLE PENTECOSTAL CHURCH BROOKLYN
-            </FooterText>
+            <FooterText variant="h6">IGLESIA TABERNACULO CRISTIANO</FooterText>
             <FooterText>
               616 JAMAICA AVENUE
               <br />
               BROOKLYN,NY 11208
-              <br />
-              (555) 555-5555
             </FooterText>
           </Grid>
           <Grid item lg={2} marginBottom="30px">
-            <FooterText variant="h6">Services</FooterText>
+            <FooterText variant="h6">Servicios</FooterText>
             <FooterText>
-              Sunday  - 7pm
+              Domingo - 7pm
               <br />
-              Wednesday - 8pm
+              Miercoles - 8pm
               <br />
-              Friday - 8pm
+              Viernes - 8pm
             </FooterText>
           </Grid>
           <Grid item lg={2}>
-            <FooterText variant="h6">Follow Us</FooterText>
+            <FooterText variant="h6">Síganos</FooterText>
 
             <a href="#">Facebook</a>
             <FooterText>InsertEmail@gmail.com</FooterText>
