@@ -29,6 +29,8 @@ const AppbarContent = styled('a')`
   margin-right: 15px;
   text-decoration: none;
   text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
 `;
 const NavContent = styled('a')`
   color: rgb(164, 220, 248);

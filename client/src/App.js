@@ -12,6 +12,7 @@ import Socials_En from './components/English/Socials_En';
 import AboutEn from './components/English/AboutEn';
 import AppbarSp from './components/AppbarSp';
 import FooterSp from './components/FooterSp';
+import PastorsEn from './components/English/PastorsEn';
 let location = window.location.href.split('/');
 class App extends Component {
   render() {
@@ -41,6 +42,7 @@ class App extends Component {
             <Route exact path="/en/about" component={AboutEn} />
             <Route exact path="/en/leaders" component={Leaders_En} />
             <Route exact path="/en/ministries" component={Ministry_En} />
+            <Route exact path="/en/pastors" component={PastorsEn} />
             <Route exact path="/en/socials" component={Socials_En} />
             {/* Spanish Routes */}
             <Route exact path="/sp" component={Main_Sp} />

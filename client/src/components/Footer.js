@@ -7,7 +7,10 @@ const MyFooter = styled('footer')`
   background-color: rgb(168, 239, 255);
   padding: 50px;
 `;
-const FooterText = styled(Typography)``;
+const FooterText = styled(Typography)`
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+`;
 export default function Footer() {
   return (
     <div>
@@ -28,7 +31,7 @@ export default function Footer() {
           <Grid item lg={2} marginBottom="30px">
             <FooterText variant="h6">Services</FooterText>
             <FooterText>
-              Sunday  - 7pm
+              Sunday - 7pm
               <br />
               Wednesday - 8pm
               <br />
