@@ -47,15 +47,6 @@ export default function PastorsEn() {
             way you tell your story online can make all the difference.
           </Text>
         </Grid>
-        <Grid container item md={12} justifyContent="center">
-          <LeaderImg
-            src={headImg}
-            sx={{
-              width: { xs: '300px', md: '500px' },
-              height: { xs: '400px', md: '600px' },
-            }}
-          ></LeaderImg>
-        </Grid>
       </MainGrid>
     </div>
   );
