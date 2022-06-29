@@ -13,10 +13,11 @@ const MainGrid = styled(Grid)`
 `;
 const Img = styled('img')({});
 const MyButton = styled(Button)`
-background-color: rgb(168,19,0);
-color: white;
-padding: 20px 40px
-border-radius: 1px
+  background-color: rgb(164,220,248);
+  color: black;
+  border-radius: 1px;
+  width: 180px;
+  height: 60px;
 `;
 export default function Option_En() {
   return (
@@ -26,7 +27,7 @@ export default function Option_En() {
         <Grid item>
           <Img src={laptopImg} sx={{ width: { xs: '300px', md: '600px' } }} />
         </Grid>
-        <Grid item style={{ width: '400px' }}>
+        <Grid item style={{ width: '500px' }}>
           <Typography variant="h3">Join us Online</Typography>
           <Typography variant="h6">
             We have virtual services and bible studies via zoom and facebook. We
@@ -34,7 +35,9 @@ export default function Option_En() {
             host FB live services every Sunday, Wednesday, and Friday. View our
             virtual services schedule here.
           </Typography>
-          <MyButton variant="contained">Watch</MyButton>
+          <MyButton variant="contained" href="/en/join us">
+            Watch
+          </MyButton>
         </Grid>
       </MainGrid>
       {/* Our Ministries */}
@@ -50,10 +53,7 @@ export default function Option_En() {
             congregation. Read more about the various ministries we have at
             Christian Tabernacle.
           </Typography>
-          <MyButton
-            variant="contained
-          "
-          >
+          <MyButton variant="contained" href="/en/ministries">
             Learn More
           </MyButton>
         </Grid>
@@ -72,11 +72,8 @@ export default function Option_En() {
             our church. Anointed and passionate, our team serves under the
             direction of God and the Holy Spirit.
           </Typography>
-          <MyButton
-            variant="contained
-          "
-          >
-            Watch
+          <MyButton variant="contained" href="en/leaders">
+            The Leaders
           </MyButton>
         </Grid>
       </MainGrid>

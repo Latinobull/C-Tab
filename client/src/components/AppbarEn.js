@@ -13,25 +13,25 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['About', 'Join us', 'Ministries', 'Leaders'];
+const pages = ['About', 'Join us', 'Ministries', 'Pastors'];
 const MyAppBar = styled(AppBar)`
   padding: 25px 0px;
-  background-color: rgb(168, 19, 0);
+  background-color: rgb(164, 220, 248);
 `;
 const Logo = styled('a')`
-  color: white;
+  color: black;
   margin-right: 15px;
   text-decoration: none;
   padding: 0px 5px;
 `;
 const AppbarContent = styled('a')`
-  color: white;
+  color: black;
   margin-right: 15px;
   text-decoration: none;
   text-align: center;
 `;
 const NavContent = styled('a')`
-  color: rgb(168, 19, 0);
+  color: rgb(164, 220, 248);
 `;
 export default function Appbar() {
   // const classes = useStyles();
@@ -120,7 +120,9 @@ export default function Appbar() {
           <Logo href="https://www.facebook.com/christiantabernacle.church.7">
             <FacebookIcon />
           </Logo>
-          <Button color="inherit">Donate</Button>
+          <Button color="inherit" style={{ color: 'black' }}>
+            Donate
+          </Button>
         </Toolbar>
       </MyAppBar>
     </div>

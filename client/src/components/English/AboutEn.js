@@ -13,27 +13,29 @@ const MainStatement = styled(Typography)`
   text-align: center;
 `;
 const MissionGrid = styled(Grid)`
-  background-color: lightblue;
   justify-content: space-evenly;
+  margin: 100px 0px;
 `;
 const MissionText = styled(Typography)`
   color: white;
 `;
 const StatementImg = styled('img')({});
 const StatementText = styled(Typography)`
-  color: white;
-  font-size: 40px;
+  font-size: 30px;
   width: 600px;
+`;
+const BeliefText = styled(Typography)`
+  text-align: center;
 `;
 export default function AboutEn() {
   return (
     <div>
-      <MainGrid container alignItems="center">
+      {/* <MainGrid container alignItems="center">
         <MainStatement>
           Since 1984, our vision to serve the Lord and help the lost has been
           established.
         </MainStatement>
-      </MainGrid>
+      </MainGrid> */}
       <MissionGrid container>
         <Grid item>
           <div
@@ -49,10 +51,17 @@ export default function AboutEn() {
         <Grid item>
           <StatementText>
             The Founder
-            <br /> lorem text about the founder
+            <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </StatementText>
         </Grid>
       </MissionGrid>
+      <BeliefText variant="h3">Our Beliefs</BeliefText>
     </div>
   );
 }

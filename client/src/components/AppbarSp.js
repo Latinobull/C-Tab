@@ -16,22 +16,20 @@ import MenuItem from '@mui/material/MenuItem';
 const pages = ['Sobre', 'Únete', 'Ministerios', 'Lideres'];
 const MyAppBar = styled(AppBar)`
   padding: 25px 0px;
-  background-color: rgb(168, 19, 0);
+  background-color: rgb(168, 239, 255);
 `;
 const Logo = styled('a')`
-  color: white;
   margin-right: 15px;
   text-decoration: none;
   padding: 0px 5px;
 `;
 const AppbarContent = styled('a')`
-  color: white;
   margin-right: 15px;
   text-decoration: none;
   text-align: center;
 `;
 const NavContent = styled('a')`
-  color: rgb(168, 19, 0);
+  color: rgb(168, 239, 255);
 `;
 export default function Appbar() {
   // const classes = useStyles();

@@ -13,19 +13,18 @@ const MainGrid = styled(Grid)`
   min-height: 100vh;
 `;
 const MainText = styled('div')`
-  color: white;
   padding-left: 200px;
   text-align: center;
+  color: white;
 `;
 const MyButton = styled(Button)`
-  background-color: white;
-  color: rgb(168, 19, 0);
+  background-color: rgb(164, 220, 248);
+  color: black;
   padding: 10px 25px;
   border-radius: 1px;
 `;
 const MissionGrid = styled(Grid)`
-  background-color: rgb(168, 19, 0);
-  color: white;
+  background-color: rgb(164, 220, 248);
   justify-content: center;
   font-size: 50px;
   padding: 50px 0px;
@@ -48,9 +47,8 @@ const MyQuote = styled(Grid)`
   margin-bottom: 50px;
 `;
 const QuoteText = styled(Typography)`
-  color: white;
   max-width: 600px;
-  background-color: rgb(168, 19, 0, 0.5);
+  background-color: rgb(164, 220, 248, 0.5);
   border-radius: 12px;
 `;
 export default function Main_En() {

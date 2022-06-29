@@ -4,12 +4,10 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 const MyFooter = styled('footer')`
   margin-top: auto;
-  background-color: rgb(168, 19, 0);
+  background-color: rgb(168, 239, 255);
   padding: 50px;
 `;
-const FooterText = styled(Typography)`
-  color: white;
-`;
+const FooterText = styled(Typography)``;
 export default function Footer() {
   return (
     <div>
@@ -41,9 +39,7 @@ export default function Footer() {
           <Grid item lg={2}>
             <FooterText variant="h6">Follow Us</FooterText>
 
-            <a href="#" style={{ color: 'white' }}>
-              Facebook
-            </a>
+            <a href="#">Facebook</a>
             <FooterText>InsertEmail@gmail.com</FooterText>
           </Grid>
         </Grid>

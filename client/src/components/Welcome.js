@@ -45,6 +45,8 @@ export default function Welcome() {
             </MyLink>
           </Button>
           <br />
+        </MyContent>
+        <MyContent>
           <Typography variant="h2">
             Beinvenidos a Tabernaculo Cristiano
           </Typography>
