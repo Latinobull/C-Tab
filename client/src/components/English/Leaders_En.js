@@ -1,56 +1,24 @@
-import { Grid, styled, Typography } from '@mui/material';
-import React from 'react';
+import {
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  styled,
+  Typography,
+} from '@mui/material';
+import React, { useState } from 'react';
 import headImg from '../../img/headShot.jpg';
-const MainGrid = styled(Grid)`
-  justify-content: space-evenly;
-  align-items: center;
-  padding-bottom: 120px;
-`;
-
-const LeaderText = styled(Typography)`
-  text-align: center;
-  max-width: 550px;
-  padding-bottom: 40px;
-`;
 const DeaconText = styled(Typography)`
   text-align: center;
   max-width: 400px;
   padding-bottom: 40px;
+  font-family: Josefin Sans, sans-serif;
+  font-weight: 300;
+  font-size: 34px;
 `;
 const LeaderImg = styled('img')({});
-const mainLeaders = [
-  {
-    title: 'Pastor',
-    name: 'Damaris Torres',
-    description:
-      'It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference.',
-  },
-  {
-    title: 'Pastor',
-    name: 'Huey Perez',
-    description:
-      'It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference.',
-  },
-  {
-    title: 'Co-Pastor',
-    name: 'Edward Guadalupe',
-    description:
-      'It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference.',
-  },
-  {
-    title: 'Secretary',
-    name: 'Annette Guadalupe',
-    description:
-      'It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference.',
-  },
-  {
-    title: 'Treasurer',
-    name: 'Yesenia Rodriquez',
-    description:
-      'It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into something more. Or maybe you have a creative project to share with the world. Whatever it is, the way you tell your story online can make all the difference.',
-  },
-];
-const Decons = [
+const deacons = [
   'Luis Cruz',
   'Tony Perez',
   'Olga Torres',
@@ -69,82 +37,98 @@ const ushers = [
   'Gregory Brito',
   'Amanda Beniquez',
 ];
+
+const worshipTeam = [
+  'Rachel Cornet',
+  'Daisy Polidura',
+  'Jeanette Perez',
+  'Sammantha Perez',
+  'Elisa Gonzalez',
+  'Moyo Cintron',
+];
+
+const band = [
+  'Jason Cornet',
+  'Sarah Cornet',
+  'Gaby Polidura',
+  'DJ George',
+  'Sammy Melendez',
+  'Manny Polidura',
+  'Caleb Beniquez',
+  'Nina Cornet',
+];
+
+const prophets = ['David Melendez', 'Moriama Fernandez? idk her last name lol'];
+
+const media = ['Jonathan Perez', 'Amelia Perez', 'Dynasty George'];
 export default function Leaders_En() {
+  let current = [];
+  const [team, setTeam] = useState('Deacons');
+  const handleChange = event => {
+    setTeam(event.target.value);
+  };
+  if (team === 'Deacons') {
+    current = deacons;
+    console.log(team);
+  }
+  if (team === 'Ushers') {
+    current = ushers;
+  }
+  if (team === 'Worship Team') {
+    current = worshipTeam;
+  }
+
+  if (team === 'Band') {
+    current = band;
+  }
+  if (team === 'Media Team') {
+    current = media;
+  }
+  if (team === 'Prophets') {
+    current = prophets;
+  }
   return (
     <div>
-      {console.log(mainLeaders[0].title)}
-      <Typography variant="h3" align="center" style={{ padding: '100px 0px' }}>
-        Our Leaders
-      </Typography>
-      {mainLeaders.map((leader, index) => (
-        <div>
-          {index % 2 === 0 ? (
-            <MainGrid container>
-              <Grid item>
-                <LeaderImg
-                  src={headImg}
-                  sx={{
-                    width: { xs: '300px', md: '500px' },
-                    height: { xs: '400px', md: '600px' },
-                  }}
-                />
-              </Grid>
-              <Grid item>
-                <LeaderText variant="h3">
-                  {leader.title}
-                  <br /> {leader.name}
-                </LeaderText>
-                <LeaderText variant="h5">{leader.description}</LeaderText>
-              </Grid>
-            </MainGrid>
-          ) : (
-            <MainGrid container direction="row-reverse">
-              <Grid item>
-                <LeaderImg
-                  src={headImg}
-                  sx={{
-                    width: { xs: '300px', md: '500px' },
-                    height: { xs: '400px', md: '600px' },
-                  }}
-                />
-              </Grid>
-              <Grid item>
-                <LeaderText variant="h3">
-                  {leader.title}
-                  <br /> {leader.name}
-                </LeaderText>
-                <LeaderText variant="h5">{leader.description}</LeaderText>
-              </Grid>
-            </MainGrid>
-          )}
-        </div>
-      ))}
-      <Typography variant="h4" align="center" style={{ padding: '50px 0px' }}>
-        Deacons
-      </Typography>
-      <Grid container spacing={2} justifyContent="space-evenly">
-        {Decons.map(decon => (
-          <Grid item>
-            <LeaderImg
-              src={headImg}
-              style={{ width: '380px', height: '400px' }}
-            />
-            <DeaconText variant="h5">{decon}</DeaconText>
-          </Grid>
-        ))}
+      <Grid
+        container
+        direction={'column'}
+        sx={{ backgroundColor: '#E8E3D6', marginBottom: '30px' }}
+        justifyContent="space-evenly"
+      >
+        <Typography
+          variant="h3"
+          align="center"
+          style={{
+            padding: '100px 0px',
+            fontFamily: 'Josefin Sans, sans-serif',
+            fontWeight: 400,
+          }}
+        >
+          Meet Our {team}
+        </Typography>
+        <FormControl variant="filled" sx={{ m: 2, width: '300px' }}>
+          <InputLabel>Team</InputLabel>
+          <Select label="Team" value={team} onChange={handleChange}>
+            <MenuItem value="Deacons">Deacons</MenuItem>
+            <MenuItem value="Worship Team">Worship Team</MenuItem>
+            <MenuItem value="Ushers">Ushers</MenuItem>
+            <MenuItem value="Media Team">Media Team</MenuItem>
+            <MenuItem value="Band">Band</MenuItem>
+            <MenuItem value="Prophets">Prophets</MenuItem>
+          </Select>
+        </FormControl>
       </Grid>
-      <Typography variant="h4" align="center" style={{ padding: '50px 0px' }}>
-        Ushers
-      </Typography>
-      <Grid container spacing={2} justifyContent="space-evenly">
-        {ushers.map(ushers => (
-          <Grid item>
-            <LeaderImg
-              src={headImg}
-              style={{ width: '380px', height: '400px' }}
-            />
-            <DeaconText variant="h5">{ushers}</DeaconText>
-          </Grid>
+      <Grid container spacing={6} justifyContent="space-evenly">
+        {current.map(person => (
+          <>
+            <Grid item>
+              <LeaderImg
+                src={headImg}
+                style={{ width: '380px', height: '400px' }}
+              />
+              <DeaconText>{person}</DeaconText>
+            </Grid>
+          </>
         ))}
       </Grid>
     </div>

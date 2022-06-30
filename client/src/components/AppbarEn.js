@@ -5,8 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Box from '@mui/material/Box';
@@ -29,7 +27,7 @@ const AppbarContent = styled('a')`
   margin-right: 15px;
   text-decoration: none;
   text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: Josefin Sans, sans-serif;
   font-weight: 600;
 `;
 const NavContent = styled('a')`
