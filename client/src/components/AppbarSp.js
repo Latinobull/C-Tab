@@ -3,34 +3,35 @@ import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Sobre', 'Únete', 'Ministerios', 'Lideres'];
-const MyAppBar = styled(AppBar)`
-  padding: 25px 0px;
-  background-color: rgb(168, 239, 255);
-`;
-const Logo = styled('a')`
-  margin-right: 15px;
-  text-decoration: none;
-  padding: 0px 5px;
-`;
-const AppbarContent = styled('a')`
-  margin-right: 15px;
-  text-decoration: none;
-  text-align: center;
-`;
-const NavContent = styled('a')`
-  color: rgb(168, 239, 255);
-`;
+const MyAppBar = styled(AppBar)(({ theme }) => ({
+  padding: '25px 0px',
+  backgroundColor: theme.primary.main,
+}));
+const Logo = styled('a')(() => ({
+  color: 'black',
+  marginRight: '15px',
+  textDecoration: 'none',
+  padding: '0px 5px',
+}));
+const AppbarContent = styled('a')(() => ({
+  color: 'black',
+  marginRight: '15px',
+  textDecoration: 'none',
+  textAlign: 'center',
+  fontWeight: 600,
+}));
+const NavContent = styled('a')(({ theme }) => ({
+  color: theme.secondary.main,
+  textDecoration: 'none',
+}));
 export default function Appbar() {
   // const classes = useStyles();
   const [anchorElHome, setAnchorElHome] = useState(null);
@@ -118,7 +119,9 @@ export default function Appbar() {
           <Logo href="https://www.facebook.com/christiantabernacle.church.7">
             <FacebookIcon />
           </Logo>
-          <Button color="inherit">Donación</Button>
+          <Typography>
+            <AppbarContent>Donate</AppbarContent>
+          </Typography>
         </Toolbar>
       </MyAppBar>
     </div>

@@ -13,7 +13,15 @@ import AboutEn from './components/English/AboutEn';
 import AppbarSp from './components/AppbarSp';
 import FooterSp from './components/FooterSp';
 import PastorsEn from './components/English/PastorsEn';
+import { createTheme, ThemeProvider } from '@mui/material';
 let location = window.location.href.split('/');
+
+const theme = createTheme({
+  primary: { main: '#E8E3D6' },
+  secondary: { main: '#a99a75' },
+  accent: {main: '#A8EFFF'},
+  typography: { fontFamily: 'Josefin Sans, sans-serif' },
+});
 class App extends Component {
   render() {
     let appbar;
@@ -32,23 +40,25 @@ class App extends Component {
     }
     return (
       <div className="page-container">
-        <div className="content-wrap">
-          <Router>
-            {appbar}
-            <Route exact path="/" component={Welcome} />
-            {/* English Routes */}
+        <ThemeProvider theme={theme}>
+          <div className="content-wrap">
+            <Router>
+              {appbar}
+              <Route exact path="/" component={Welcome} />
+              {/* English Routes */}
 
-            <Route exact path="/en" component={Main_En} />
-            <Route exact path="/en/about" component={AboutEn} />
-            <Route exact path="/en/leaders" component={Leaders_En} />
-            <Route exact path="/en/ministries" component={Ministry_En} />
-            <Route exact path="/en/pastors" component={PastorsEn} />
-            <Route exact path="/en/socials" component={Socials_En} />
-            {/* Spanish Routes */}
-            <Route exact path="/sp" component={Main_Sp} />
-          </Router>
-        </div>
-        {footer}
+              <Route exact path="/en" component={Main_En} />
+              <Route exact path="/en/about" component={AboutEn} />
+              <Route exact path="/en/leaders" component={Leaders_En} />
+              <Route exact path="/en/ministries" component={Ministry_En} />
+              <Route exact path="/en/pastors" component={PastorsEn} />
+              <Route exact path="/en/socials" component={Socials_En} />
+              {/* Spanish Routes */}
+              <Route exact path="/sp" component={Main_Sp} />
+            </Router>
+          </div>
+          {footer}
+        </ThemeProvider>
       </div>
     );
   }
