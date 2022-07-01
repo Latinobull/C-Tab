@@ -17,7 +17,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 let location = window.location.href.split('/');
 
 const theme = createTheme({
-  primary: { main: '#E8E3D6' },
+  primary: { main: '#E8E3D6',  },
   secondary: { main: '#a99a75' },
   accent: {main: '#A8EFFF'},
   typography: { fontFamily: 'Josefin Sans, sans-serif' },

@@ -2,15 +2,14 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
-const MyFooter = styled('footer')`
-  margin-top: auto;
-  background-color: rgb(168, 239, 255);
-  padding: 50px;
-`;
-const FooterText = styled(Typography)`
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
-`;
+const MyFooter = styled('footer')(({ theme }) => ({
+  marginTop: 'auto',
+  backgroundColor: theme.primary.main,
+  padding: '50px',
+}));
+const FooterText = styled(Typography)(({ theme }) => ({
+  fontWeight: 400,
+}));
 export default function Footer() {
   return (
     <div>

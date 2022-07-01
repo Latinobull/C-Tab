@@ -21,8 +21,8 @@ const Logo = styled('a')(() => ({
   textDecoration: 'none',
   padding: '0px 5px',
 }));
-const AppbarContent = styled('a')(() => ({
-  color: 'black',
+const AppbarContent = styled('a')(({ theme }) => ({
+  color: theme.secondary.main,
   marginRight: '15px',
   textDecoration: 'none',
   textAlign: 'center',
