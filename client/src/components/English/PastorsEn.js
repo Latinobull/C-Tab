@@ -4,21 +4,19 @@ import headImg from '../../img/headShot.jpg';
 const MainGrid = styled(Grid)`
   padding-bottom: 120px;
 `;
-const Headers = styled(Typography)`
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 600;
-  font-size: 50px;
-`;
+const Headers = styled(Typography)(({ theme }) => ({
+  textAlign: 'center',
+  fontWeight: '600',
+  fontSize: '50px',
+}))
 
-const Text = styled(Typography)`
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: 30px;
-  max-width: 1400px;
-  padding-bottom: 30px;
-`;
+const Text = styled(Typography)(({theme})=> ({
+  textAlign: 'center',
+  fontWeight: '300',
+  fontSize: '30px',
+  maxWidth: '1400px',
+  paddingBottom: '30px',
+}))
 const LeaderImg = styled('img')`
   padding-bottom: 25px;
 `;
@@ -40,7 +38,7 @@ const pastors = [
 export default function PastorsEn() {
   return (
     <div>
-      <Headers>Meet the Leaders</Headers>
+      <Headers>Meet the Pastors </Headers>
       {pastors.map(pastor => (
         <MainGrid container>
           <Grid container item md={12} justifyContent="center">

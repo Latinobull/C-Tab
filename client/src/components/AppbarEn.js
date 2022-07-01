@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { styled } from '@mui/material/styles';
+import { createTheme, styled, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -9,8 +9,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Button } from '@mui/material';
 
-const pages = ['About', 'Join us', 'Ministries', 'Pastors'];
+const theme2 = createTheme({});
+
+const pages = ['Join us', 'Ministries', 'Pastors'];
+const aboutDrop = ['Our Beliefs', 'Our Founder', 'Our Team'];
 const MyAppBar = styled(AppBar)(({ theme }) => ({
   padding: '25px 0px',
   backgroundColor: theme.primary.main,
@@ -35,6 +39,7 @@ const NavContent = styled('a')(({ theme }) => ({
 export default function Appbar() {
   // const classes = useStyles();
   const [anchorElHome, setAnchorElHome] = useState(null);
+  const [aboutAnchor, setAboutAnchor] = useState(null);
 
   const handleOpenHome = event => {
     setAnchorElHome(event.currentTarget);
@@ -42,6 +47,12 @@ export default function Appbar() {
 
   const handleCloseHome = () => {
     setAnchorElHome(null);
+  };
+  const handleOpenAbout = event => {
+    setAboutAnchor(event.currentTarget);
+  };
+  const handleCloseAbout = e => {
+    setAboutAnchor(null);
   };
 
   return (
@@ -84,9 +95,6 @@ export default function Appbar() {
               }}
               open={Boolean(anchorElHome)}
               onClose={handleCloseHome}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
             >
               {pages.map(page => (
                 <MenuItem key={page}>
@@ -110,6 +118,33 @@ export default function Appbar() {
             </Typography>
           </Box>
           <Box sx={{ display: { xs: 'none', md: 'inherit' } }}>
+            <Box>
+              <Typography key={'About'} variant="h6">
+                <AppbarContent
+                  aria-owns={aboutAnchor ? 'simple-menu' : null}
+                  aria-haspopup="true"
+                  onMouseOver={handleOpenAbout}
+                  onClick={handleOpenAbout}
+                >
+                  {'About'}
+                </AppbarContent>
+              </Typography>
+              <Menu
+                id="menu-appbar2"
+                anchorEl={aboutAnchor}
+                open={Boolean(aboutAnchor)}
+                onClose={handleCloseAbout}
+                MenuListProps={{ onMouseLeave: handleCloseAbout }}
+              >
+                {aboutDrop.map(about => (
+                  <MenuItem key={about} onClick={handleCloseAbout}>
+                    <Typography textAlign="center">
+                      <NavContent href={`/en/${about}`}>{about}</NavContent>
+                    </Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
             {pages.map(page => (
               <Typography key={page} variant="h6">
                 <AppbarContent href={`/en/${page}`}>{page}</AppbarContent>

@@ -9,14 +9,13 @@ import {
 } from '@mui/material';
 import React, { useState } from 'react';
 import headImg from '../../img/headShot.jpg';
-const DeaconText = styled(Typography)`
-  text-align: center;
-  max-width: 400px;
-  padding-bottom: 40px;
-  font-family: Josefin Sans, sans-serif;
-  font-weight: 300;
-  font-size: 34px;
-`;
+const DeaconText = styled(Typography)(({ theme }) => ({
+  textAlign: 'center',
+  maxWidth: '400px',
+  paddingBottom: '40px',
+  fontWeight: 300,
+  fontSize: '34px',
+}));
 const LeaderImg = styled('img')({});
 const deacons = [
   'Luis Cruz',
@@ -61,15 +60,15 @@ const band = [
 const prophets = ['David Melendez', 'Moriama Fernandez? idk her last name lol'];
 
 const media = ['Jonathan Perez', 'Amelia Perez', 'Dynasty George'];
-export default function Leaders_En() {
+export default function Leaders_En({ theme }) {
   let current = [];
+  console.log(theme);
   const [team, setTeam] = useState('Deacons');
   const handleChange = event => {
     setTeam(event.target.value);
   };
   if (team === 'Deacons') {
     current = deacons;
-    console.log(team);
   }
   if (team === 'Ushers') {
     current = ushers;
@@ -77,7 +76,6 @@ export default function Leaders_En() {
   if (team === 'Worship Team') {
     current = worshipTeam;
   }
-
   if (team === 'Band') {
     current = band;
   }
@@ -100,7 +98,6 @@ export default function Leaders_En() {
           align="center"
           style={{
             padding: '100px 0px',
-            fontFamily: 'Josefin Sans, sans-serif',
             fontWeight: 400,
           }}
         >
@@ -120,15 +117,13 @@ export default function Leaders_En() {
       </Grid>
       <Grid container spacing={6} justifyContent="space-evenly">
         {current.map(person => (
-          <>
-            <Grid item>
-              <LeaderImg
-                src={headImg}
-                style={{ width: '380px', height: '400px' }}
-              />
-              <DeaconText>{person}</DeaconText>
-            </Grid>
-          </>
+          <Grid item key={person}>
+            <LeaderImg
+              src={headImg}
+              style={{ width: '380px', height: '400px' }}
+            />
+            <DeaconText>{person}</DeaconText>
+          </Grid>
         ))}
       </Grid>
     </div>
