@@ -7,18 +7,18 @@ import kidImg from '../../img/kids.jpg';
 import handImg from '../../img/hands.jpg';
 import { styled } from '@mui/material/styles';
 
-const MainGrid = styled(Grid)`
-  justify-content: space-evenly;
-  padding-top: 100px;
-`;
+const MainGrid = styled(Grid)(({ theme }) => ({
+  justifyContent: 'space-evenly',
+  paddingTop: '100px',
+}));
 const Img = styled('img')({});
-const MyButton = styled(Button)`
-  background-color: rgb(164,220,248);
-  color: black;
-  border-radius: 1px;
-  width: 180px;
-  height: 60px;
-`;
+const MyButton = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.accent.main,
+  color: 'black',
+  borderRadius: '1px',
+  width: '180px',
+  height: '60px',
+}));
 export default function Option_En() {
   return (
     <div>

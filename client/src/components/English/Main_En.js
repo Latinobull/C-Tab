@@ -7,50 +7,52 @@ import worshipImage from '../../img/worship.jpg';
 import crossImg from '../../img/cross.jpg';
 import Option_En from './Options_En';
 
-const MainGrid = styled(Grid)`
-  background-image: url(${worshipImage});
-  background-size: cover;
-  min-height: 100vh;
-`;
-const MainText = styled('div')`
-  padding-left: 200px;
-  text-align: center;
-  color: white;
-`;
-const MyButton = styled(Button)`
-  background-color: rgb(164, 220, 248);
-  color: black;
-  padding: 10px 25px;
-  border-radius: 1px;
-`;
-const MissionGrid = styled(Grid)`
-  background-color: rgb(164, 220, 248);
-  justify-content: center;
-  font-size: 50px;
-  padding: 50px 0px;
-  margin-bottom: 10px;
-`;
-const MissionText = styled(Typography)`
-  max-width: 700px;
-  font-size: 30px;
-  text-align: center;
-`;
-const MyQuote = styled(Grid)`
-  background-image: url(${crossImg});
-  max-width: 99vw;
-  min-height: 50vh;
-  background-size: cover;
-  margin-top: 100px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 50px;
-`;
-const QuoteText = styled(Typography)`
-  max-width: 600px;
-  background-color: rgb(164, 220, 248, 0.5);
-  border-radius: 12px;
-`;
+const MainGrid = styled(Grid)(({ theme }) => ({
+  backgroundImage: `url(${worshipImage})`,
+  backgroundSize: 'cover',
+  minHeight: '100vh',
+}));
+const MainText = styled('div')(({ theme }) => ({
+  paddingLeft: '200px',
+  textAlign: 'center',
+  color: 'white',
+}));
+const MyButton = styled(Button)(({ theme }) => ({
+  backgroundColor: theme.accent.main,
+  color: 'black',
+  padding: '10px 25px',
+  borderRadius: '1px',
+}));
+const MissionGrid = styled(Grid)(({ theme }) => ({
+  backgroundColor: theme.primary.main,
+  justifyContent: 'center',
+  fontSize: '50px',
+  padding: '50px 0px',
+  marginBottom: '10px',
+}));
+const MissionText = styled(Typography)(({ theme }) => ({
+  maxWidth: '700px',
+  fontSize: '30px',
+  textAlign: 'center',
+}));
+const MyQuote = styled(Grid)(({ theme }) => ({
+  backgroundImage: `url(${crossImg})`,
+  maxWidth: '99vw',
+  minHeight: '50vh',
+  backgroundSize: 'cover',
+  marginTop: '100px',
+  alignItems: 'center',
+  justifyContent: 'center',
+  textAlign: 'center',
+  marginBottom: '50px',
+}));
+
+const QuoteText = styled(Typography)(({ theme }) => ({
+  maxWidth: '600px',
+  backgroundColor: theme.secondary.main,
+  opacity: '0.8',
+  borderRadius: '12px',
+}));
 export default function Main_En() {
   return (
     <div>

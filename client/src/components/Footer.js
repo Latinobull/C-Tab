@@ -9,6 +9,7 @@ const MyFooter = styled('footer')(({ theme }) => ({
 }));
 const FooterText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
+  color: theme.secondary.main,
 }));
 export default function Footer() {
   return (
