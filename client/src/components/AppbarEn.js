@@ -11,8 +11,15 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Button } from '@mui/material';
 
-const theme2 = createTheme({});
-
+const mobilePages = [
+  'Our Beliefs',
+  'Our Founder',
+  'Our Team',
+  'Our Services',
+  'Our Classes',
+  'Ministries',
+  'Pastors',
+];
 const pages = ['Ministries', 'Pastors'];
 const aboutDrop = ['Our Beliefs', 'Our Founder', 'Our Team'];
 const joinDrop = ['Our Services', 'Our Bible Studies'];
@@ -36,6 +43,9 @@ const AppbarContent = styled('a')(({ theme }) => ({
 const NavContent = styled('a')(({ theme }) => ({
   color: theme.secondary.main,
   textDecoration: 'none',
+}));
+const MyIconButton = styled(IconButton)(({ theme }) => ({
+  color: theme.secondary.main,
 }));
 export default function Appbar() {
   // const classes = useStyles();
@@ -79,16 +89,16 @@ export default function Appbar() {
               paddingRight: { xs: '30px', md: '0px' },
             }}
           >
-            <IconButton
+            <MyIconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenHome}
-              color="inherit"
+              color="primary"
             >
               <MenuIcon sx={{ paddingRight: { xs: '10px' } }} />
-            </IconButton>
+            </MyIconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElHome}
@@ -104,7 +114,7 @@ export default function Appbar() {
               open={Boolean(anchorElHome)}
               onClose={handleCloseHome}
             >
-              {pages.map(page => (
+              {mobilePages.map(page => (
                 <MenuItem key={page}>
                   <Typography textAlign="center">
                     <NavContent href={`/en/${page}`} onClick={handleCloseHome}>

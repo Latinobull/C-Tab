@@ -35,7 +35,7 @@ export default function Option_En() {
             host FB live services every Sunday, Wednesday, and Friday. View our
             virtual services schedule here.
           </Typography>
-          <MyButton variant="contained" href="/en/join us">
+          <MyButton variant="contained" href="/en/our services">
             Watch
           </MyButton>
         </Grid>
@@ -72,7 +72,7 @@ export default function Option_En() {
             our church. Anointed and passionate, our team serves under the
             direction of God and the Holy Spirit.
           </Typography>
-          <MyButton variant="contained" href="en/leaders">
+          <MyButton variant="contained" href="en/our team">
             The Leaders
           </MyButton>
         </Grid>
