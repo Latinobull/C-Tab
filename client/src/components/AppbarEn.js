@@ -13,8 +13,9 @@ import { Button } from '@mui/material';
 
 const theme2 = createTheme({});
 
-const pages = ['Join us', 'Ministries', 'Pastors'];
+const pages = ['Ministries', 'Pastors'];
 const aboutDrop = ['Our Beliefs', 'Our Founder', 'Our Team'];
+const joinDrop = ['Our Services', 'Our Bible Studies'];
 const MyAppBar = styled(AppBar)(({ theme }) => ({
   padding: '25px 0px',
   backgroundColor: theme.primary.main,
@@ -40,6 +41,7 @@ export default function Appbar() {
   // const classes = useStyles();
   const [anchorElHome, setAnchorElHome] = useState(null);
   const [aboutAnchor, setAboutAnchor] = useState(null);
+  const [joinAnchor, setJoinAnchor] = useState(null);
 
   const handleOpenHome = event => {
     setAnchorElHome(event.currentTarget);
@@ -55,6 +57,12 @@ export default function Appbar() {
     setAboutAnchor(null);
   };
 
+  const handleOpenJoin = event => {
+    setJoinAnchor(event.currentTarget);
+  };
+  const handleCloseJoin = e => {
+    setJoinAnchor(null);
+  };
   return (
     <div>
       <MyAppBar position="static">
@@ -145,6 +153,33 @@ export default function Appbar() {
                 ))}
               </Menu>
             </Box>
+            <Box>
+              <Typography key={'Join'} variant="h6">
+                <AppbarContent
+                  aria-owns={joinAnchor ? 'simple-menu' : null}
+                  aria-haspopup="true"
+                  onMouseOver={handleOpenJoin}
+                  onClick={handleOpenJoin}
+                >
+                  {'Join Us'}
+                </AppbarContent>
+              </Typography>
+              <Menu
+                id="menu-appbar3"
+                anchorEl={joinAnchor}
+                open={Boolean(joinAnchor)}
+                onClose={handleCloseJoin}
+                MenuListProps={{ onMouseLeave: handleCloseJoin }}
+              >
+                {joinDrop.map(join => (
+                  <MenuItem key={join} onClick={handleCloseJoin}>
+                    <Typography textAlign="center">
+                      <NavContent href={`/en/${join}`}>{join}</NavContent>
+                    </Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
             {pages.map(page => (
               <Typography key={page} variant="h6">
                 <AppbarContent href={`/en/${page}`}>{page}</AppbarContent>
@@ -154,9 +189,9 @@ export default function Appbar() {
           <Logo href="https://www.facebook.com/christiantabernacle.church.7">
             <FacebookIcon />
           </Logo>
-          <Typography>
+          {/* <Typography>
             <AppbarContent>Donate</AppbarContent>
-          </Typography>
+          </Typography> */}
         </Toolbar>
       </MyAppBar>
     </div>

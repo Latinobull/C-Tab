@@ -14,6 +14,7 @@ import AppbarSp from './components/AppbarSp';
 import FooterSp from './components/FooterSp';
 import PastorsEn from './components/English/PastorsEn';
 import JoinUsEn from './components/English/JoinUsEn';
+import ClassesEn from './components/English/ClassesEn';
 import { createTheme, ThemeProvider } from '@mui/material';
 let location = window.location.href.split('/');
 
@@ -54,7 +55,8 @@ class App extends Component {
               <Route exact path="/en/ministries" component={Ministry_En} />
               <Route exact path="/en/pastors" component={PastorsEn} />
               <Route exact path="/en/socials" component={Socials_En} />
-              <Route exact path="/en/join us" component={JoinUsEn} />
+              <Route exact path="/en/our services" component={JoinUsEn} />
+              <Route exact path="/en/our bible studies" component={ClassesEn} />
               {/* Spanish Routes */}
               <Route exact path="/sp" component={Main_Sp} />
             </Router>
