@@ -1,17 +1,7 @@
 import { Grid, styled, Typography } from '@mui/material';
 import React from 'react';
 
-const MainGrid = styled(Grid)`
-  min-height: 40vh;
-  margin-top: 20px;
-  margin-bottom: 30px;
-`;
-const MainStatement = styled(Typography)`
-  color: black;
-  font-size: 50px;
-  max-width: 700px;
-  text-align: center;
-`;
+
 const MissionGrid = styled(Grid)`
   justify-content: space-evenly;
   margin: 100px 0px;
@@ -30,12 +20,6 @@ const BeliefText = styled(Typography)`
 export default function AboutEn() {
   return (
     <div>
-      {/* <MainGrid container alignItems="center">
-        <MainStatement>
-          Since 1984, our vision to serve the Lord and help the lost has been
-          established.
-        </MainStatement>
-      </MainGrid> */}
       <MissionGrid container>
         <Grid item>
           <div
@@ -61,7 +45,6 @@ export default function AboutEn() {
           </StatementText>
         </Grid>
       </MissionGrid>
-      <BeliefText variant="h3">Our Beliefs</BeliefText>
     </div>
   );
 }

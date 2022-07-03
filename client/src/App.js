@@ -9,17 +9,18 @@ import Footer from './components/Footer';
 import Leaders_En from './components/English/Leaders_En';
 import Ministry_En from './components/English/Ministry_En';
 import Socials_En from './components/English/Socials_En';
-import AboutEn from './components/English/AboutEn';
+import FounderEn from './components/English/FounderEn';
 import AppbarSp from './components/AppbarSp';
 import FooterSp from './components/FooterSp';
 import PastorsEn from './components/English/PastorsEn';
+import JoinUsEn from './components/English/JoinUsEn';
 import { createTheme, ThemeProvider } from '@mui/material';
 let location = window.location.href.split('/');
 
 const theme = createTheme({
-  primary: { main: '#E8E3D6',  },
+  primary: { main: '#E8E3D6' },
   secondary: { main: '#a99a75' },
-  accent: {main: '#A8EFFF'},
+  accent: { main: '#A8EFFF' },
   typography: { fontFamily: 'Josefin Sans, sans-serif' },
 });
 class App extends Component {
@@ -48,11 +49,12 @@ class App extends Component {
               {/* English Routes */}
 
               <Route exact path="/en" component={Main_En} />
-              <Route exact path="/en/about" component={AboutEn} />
-              <Route exact path="/en/leaders" component={Leaders_En} />
+              <Route exact path="/en/our founder" component={FounderEn} />
+              <Route exact path="/en/our team" component={Leaders_En} />
               <Route exact path="/en/ministries" component={Ministry_En} />
               <Route exact path="/en/pastors" component={PastorsEn} />
               <Route exact path="/en/socials" component={Socials_En} />
+              <Route exact path="/en/join us" component={JoinUsEn} />
               {/* Spanish Routes */}
               <Route exact path="/sp" component={Main_Sp} />
             </Router>
