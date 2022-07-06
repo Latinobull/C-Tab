@@ -12,6 +12,8 @@ import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import BibleImg from '../../img/bible.jpg';
+
 const images = [
   {
     label: 'San Francisco – Oakland Bay Bridge, United States',
@@ -49,6 +51,19 @@ const BeliefText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   fontSize: 30,
 }));
+const Headers = styled(Typography)(({ theme }) => ({
+  fontWeight: 600,
+  textAlign: 'center',
+  fontSize: '50px',
+  backgroundImage: `url(${BibleImg})`,
+  backgroundSize: '100% 400px',
+  maxWidth: '100%',
+  minHeight: '400px',
+  color: 'white',
+}));
+const MyButton = styled(Button)(({ theme }) => ({
+  color: theme.primary.main,
+}));
 export default function OurBeliefs() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
@@ -56,7 +71,7 @@ export default function OurBeliefs() {
   const handleNext = () => {
     console.log(maxSteps);
     if (activeStep + 1 === maxSteps) {
-      setActiveStep(0);
+      setActiveStep(-1);
     }
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
@@ -64,7 +79,7 @@ export default function OurBeliefs() {
   const handleBack = () => {
     if (activeStep <= 0) {
       console.log('show');
-      setActiveStep(4);
+      setActiveStep(maxSteps);
     }
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
@@ -74,6 +89,11 @@ export default function OurBeliefs() {
   };
   return (
     <div>
+      <Headers>
+        Beliefs <br />
+        Jesus is the foundation of our beliefs. Below you will see where else
+        are beliefs stem from.
+      </Headers>
       <LiveGrid container>
         <Box sx={{ maxWidth: 600, flexGrow: 1 }}>
           <Paper
@@ -116,29 +136,36 @@ export default function OurBeliefs() {
             ))}
           </SwipeableViews>
           <MobileStepper
+            variant="dots"
             steps={maxSteps}
             position="static"
             activeStep={activeStep}
             nextButton={
-              <Button size="small" onClick={handleNext}>
+              <MyButton size="small" onClick={handleNext}>
                 Next
                 {theme.direction === 'rtl' ? (
                   <KeyboardArrowLeft />
                 ) : (
                   <KeyboardArrowRight />
                 )}
-              </Button>
+              </MyButton>
             }
             backButton={
-              <Button size="small" onClick={handleBack}>
+              <MyButton size="small" onClick={handleBack}>
                 {theme.direction === 'rtl' ? (
                   <KeyboardArrowRight />
                 ) : (
                   <KeyboardArrowLeft />
                 )}
                 Back
-              </Button>
+              </MyButton>
             }
+            sx={{
+              '& .MuiMobileStepper-dotActive': {
+                backgroundColor: '#751E25',
+                borderRadius: '3px',
+              },
+            }}
           />
         </Box>
         <BeliefText>Here is the text for each item</BeliefText>

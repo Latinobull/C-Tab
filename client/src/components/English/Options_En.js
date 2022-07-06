@@ -13,8 +13,8 @@ const MainGrid = styled(Grid)(({ theme }) => ({
 }));
 const Img = styled('img')({});
 const MyButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.accent.main,
-  color: 'black',
+  backgroundColor: theme.primary.main,
+  color: 'white',
   borderRadius: '1px',
   width: '180px',
   height: '60px',
