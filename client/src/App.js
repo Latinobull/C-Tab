@@ -16,12 +16,13 @@ import PastorsEn from './components/English/PastorsEn';
 import JoinUsEn from './components/English/JoinUsEn';
 import ClassesEn from './components/English/ClassesEn';
 import { createTheme, ThemeProvider } from '@mui/material';
+import OurBeliefs from './components/English/OurBeliefs';
 let location = window.location.href.split('/');
 
 const theme = createTheme({
-  primary: { main: '#E8E3D6' },
-  secondary: { main: '#a99a75' },
-  accent: { main: '#A8EFFF' },
+  primary: { main: '#751E25' },
+  secondary: { main: 'white' },
+  accent: { main: '#E8E3D6' },
   typography: { fontFamily: 'Josefin Sans, sans-serif' },
 });
 class App extends Component {
@@ -57,6 +58,7 @@ class App extends Component {
               <Route exact path="/en/socials" component={Socials_En} />
               <Route exact path="/en/our services" component={JoinUsEn} />
               <Route exact path="/en/our bible studies" component={ClassesEn} />
+              <Route exact path="/en/our beliefs" component={OurBeliefs} />
               {/* Spanish Routes */}
               <Route exact path="/sp" component={Main_Sp} />
             </Router>

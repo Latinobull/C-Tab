@@ -41,7 +41,7 @@ const AppbarContent = styled('a')(({ theme }) => ({
   fontWeight: 600,
 }));
 const NavContent = styled('a')(({ theme }) => ({
-  color: theme.secondary.main,
+  color: 'black',
   textDecoration: 'none',
 }));
 const MyIconButton = styled(IconButton)(({ theme }) => ({
