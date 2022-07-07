@@ -5,6 +5,7 @@ import {
   MenuItem,
   Select,
   styled,
+  ThemeProvider,
   Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
@@ -60,9 +61,8 @@ const band = [
 const prophets = ['David Melendez', 'Moriama Fernandez? idk her last name lol'];
 
 const media = ['Jonathan Perez', 'Amelia Perez', 'Dynasty George'];
-export default function Leaders_En({ theme }) {
+export default function Leaders_En() {
   let current = [];
-  console.log(theme);
   const [team, setTeam] = useState('Deacons');
   const handleChange = event => {
     setTeam(event.target.value);
@@ -104,8 +104,25 @@ export default function Leaders_En({ theme }) {
           Meet Our {team}
         </Typography>
         <FormControl variant="filled" sx={{ m: 2, width: '300px' }}>
-          <InputLabel>Team</InputLabel>
-          <Select label="Team" value={team} onChange={handleChange}>
+          <InputLabel
+            sx={{
+              '&.Mui-focused': {
+                color: theme => theme.primary.main,
+              },
+            }}
+          >
+            Team
+          </InputLabel>
+
+          <Select
+            variant="filled"
+            label="Team"
+            value={team}
+            onChange={handleChange}
+            sx={{
+              ':after': { borderBottomColor: theme => theme.primary.main },
+            }}
+          >
             <MenuItem value="Deacons">Deacons</MenuItem>
             <MenuItem value="Worship Team">Worship Team</MenuItem>
             <MenuItem value="Ushers">Ushers</MenuItem>
