@@ -22,6 +22,9 @@ const MyButton = styled(Button)(({ theme }) => ({
   color: 'black',
   padding: '10px 25px',
   borderRadius: '1px',
+  '&:hover': {
+    backgroundColor: theme.accent.second,
+  },
 }));
 const MissionGrid = styled(Grid)(({ theme }) => ({
   backgroundColor: theme.primary.main,
@@ -62,7 +65,9 @@ export default function Main_En() {
           <Typography style={{ fontSize: '32px' }}>
             led by the Holy Spirit
           </Typography>
-          <MyButton variant="contained">Learn More</MyButton>
+          <MyButton variant="contained" href="/en/our beliefs">
+            Learn More
+          </MyButton>
         </MainText>
       </MainGrid>
       <MissionGrid container justify="" direction="row" alignItems="center">

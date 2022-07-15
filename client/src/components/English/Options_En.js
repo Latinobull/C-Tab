@@ -18,6 +18,9 @@ const MyButton = styled(Button)(({ theme }) => ({
   borderRadius: '1px',
   width: '180px',
   height: '60px',
+  '&:hover': {
+    backgroundColor: theme.primary.second,
+  },
 }));
 export default function Option_En() {
   return (
@@ -72,8 +75,8 @@ export default function Option_En() {
             our church. Anointed and passionate, our team serves under the
             direction of God and the Holy Spirit.
           </Typography>
-          <MyButton variant="contained" href="en/our team">
-            The Leaders
+          <MyButton variant="contained" href="en/Ministries">
+            The Ministries
           </MyButton>
         </Grid>
       </MainGrid>
