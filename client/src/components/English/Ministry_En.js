@@ -22,12 +22,12 @@ const BoldText = styled(Typography)(({ theme }) => ({
 }));
 const MinistryImg = styled('img')({});
 const ministries = [
-  { name: 'Good News Choir', img: `..${ministryStockImg}` },
-  { name: 'Healing Rooms', img: `..${ministryStockImg}` },
-  { name: 'Family Ministry', img: `..${ministryStockImg}` },
-  { name: 'Kadosh', img: `..${ministryStockImg}` },
-  { name: 'Other Ministry', img: `..${ministryStockImg}` },
-  { name: '2nd Other Ministry', img: `..${ministryStockImg}` },
+  { name: 'Good News Choir', img: ministryStockImg },
+  { name: 'Healing Rooms', img: ministryStockImg },
+  { name: 'Family Ministry', img: ministryStockImg },
+  { name: 'Kadosh', img: ministryStockImg },
+  { name: 'Other Ministry', img: ministryStockImg },
+  { name: '2nd Other Ministry', img: ministryStockImg },
 ];
 export default function Ministry_En() {
   const theme = useTheme();
