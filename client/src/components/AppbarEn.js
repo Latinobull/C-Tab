@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Button } from '@mui/material';
+import { Button, Link } from '@mui/material';
 
 const mobilePages = [
   'Our Beliefs',
@@ -27,20 +27,20 @@ const MyAppBar = styled(AppBar)(({ theme }) => ({
   padding: '25px 0px',
   backgroundColor: theme.primary.main,
 }));
-const Logo = styled('a')(() => ({
+const Logo = styled(Link)(() => ({
   color: 'black',
   marginRight: '15px',
   textDecoration: 'none',
   padding: '0px 5px',
 }));
-const AppbarContent = styled('a')(({ theme }) => ({
+const AppbarContent = styled(Link)(({ theme }) => ({
   color: theme.secondary.main,
   marginRight: '15px',
   textDecoration: 'none',
   textAlign: 'center',
   fontWeight: 600,
 }));
-const NavContent = styled('a')(({ theme }) => ({
+const NavContent = styled(Link)(({ theme }) => ({
   color: 'black',
   textDecoration: 'none',
 }));
@@ -155,11 +155,15 @@ export default function Appbar() {
                 MenuListProps={{ onMouseLeave: handleCloseAbout }}
               >
                 {aboutDrop.map(about => (
-                  <MenuItem key={about} onClick={handleCloseAbout}>
-                    <Typography textAlign="center">
-                      <NavContent href={`/en/${about}`}>{about}</NavContent>
-                    </Typography>
-                  </MenuItem>
+                  <NavContent
+                    key={about}
+                    underline="none"
+                    href={`/en/${about}`}
+                  >
+                    <MenuItem onClick={handleCloseAbout} href={'/en'}>
+                      <Typography textAlign="center">{about}</Typography>
+                    </MenuItem>
+                  </NavContent>
                 ))}
               </Menu>
             </Box>
@@ -182,11 +186,11 @@ export default function Appbar() {
                 MenuListProps={{ onMouseLeave: handleCloseJoin }}
               >
                 {joinDrop.map(join => (
-                  <MenuItem key={join} onClick={handleCloseJoin}>
-                    <Typography textAlign="center">
-                      <NavContent href={`/en/${join}`}>{join}</NavContent>
-                    </Typography>
-                  </MenuItem>
+                  <NavContent key={join} href={`/en/${join}`}>
+                    <MenuItem onClick={handleCloseJoin}>
+                      <Typography textAlign="center">{join}</Typography>
+                    </MenuItem>
+                  </NavContent>
                 ))}
               </Menu>
             </Box>
