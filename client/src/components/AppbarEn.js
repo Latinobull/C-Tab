@@ -28,7 +28,7 @@ const MyAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.primary.main,
 }));
 const Logo = styled(Link)(() => ({
-  color: 'black',
+  color: 'white',
   marginRight: '15px',
   textDecoration: 'none',
   padding: '0px 5px',
@@ -200,7 +200,10 @@ export default function Appbar() {
               </Typography>
             ))}
           </Box>
-          <Logo href="https://www.facebook.com/christiantabernacle.church.7">
+          <Logo
+            href="https://www.facebook.com/christiantabernacle.church.7"
+            target="_blank"
+          >
             <FacebookIcon />
           </Logo>
           {/* <Typography>

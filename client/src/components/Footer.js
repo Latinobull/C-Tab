@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
+import { Link } from '@mui/material';
 const MyFooter = styled('footer')(({ theme }) => ({
   marginTop: 'auto',
   backgroundColor: theme.primary.main,
@@ -28,7 +29,7 @@ export default function Footer() {
               (555) 555-5555
             </FooterText>
           </Grid>
-          <Grid item lg={2} marginBottom="30px">
+          <Grid item xs={12} lg={2} marginBottom="30px">
             <FooterText variant="h6">Services</FooterText>
             <FooterText>
               Sunday - 7pm
@@ -38,10 +39,17 @@ export default function Footer() {
               Friday - 8pm
             </FooterText>
           </Grid>
-          <Grid item lg={2}>
+          <Grid item lg={2} xs={12}>
             <FooterText variant="h6">Follow Us</FooterText>
 
-            <a href="#">Facebook</a>
+            <Link
+              href="https://www.facebook.com/christiantabernacle.church.7"
+              target="_blank"
+              underline="none"
+              sx={{ color: 'white' }}
+            >
+              Facebook
+            </Link>
             <FooterText>InsertEmail@gmail.com</FooterText>
           </Grid>
         </Grid>

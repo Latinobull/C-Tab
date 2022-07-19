@@ -22,6 +22,7 @@ const MyButton = styled(Button)(({ theme }) => ({
   color: 'black',
   padding: '10px 25px',
   borderRadius: '1px',
+  marginTop: '15px',
   '&:hover': {
     backgroundColor: theme.accent.second,
   },
@@ -37,6 +38,7 @@ const MissionText = styled(Typography)(({ theme }) => ({
   maxWidth: '700px',
   fontSize: '30px',
   textAlign: 'center',
+  color: 'white',
 }));
 const MyQuote = styled(Grid)(({ theme }) => ({
   backgroundImage: `url(${crossImg})`,
@@ -60,7 +62,7 @@ export default function Main_En() {
   return (
     <div>
       <MainGrid container direction="row" justify="center" alignItems="center">
-        <MainText>
+        <MainText sx={{ paddingLeft: { xs: '30px', lg: '200px' } }}>
           <Typography style={{ fontSize: '32px' }}>A house on fire,</Typography>
           <Typography style={{ fontSize: '32px' }}>
             led by the Holy Spirit
