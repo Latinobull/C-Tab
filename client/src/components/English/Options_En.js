@@ -32,7 +32,7 @@ export default function Option_En() {
           <Img src={laptopImg} sx={{ width: { xs: '300px', md: '600px' } }} />
         </Grid>
         <Grid item style={{ width: '500px' }}>
-          <Typography variant="h3">Join us Online</Typography>
+          <Typography variant="h3">Our Founder</Typography>
           <Typography variant="h6">
             We have virtual services and bible studies via zoom and facebook. We
             host kids, teens, and adult bible study, view our schedule here. We
@@ -40,7 +40,7 @@ export default function Option_En() {
             virtual services schedule here.
           </Typography>
           <MyButton variant="contained" href="/en/our services">
-            Watch
+            Learn More
           </MyButton>
         </Grid>
       </MainGrid>
@@ -58,7 +58,7 @@ export default function Option_En() {
             Christian Tabernacle.
           </Typography>
           <MyButton variant="contained" href="/en/ministries">
-            Learn More
+            Ministries
           </MyButton>
         </Grid>
       </MainGrid>
@@ -77,7 +77,7 @@ export default function Option_En() {
             direction of God and the Holy Spirit.
           </Typography>
           <MyButton variant="contained" href="en/Ministries">
-            The Ministries
+            Leadership
           </MyButton>
         </Grid>
       </MainGrid>

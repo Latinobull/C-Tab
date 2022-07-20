@@ -39,10 +39,6 @@ export default function Welcome() {
         <MyContent sx={{ minWidth: { xs: 'none', md: '1300px' } }}>
           <Typography variant="h2">Welcome to Cristian Tabernacle</Typography>
 
-          <Typography variant="h3">
-            A house on fire, led by the Holy Spirit
-          </Typography>
-          <Typography>Join Us in English</Typography>
           <Button size="large">
             <MyLink href="/en" underline="hover">
               English
@@ -54,10 +50,6 @@ export default function Welcome() {
           <Typography variant="h2">
             Beinvenidos a Tabernaculo Cristiano
           </Typography>
-          <Typography variant="h3">
-            Una casa en llamas, dirigida por el espíritu santo
-          </Typography>
-          <Typography>Unete en Espanol</Typography>
           <Button size="large">
             <MyLink href="/sp" underline="hover">
               Spanish

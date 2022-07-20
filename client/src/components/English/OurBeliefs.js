@@ -42,7 +42,6 @@ const images = [
 ];
 const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
-  backgroundColor: theme.accent.main,
   alignItems: 'center',
   margin: '100px 0',
 }));
@@ -58,12 +57,13 @@ const BeliefText = styled(Typography)(({ theme }) => ({
 const Headers = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
   textAlign: 'center',
-  fontSize: '50px',
+  fontSize: '70px',
   backgroundImage: `url(${BibleImg})`,
   backgroundSize: '100% 400px',
   maxWidth: '100%',
   minHeight: '400px',
   color: 'white',
+  justifyContent: 'center',
 }));
 const MyButton = styled(Button)(({ theme }) => ({
   color: theme.primary.main,
@@ -100,11 +100,8 @@ export default function OurBeliefs() {
   };
   return (
     <div>
-      <Headers>
-        Beliefs <br />
-        Jesus is the foundation of our beliefs. Below you will see where else
-        are beliefs stem from.
-      </Headers>
+      <Grid></Grid>
+      <Headers>Our Beliefs</Headers>
       <LiveGrid container>
         <Box sx={{ maxWidth: 600, flexGrow: 1 }}>
           <Paper
@@ -137,14 +134,14 @@ export default function OurBeliefs() {
                   maxWidth: 600,
                   overflow: 'hidden',
                   width: '100%',
-                  backgroundImage: `url(${step.imgPath})`,
-                  backgroundSize: 'cover',
                 }}
                 src={step.imgPath}
                 alt={step.label}
               >
                 {Math.abs(activeStep - index) <= 2 ? (
-                  <Typography>{step.label}</Typography>
+                  <Typography style={{ fontSize: '50px' }}>
+                    {step.label}
+                  </Typography>
                 ) : null}
               </Grid>
             ))}

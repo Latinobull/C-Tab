@@ -31,11 +31,11 @@ const MissionGrid = styled(Grid)(({ theme }) => ({
   backgroundColor: theme.primary.main,
   justifyContent: 'center',
   fontSize: '50px',
-  padding: '50px 0px',
+  padding: '160px 0px',
   marginBottom: '10px',
 }));
 const MissionText = styled(Typography)(({ theme }) => ({
-  maxWidth: '700px',
+  maxWidth: '1300px',
   fontSize: '30px',
   textAlign: 'center',
   color: 'white',
@@ -58,7 +58,14 @@ const QuoteText = styled(Typography)(({ theme }) => ({
   opacity: '0.8',
   borderRadius: '12px',
 }));
+const Headers = styled(Typography)(({ theme }) => ({
+  fontWeight: 600,
+  textAlign: 'center',
+  fontSize: '100px',
+  color: 'white',
+}));
 export default function Main_En() {
+  console.log('Hey');
   return (
     <div>
       <MainGrid container direction="row" justify="center" alignItems="center">
@@ -74,19 +81,15 @@ export default function Main_En() {
       </MainGrid>
       <MissionGrid container justify="" direction="row" alignItems="center">
         <Grid item>
+          <Headers>Our Mission</Headers>
           <MissionText>
-            'We are not just a church, but a home and a hospital for the
-            broken.'
-          </MissionText>
-        </Grid>
-        <br />
-        <Grid item>
-          <MissionText>
-            Our mission
-            <br />
-            We believe that we are not just a church but a home and a hospital
-            for the broken. Everything we do is guided by the power of the Holy
-            Spirit and the love that Christ has shown us
+            Here at Christian Tabernacle we believe that we are not just a
+            church but a home and a hospital for the broken. Everything we do is
+            guided by the power of the Holy Spirit and the love that Christ has
+            shown us. Christian Tabernacle was established in 1984 by our
+            founder Josefina De La Rosa. Her vision still stands true to this
+            day with her daughter and our pastor, Reverend Dr. Damaris
+            Torres, continuing the legacy.
           </MissionText>
         </Grid>
       </MissionGrid>

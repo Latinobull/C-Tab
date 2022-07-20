@@ -19,11 +19,12 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import OurBeliefs from './components/English/OurBeliefs';
 let location = window.location.href.split('/');
 
+
 const theme = createTheme({
-  primary: { main: '#751E25', second: '#9E2832' },
+  primary: { main: '#8C000B', second: '#9E2832' },
   secondary: { main: 'white' },
   accent: { main: '#E8E3D6', second: '#D6CDB5' },
-  typography: { fontFamily: 'Josefin Sans, sans-serif' },
+  typography: { fontFamily: 'QuincyCF, sans-serif' },
 });
 class App extends Component {
   render() {

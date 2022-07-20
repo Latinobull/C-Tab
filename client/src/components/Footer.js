@@ -18,9 +18,7 @@ export default function Footer() {
       <MyFooter>
         <Grid container justifyContent="space-evenly" textAlign="center">
           <Grid item marginBottom="30px">
-            <FooterText variant="h6">
-              CHRISTIAN TABERNACLE PENTECOSTAL CHURCH BROOKLYN
-            </FooterText>
+            <FooterText variant="h6">CHRISTIAN TABERNACLE CHURCH</FooterText>
             <FooterText>
               616 JAMAICA AVENUE
               <br />
