@@ -19,7 +19,6 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import OurBeliefs from './components/English/OurBeliefs';
 let location = window.location.href.split('/');
 
-
 const theme = createTheme({
   primary: { main: '#8C000B', second: '#9E2832' },
   secondary: { main: 'white' },

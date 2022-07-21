@@ -27,12 +27,6 @@ const MyAppBar = styled(AppBar)(({ theme }) => ({
   padding: '25px 0px',
   backgroundColor: theme.primary.main,
 }));
-const Logo = styled(Link)(() => ({
-  color: 'white',
-  marginRight: '15px',
-  textDecoration: 'none',
-  padding: '0px 5px',
-}));
 const AppbarContent = styled(Link)(({ theme }) => ({
   color: theme.secondary.main,
   marginRight: '15px',
@@ -43,6 +37,10 @@ const AppbarContent = styled(Link)(({ theme }) => ({
 const NavContent = styled(Link)(({ theme }) => ({
   color: 'black',
   textDecoration: 'none',
+}));
+const MyButton = styled(Button)(({ theme }) => ({
+  color: 'white',
+  fontWeight: 400,
 }));
 const MyIconButton = styled(IconButton)(({ theme }) => ({
   color: theme.secondary.main,
@@ -200,15 +198,7 @@ export default function Appbar() {
               </Typography>
             ))}
           </Box>
-          <Logo
-            href="https://www.facebook.com/christiantabernacle.church.7"
-            target="_blank"
-          >
-            <FacebookIcon />
-          </Logo>
-          {/* <Typography>
-            <AppbarContent>Donate</AppbarContent>
-          </Typography> */}
+          <MyButton href="/sp">Cambiar Idioma</MyButton>
         </Toolbar>
       </MyAppBar>
     </div>

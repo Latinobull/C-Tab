@@ -6,12 +6,20 @@ import React from 'react';
 import worshipImage from '../../img/worship.jpg';
 import crossImg from '../../img/cross.jpg';
 import Option_En from './Options_En';
+import backgroundImg from '../../videos/welcomeTest.mp4';
 
 const MainGrid = styled(Grid)(({ theme }) => ({
-  backgroundImage: `url(${worshipImage})`,
-  backgroundSize: 'cover',
   minHeight: '100vh',
 }));
+const MyVideo = styled('video')`
+  position: absolute;
+
+  z-index: -1;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+`;
 const MainText = styled('div')(({ theme }) => ({
   paddingLeft: '200px',
   textAlign: 'center',
@@ -59,23 +67,25 @@ const QuoteText = styled(Typography)(({ theme }) => ({
   borderRadius: '12px',
 }));
 const Headers = styled(Typography)(({ theme }) => ({
-  fontWeight: 600,
+  fontWeight: 700,
   textAlign: 'center',
-  fontSize: '100px',
+  fontSize: '120px',
   color: 'white',
 }));
 export default function Main_En() {
-  console.log('Hey');
   return (
     <div>
+      <MyVideo autoPlay loop muted id="video">
+        <source src={backgroundImg} type="video/mp4" />
+      </MyVideo>
       <MainGrid container direction="row" justify="center" alignItems="center">
         <MainText sx={{ paddingLeft: { xs: '30px', lg: '200px' } }}>
           <Typography style={{ fontSize: '32px' }}>A house on fire,</Typography>
           <Typography style={{ fontSize: '32px' }}>
             led by the Holy Spirit
           </Typography>
-          <MyButton variant="contained" href="/en/our beliefs">
-            Learn More
+          <MyButton variant="contained" href="/en/our services">
+            Join us in Worship
           </MyButton>
         </MainText>
       </MainGrid>
@@ -83,13 +93,13 @@ export default function Main_En() {
         <Grid item>
           <Headers>Our Mission</Headers>
           <MissionText>
-            Here at Christian Tabernacle we believe that we are not just a
+            Here at Christian Tabernacle we believe that we are not just a
             church but a home and a hospital for the broken. Everything we do is
             guided by the power of the Holy Spirit and the love that Christ has
-            shown us. Christian Tabernacle was established in 1984 by our
+            shown us. Christian Tabernacle was established in 1984 by our
             founder Josefina De La Rosa. Her vision still stands true to this
-            day with her daughter and our pastor, Reverend Dr. Damaris
-            Torres, continuing the legacy.
+            day with her daughter and our pastor, Reverend Dr. Damaris Torres,
+            continuing the legacy.
           </MissionText>
         </Grid>
       </MissionGrid>
