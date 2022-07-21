@@ -54,14 +54,18 @@ const BeliefText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   fontSize: 30,
 }));
+const HeaderGrid = styled(Grid)(({ theme }) => ({
+  backgroundImage: `url(${BibleImg})`,
+  backgroundSize: '100% 400px',
+  height: '40vh',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
 const Headers = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
   textAlign: 'center',
-  fontSize: '70px',
-  backgroundImage: `url(${BibleImg})`,
-  backgroundSize: '100% 400px',
-  maxWidth: '100%',
-  minHeight: '400px',
+  fontSize: '120px',
+  letterSpacing: '5px',
   color: 'white',
   justifyContent: 'center',
 }));
@@ -100,8 +104,9 @@ export default function OurBeliefs() {
   };
   return (
     <div>
-      <Grid></Grid>
-      <Headers>Our Beliefs</Headers>
+      <HeaderGrid container>
+        <Headers>Our Beliefs</Headers>
+      </HeaderGrid>
       <LiveGrid container>
         <Box sx={{ maxWidth: 600, flexGrow: 1 }}>
           <Paper
