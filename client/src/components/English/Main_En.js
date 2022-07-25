@@ -28,9 +28,11 @@ const MainText = styled('div')(({ theme }) => ({
 const MyButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.accent.main,
   color: 'black',
-  padding: '10px 25px',
+  padding: '20px 25px',
   borderRadius: '1px',
   marginTop: '15px',
+  width: '250px',
+  fontSize: '20px',
   '&:hover': {
     backgroundColor: theme.accent.second,
   },
@@ -72,6 +74,10 @@ const Headers = styled(Typography)(({ theme }) => ({
   fontSize: '120px',
   color: 'white',
 }));
+const OpenText = styled(Typography)(({ theme }) => ({
+  fontWeight: 400,
+  fontSize: '60px',
+}));
 export default function Main_En() {
   return (
     <div>
@@ -80,11 +86,13 @@ export default function Main_En() {
       </MyVideo>
       <MainGrid container direction="row" justify="center" alignItems="center">
         <MainText sx={{ paddingLeft: { xs: '30px', lg: '200px' } }}>
-          <Typography style={{ fontSize: '32px' }}>A house on fire,</Typography>
-          <Typography style={{ fontSize: '32px' }}>
-            led by the Holy Spirit
-          </Typography>
-          <MyButton variant="contained" href="/en/our services">
+          <OpenText>A house on fire,</OpenText>
+          <OpenText>led by the Holy Spirit</OpenText>
+          <MyButton
+            variant="contained"
+            sx={{ width: '250px', height: '50px', fontSize: '20px' }}
+            href="/en/our services"
+          >
             Join us in Worship
           </MyButton>
         </MainText>

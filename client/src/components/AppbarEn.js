@@ -27,12 +27,21 @@ const MyAppBar = styled(AppBar)(({ theme }) => ({
   padding: '25px 0px',
   backgroundColor: theme.primary.main,
 }));
+const AppBarHeader = styled(Link)(({ theme }) => ({
+  color: theme.secondary.main,
+  marginRight: '15px',
+  textDecoration: 'none',
+  textAlign: 'center',
+  fontWeight: 600,
+  fontSize: '40px',
+}));
 const AppbarContent = styled(Link)(({ theme }) => ({
   color: theme.secondary.main,
   marginRight: '15px',
   textDecoration: 'none',
   textAlign: 'center',
   fontWeight: 600,
+  fontSize: '20px',
 }));
 const NavContent = styled(Link)(({ theme }) => ({
   color: 'black',
@@ -76,9 +85,7 @@ export default function Appbar() {
       <MyAppBar position="static">
         <Toolbar>
           <Typography variant="h5" sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <AppbarContent href="/en">
-              Christian Tabernacle Church
-            </AppbarContent>
+            <AppBarHeader href="/en">Christian Tabernacle Church</AppBarHeader>
           </Typography>
           <Box
             sx={{
@@ -128,9 +135,9 @@ export default function Appbar() {
               variant="h5"
               sx={{ display: { xs: 'flex', md: 'none' } }}
             >
-              <AppbarContent href="/en">
+              <AppBarHeader href="/en">
                 Christian Tabernacle Church
-              </AppbarContent>
+              </AppBarHeader>
             </Typography>
           </Box>
           <Box sx={{ display: { xs: 'none', md: 'inherit' } }}>
