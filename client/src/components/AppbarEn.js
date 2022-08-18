@@ -26,6 +26,7 @@ const joinDrop = ['Our Services', 'Our Bible Studies'];
 const MyAppBar = styled(AppBar)(({ theme }) => ({
   padding: '25px 0px',
   backgroundColor: theme.primary.main,
+  boxSizing: 'border-box',
 }));
 const AppBarHeader = styled(Link)(({ theme }) => ({
   color: theme.secondary.main,
@@ -42,6 +43,7 @@ const AppbarContent = styled(Link)(({ theme }) => ({
   textAlign: 'center',
   fontWeight: 600,
   fontSize: '20px',
+  boxSizing: 'border-box',
 }));
 const NavContent = styled(Link)(({ theme }) => ({
   color: 'black',
@@ -118,6 +120,7 @@ export default function Appbar() {
               }}
               open={Boolean(anchorElHome)}
               onClose={handleCloseHome}
+              disableScrollLock={true}
             >
               {mobilePages.map(page => (
                 <MenuItem key={page}>
@@ -157,7 +160,10 @@ export default function Appbar() {
                 anchorEl={aboutAnchor}
                 open={Boolean(aboutAnchor)}
                 onClose={handleCloseAbout}
-                MenuListProps={{ onMouseLeave: handleCloseAbout }}
+                MenuListProps={{
+                  onMouseLeave: handleCloseAbout,
+                }}
+                disableScrollLock={true}
               >
                 {aboutDrop.map(about => (
                   <NavContent
@@ -165,7 +171,11 @@ export default function Appbar() {
                     underline="none"
                     href={`/en/${about}`}
                   >
-                    <MenuItem onClick={handleCloseAbout} href={'/en'}>
+                    <MenuItem
+                      onClick={handleCloseAbout}
+                      href={'/en'}
+                      dense={true}
+                    >
                       <Typography textAlign="center">{about}</Typography>
                     </MenuItem>
                   </NavContent>
@@ -189,6 +199,7 @@ export default function Appbar() {
                 open={Boolean(joinAnchor)}
                 onClose={handleCloseJoin}
                 MenuListProps={{ onMouseLeave: handleCloseJoin }}
+                disableScrollLock={true}
               >
                 {joinDrop.map(join => (
                   <NavContent key={join} href={`/en/${join}`}>
