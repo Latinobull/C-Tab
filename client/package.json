@@ -12,7 +12,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-material-ui-carousel": "^2.2.4",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "^2.1.1",
     "react-swipeable-views": "^0.14.0",
     "react-swipeable-views-utils": "^0.14.0"

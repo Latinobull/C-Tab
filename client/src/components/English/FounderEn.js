@@ -1,7 +1,6 @@
 import { Grid, styled, Typography } from '@mui/material';
 import React from 'react';
 
-
 const MissionGrid = styled(Grid)`
   justify-content: space-evenly;
   margin: 100px 0px;
@@ -24,7 +23,7 @@ export default function AboutEn() {
         <Grid item>
           <div
             style={{
-              'background-color': 'grey',
+              backgroundColor: 'grey',
               width: '500px',
               height: '400px',
             }}

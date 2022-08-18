@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Appbar from './components/AppbarEn';
 import Main_En from './components/English/Main_En';
@@ -47,20 +47,26 @@ class App extends Component {
           <div className="content-wrap">
             <Router>
               {appbar}
-              <Route exact path="/" component={Welcome} />
-              {/* English Routes */}
+              <Routes>
+                <Route exact path="/" element={<Welcome />} />
+                {/* English Routes */}
 
-              <Route exact path="/en" component={Main_En} />
-              <Route exact path="/en/our founder" component={FounderEn} />
-              <Route exact path="/en/our team" component={Leaders_En} />
-              <Route exact path="/en/ministries" component={Ministry_En} />
-              <Route exact path="/en/pastors" component={PastorsEn} />
-              <Route exact path="/en/socials" component={Socials_En} />
-              <Route exact path="/en/our services" component={JoinUsEn} />
-              <Route exact path="/en/our bible studies" component={ClassesEn} />
-              <Route exact path="/en/our beliefs" component={OurBeliefs} />
-              {/* Spanish Routes */}
-              <Route exact path="/sp" component={Main_Sp} />
+                <Route exact path="/en" element={<Main_En />} />
+                <Route exact path="/en/ourfounder" element={<FounderEn />} />
+                <Route exact path="/en/ourteam" element={<Leaders_En />} />
+                <Route exact path="/en/ministries" element={<Ministry_En />} />
+                <Route exact path="/en/pastors" element={<PastorsEn />} />
+                <Route exact path="/en/socials" element={<Socials_En />} />
+                <Route exact path="/en/ourservices" element={<JoinUsEn />} />
+                <Route
+                  exact
+                  path="/en/ourbiblestudies"
+                  element={<ClassesEn />}
+                />
+                <Route exact path="/en/OurBeliefs" element={<OurBeliefs />} />
+                {/* Spanish Routes */}
+                <Route exact path="/sp" element={<Main_Sp />} />
+              </Routes>
             </Router>
           </div>
           {footer}

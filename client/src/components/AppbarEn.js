@@ -125,7 +125,10 @@ export default function Appbar() {
               {mobilePages.map(page => (
                 <MenuItem key={page}>
                   <Typography textAlign="center">
-                    <NavContent href={`/en/${page}`} onClick={handleCloseHome}>
+                    <NavContent
+                      href={`/en/${page.replace(/\s/g, '')}`}
+                      onClick={handleCloseHome}
+                    >
                       {page}
                     </NavContent>
                   </Typography>
@@ -169,7 +172,7 @@ export default function Appbar() {
                   <NavContent
                     key={about}
                     underline="none"
-                    href={`/en/${about}`}
+                    href={`/en/${about.replace(/\s/g, '')}`}
                   >
                     <MenuItem
                       onClick={handleCloseAbout}
@@ -202,7 +205,10 @@ export default function Appbar() {
                 disableScrollLock={true}
               >
                 {joinDrop.map(join => (
-                  <NavContent key={join} href={`/en/${join}`}>
+                  <NavContent
+                    key={join}
+                    href={`/en/${join.replace(/\s/g, '')}`}
+                  >
                     <MenuItem onClick={handleCloseJoin}>
                       <Typography textAlign="center">{join}</Typography>
                     </MenuItem>
