@@ -18,6 +18,8 @@ const MyButton = styled(Button)(({ theme }) => ({
   borderRadius: '1px',
   width: '180px',
   height: '60px',
+  fontWeight: 400,
+  fontSize: '20px',
   marginTop: '20px',
   '&:hover': {
     backgroundColor: theme.primary.second,
