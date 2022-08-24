@@ -4,7 +4,6 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-import backgroundImg from '../videos/welcomeTest.mp4';
 
 const MyContent = styled(Grid)`
   text-align: center;
@@ -26,9 +25,7 @@ const MyVideo = styled('video')`
 export default function Welcome() {
   return (
     <div>
-      <MyVideo autoPlay loop muted id="video">
-        <source src={backgroundImg} type="video/mp4" />
-      </MyVideo>
+      <MyVideo autoPlay loop muted id="video"></MyVideo>
       <Grid
         container
         direction="row"

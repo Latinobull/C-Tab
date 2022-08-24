@@ -10,6 +10,9 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Button, Link } from '@mui/material';
+import { IconFlagES } from 'material-ui-flags';
+import churchLogo from '../img/churchLogo.png';
+import Grid from '@mui/material/Grid';
 
 const mobilePages = [
   'Our Beliefs',
@@ -24,37 +27,37 @@ const pages = ['Ministries', 'Pastors'];
 const aboutDrop = ['Our Beliefs', 'Our Founder', 'Our Team'];
 const joinDrop = ['Our Services', 'Our Bible Studies'];
 const MyAppBar = styled(AppBar)(({ theme }) => ({
-  padding: '25px 0px',
-  backgroundColor: theme.primary.main,
+  backgroundColor: theme.secondary.main,
   boxSizing: 'border-box',
+  maxHeight: '300px',
+  padding: '10px 0px',
 }));
-const AppBarHeader = styled(Link)(({ theme }) => ({
-  color: theme.secondary.main,
-  marginRight: '15px',
-  textDecoration: 'none',
-  textAlign: 'center',
-  fontWeight: 600,
-  fontSize: '40px',
+const AppBarHeader = styled('img')(({ theme }) => ({
+  color: theme.primary.main,
+  width: '450px',
+  marginLeft: '150px',
+  height: '450px',
+}));
+const AppBarHeaderMobile = styled('img')(({ theme }) => ({
+  color: theme.primary.main,
+  width: '350px',
+  height: '350px',
 }));
 const AppbarContent = styled(Link)(({ theme }) => ({
-  color: theme.secondary.main,
-  marginRight: '15px',
+  color: theme.primary.main,
+  marginRight: '35px',
   textDecoration: 'none',
   textAlign: 'center',
   fontWeight: 600,
-  fontSize: '20px',
+  fontSize: '25px',
   boxSizing: 'border-box',
 }));
 const NavContent = styled(Link)(({ theme }) => ({
   color: 'black',
   textDecoration: 'none',
 }));
-const MyButton = styled(Button)(({ theme }) => ({
-  color: 'white',
-  fontWeight: 400,
-}));
 const MyIconButton = styled(IconButton)(({ theme }) => ({
-  color: theme.secondary.main,
+  color: theme.primary.main,
 }));
 export default function Appbar() {
   // const classes = useStyles();
@@ -87,7 +90,7 @@ export default function Appbar() {
       <MyAppBar position="static">
         <Toolbar>
           <Typography variant="h5" sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <AppBarHeader href="/en">Christian Tabernacle Church</AppBarHeader>
+            <AppBarHeader href="/en" src={churchLogo}></AppBarHeader>
           </Typography>
           <Box
             sx={{
@@ -141,12 +144,18 @@ export default function Appbar() {
               variant="h5"
               sx={{ display: { xs: 'flex', md: 'none' } }}
             >
-              <AppBarHeader href="/en">
-                Christian Tabernacle Church
-              </AppBarHeader>
+              <AppBarHeaderMobile
+                href="/en"
+                src={churchLogo}
+              ></AppBarHeaderMobile>
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: 'none', md: 'inherit' } }}>
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'inherit' },
+              marginRight: '220px',
+            }}
+          >
             <Box>
               <Typography key={'About'} variant="h6">
                 <AppbarContent
@@ -221,8 +230,10 @@ export default function Appbar() {
                 <AppbarContent href={`/en/${page}`}>{page}</AppbarContent>
               </Typography>
             ))}
+            <IconButton href="/sp">
+              <IconFlagES />
+            </IconButton>
           </Box>
-          <MyButton href="/sp">Cambiar Idioma</MyButton>
         </Toolbar>
       </MyAppBar>
     </div>

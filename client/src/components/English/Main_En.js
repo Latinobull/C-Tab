@@ -3,22 +3,19 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import React from 'react';
-import worshipImage from '../../img/worship.jpg';
 import crossImg from '../../img/cross.jpg';
 import Option_En from './Options_En';
-import backgroundImg from '../../videos/welcomeTest.mp4';
+import backgroundImg from '../../videos/MainVideo.mp4';
 
 const MainGrid = styled(Grid)(({ theme }) => ({
-  minHeight: '100vh',
+  height: '70vh',
 }));
 const MyVideo = styled('video')`
   position: absolute;
-
   z-index: -1;
   object-fit: cover;
   min-width: 100%;
-  min-height: 100%;
-  height: 100%;
+  max-height: 980px;
 `;
 const MainText = styled('div')(({ theme }) => ({
   paddingLeft: '200px',
@@ -87,13 +84,12 @@ export default function Main_En() {
       <MainGrid container direction="row" justify="center" alignItems="center">
         <MainText sx={{ paddingLeft: { xs: '30px', lg: '200px' } }}>
           <OpenText>A house on fire,</OpenText>
-          <OpenText>led by the Holy Spirit</OpenText>
           <MyButton
             variant="contained"
             sx={{ width: '250px', height: '50px', fontSize: '20px' }}
             href="/en/our services"
           >
-            Join us in Worship
+            Join us
           </MyButton>
         </MainText>
       </MainGrid>

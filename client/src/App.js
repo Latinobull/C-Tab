@@ -20,8 +20,8 @@ import OurBeliefs from './components/English/OurBeliefs';
 let location = window.location.href.split('/');
 
 const theme = createTheme({
-  primary: { main: '#8C000B', second: '#9E2832' },
-  secondary: { main: 'white' },
+  primary: { main: '#8B0000', second: '#9E2832' },
+  secondary: { main: '#F4F2EC' },
   accent: { main: '#E8E3D6', second: '#D6CDB5' },
   typography: { fontFamily: 'QuincyCF, sans-serif' },
 });
