@@ -4,6 +4,7 @@
   src: local(QuincyCF-RegularItalic),
     url('./utils/fonts/QuincyCF-RegularItalic.otf') format('truetype');
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body {
   margin: 0;
   background-color: white;

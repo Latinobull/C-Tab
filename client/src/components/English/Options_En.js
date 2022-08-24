@@ -9,27 +9,37 @@ import { styled } from '@mui/material/styles';
 
 const MainGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
-  paddingTop: '100px',
+  padding: '100px 0px',
+  backgroundColor: theme.primary.main,
 }));
 const Img = styled('img')({});
 const MyButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.primary.main,
-  color: 'white',
+  backgroundColor: theme.secondary.main,
+  color: theme.primary.main,
   borderRadius: '1px',
   width: '180px',
   height: '60px',
   fontWeight: 400,
   fontSize: '20px',
   marginTop: '20px',
+  fontFamily: theme.typography.h6.fontFamily,
   '&:hover': {
-    backgroundColor: theme.primary.second,
+    backgroundColor: theme.secondary.main,
+    color: 'black',
   },
+}));
+const Text = styled(Typography)(({ theme }) => ({
+  color: theme.secondary.main,
+}));
+const Header = styled(Typography)(({ theme }) => ({
+  color: theme.secondary.main,
+  fontSize: 105,
 }));
 export default function Option_En() {
   return (
     <div>
       {/* Join us Online */}
-      <MainGrid container>
+      {/* <MainGrid container>
         <Grid item>
           <Img src={laptopImg} sx={{ width: { xs: '300px', md: '600px' } }} />
         </Grid>
@@ -45,22 +55,22 @@ export default function Option_En() {
             Learn More
           </MyButton>
         </Grid>
-      </MainGrid>
+      </MainGrid> */}
       {/* Our Ministries */}
       <MainGrid container direction="row-reverse">
         <Grid item>
           <Img src={kidImg} sx={{ width: { xs: '300px', md: '600px' } }} />{' '}
         </Grid>
         <Grid item style={{ width: '500px' }}>
-          <Typography variant="h3">Our Ministries</Typography>
-          <Typography variant="h6">
+          <Header variant="h3">Ministries</Header>
+          <Text variant="h6">
             Everyone who comes to Christian Tabernacle, governs a special
             talent. We aim to foster and grow those gifts within our
             congregation. Read more about the various ministries we have at
             Christian Tabernacle.
-          </Typography>
+          </Text>
           <MyButton variant="contained" href="/en/ministries">
-            Ministries
+            View More
           </MyButton>
         </Grid>
       </MainGrid>
@@ -70,16 +80,14 @@ export default function Option_En() {
           <Img src={handImg} sx={{ width: { xs: '300px', md: '600px' } }} />{' '}
         </Grid>
         <Grid item style={{ width: '500px' }}>
-          <Typography variant="h3">
-            Changing the world is possible. We’ve done it before.
-          </Typography>
-          <Typography variant="h6">
+          <Header variant="h3">Leaders</Header>
+          <Text variant="h6">
             Our leadership team bring years of devotion and experience to govern
             our church. Anointed and passionate, our team serves under the
             direction of God and the Holy Spirit.
-          </Typography>
+          </Text>
           <MyButton variant="contained" href="en/Ministries">
-            Leadership
+            View More
           </MyButton>
         </Grid>
       </MainGrid>

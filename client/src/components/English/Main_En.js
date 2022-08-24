@@ -3,12 +3,14 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import React from 'react';
-import crossImg from '../../img/cross.jpg';
+import churchImg from '../../img/churchBuilding.jpg';
 import Option_En from './Options_En';
 import backgroundImg from '../../videos/MainVideo.mp4';
 
 const MainGrid = styled(Grid)(({ theme }) => ({
-  height: '70vh',
+  height: '90vh',
+  textAlign: 'center',
+  justifyContent: 'center',
 }));
 const MyVideo = styled('video')`
   position: absolute;
@@ -17,11 +19,6 @@ const MyVideo = styled('video')`
   min-width: 100%;
   max-height: 980px;
 `;
-const MainText = styled('div')(({ theme }) => ({
-  paddingLeft: '200px',
-  textAlign: 'center',
-  color: 'white',
-}));
 const MyButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.accent.main,
   color: 'black',
@@ -35,45 +32,48 @@ const MyButton = styled(Button)(({ theme }) => ({
   },
 }));
 const MissionGrid = styled(Grid)(({ theme }) => ({
-  backgroundColor: theme.primary.main,
+  backgroundColor: theme.secondary.main,
   justifyContent: 'center',
   fontSize: '50px',
   padding: '160px 0px',
-  marginBottom: '10px',
 }));
 const MissionText = styled(Typography)(({ theme }) => ({
   maxWidth: '1300px',
   fontSize: '30px',
   textAlign: 'center',
-  color: 'white',
+  color: theme.primary.main,
 }));
 const MyQuote = styled(Grid)(({ theme }) => ({
-  backgroundImage: `url(${crossImg})`,
+  backgroundImage: `url(${churchImg})`,
   maxWidth: '99vw',
-  minHeight: '50vh',
+  minHeight: '70vh',
   backgroundSize: 'cover',
-  marginTop: '100px',
   alignItems: 'center',
   justifyContent: 'center',
   textAlign: 'center',
-  marginBottom: '50px',
 }));
 
 const QuoteText = styled(Typography)(({ theme }) => ({
-  maxWidth: '600px',
+  maxWidth: '500px',
   backgroundColor: theme.secondary.main,
-  opacity: '0.8',
-  borderRadius: '12px',
+  borderRadius: '1px',
+  fontSize: '45px',
+  color: theme.primary.main,
+  padding: '50px 125px',
+}));
+const QuoteText2 = styled(Typography)(({ theme }) => ({
+  fontSize: '30px',
 }));
 const Headers = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   textAlign: 'center',
   fontSize: '120px',
-  color: 'white',
+  color: theme.primary.main,
 }));
 const OpenText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
-  fontSize: '60px',
+  fontSize: '100px',
+  color: theme.secondary.main,
 }));
 export default function Main_En() {
   return (
@@ -81,22 +81,22 @@ export default function Main_En() {
       <MyVideo autoPlay loop muted id="video">
         <source src={backgroundImg} type="video/mp4" />
       </MyVideo>
-      <MainGrid container direction="row" justify="center" alignItems="center">
-        <MainText sx={{ paddingLeft: { xs: '30px', lg: '200px' } }}>
-          <OpenText>A house on fire,</OpenText>
+      <MainGrid container alignItems="center">
+        <Grid item>
+          <OpenText>A house on fire</OpenText>
           <MyButton
             variant="contained"
             sx={{ width: '250px', height: '50px', fontSize: '20px' }}
-            href="/en/our services"
+            href="/en/ourservices"
           >
             Join us
           </MyButton>
-        </MainText>
+        </Grid>
       </MainGrid>
-      <MissionGrid container justify="" direction="row" alignItems="center">
+      <MissionGrid container direction="row" alignItems="center">
         <Grid item>
           <Headers>Our Mission</Headers>
-          <MissionText>
+          <MissionText variant="h6">
             Here at Christian Tabernacle we believe that we are not just a
             church but a home and a hospital for the broken. Everything we do is
             guided by the power of the Holy Spirit and the love that Christ has
@@ -110,12 +110,8 @@ export default function Main_En() {
       <Option_En />
       <MyQuote container>
         <QuoteText variant="h5">
-          “24 And let us consider how we may spur one another on toward love and
-          good deeds, 25 not giving up meeting together, as some are in the
-          habit of doing, but encouraging one another—and all the more as you
-          see the Day approaching.”
-          <br />
-          -Hebrews 10:24-25
+          “Then have them make a sanctuary for me, and I will dwell among them."
+          <QuoteText2 variant="h6">Exodus 25:8</QuoteText2>
         </QuoteText>
       </MyQuote>
     </div>

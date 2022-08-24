@@ -23,7 +23,10 @@ const theme = createTheme({
   primary: { main: '#8B0000', second: '#9E2832' },
   secondary: { main: '#F4F2EC' },
   accent: { main: '#E8E3D6', second: '#D6CDB5' },
-  typography: { fontFamily: 'QuincyCF, sans-serif' },
+  typography: {
+    h6: { fontFamily: 'Poppins, sans-serif' },
+    fontFamily: 'QuincyCF, sans-serif',
+  },
 });
 class App extends Component {
   render() {
