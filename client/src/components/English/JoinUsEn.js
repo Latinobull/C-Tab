@@ -9,7 +9,6 @@ import {
   AccordionDetails,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import React from 'react';
 const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',

@@ -4,11 +4,11 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import React from 'react';
 import churchImg from '../../img/churchBuilding.jpg';
-import Option_En from './Options_En';
+import OptionEn from './OptionsEn';
 import backgroundImg from '../../videos/MainVideo.mp4';
 
 const MainGrid = styled(Grid)(({ theme }) => ({
-  height: '90vh',
+  height: '800px',
   textAlign: 'center',
   justifyContent: 'center',
 }));
@@ -107,7 +107,7 @@ export default function Main_En() {
           </MissionText>
         </Grid>
       </MissionGrid>
-      <Option_En />
+      <OptionEn />
       <MyQuote container>
         <QuoteText variant="h5">
           “Then have them make a sanctuary for me, and I will dwell among them."

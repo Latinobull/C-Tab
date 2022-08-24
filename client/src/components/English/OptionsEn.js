@@ -2,7 +2,6 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import laptopImg from '../../img/laptop.jpg';
 import kidImg from '../../img/kids.jpg';
 import handImg from '../../img/hands.jpg';
 import { styled } from '@mui/material/styles';

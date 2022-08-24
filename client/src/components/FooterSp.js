@@ -36,7 +36,7 @@ export default function Footer() {
           <Grid item lg={2}>
             <FooterText variant="h6">Síganos</FooterText>
 
-            <a href="#">Facebook</a>
+            <div>Facebook</div>
             <FooterText>InsertEmail@gmail.com</FooterText>
           </Grid>
         </Grid>

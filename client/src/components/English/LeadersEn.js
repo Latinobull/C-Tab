@@ -5,7 +5,6 @@ import {
   MenuItem,
   Select,
   styled,
-  ThemeProvider,
   Typography,
 } from '@mui/material';
 import React, { useState } from 'react';

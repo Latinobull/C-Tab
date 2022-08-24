@@ -1,4 +1,4 @@
-import { Grid, Link, styled, Typography, useTheme } from '@mui/material';
+import { Grid, Link, styled, Typography,} from '@mui/material';
 import React from 'react';
 import ministryStockImg from '../../img/ministryStockImg.jpg';
 
@@ -30,7 +30,6 @@ const ministries = [
   { name: '2nd Other Ministry', img: ministryStockImg },
 ];
 export default function Ministry_En() {
-  const theme = useTheme();
   console.log(ministries[0].img);
   console.log(ministryStockImg);
   return (

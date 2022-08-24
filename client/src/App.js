@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Welcome from './components/Welcome';
 import Appbar from './components/AppbarEn';
-import Main_En from './components/English/Main_En';
-import Main_Sp from './components/Spanish/Main_Sp';
+import MainEn from './components/English/MainEn';
+import MainSp from './components/Spanish/Main_Sp';
 import Footer from './components/Footer';
-import Leaders_En from './components/English/Leaders_En';
-import Ministry_En from './components/English/Ministry_En';
-import Socials_En from './components/English/Socials_En';
+import LeadersEn from './components/English/LeadersEn';
+import MinistryEn from './components/English/MinistryEn';
 import FounderEn from './components/English/FounderEn';
 import AppbarSp from './components/AppbarSp';
 import FooterSp from './components/FooterSp';
@@ -52,12 +50,11 @@ class App extends Component {
               <Routes>
                 {/* English Routes */}
 
-                <Route exact path="/en" element={<Main_En />} />
+                <Route exact path="/en" element={<MainEn />} />
                 <Route exact path="/en/ourfounder" element={<FounderEn />} />
-                <Route exact path="/en/ourteam" element={<Leaders_En />} />
-                <Route exact path="/en/ministries" element={<Ministry_En />} />
+                <Route exact path="/en/ourteam" element={<LeadersEn />} />
+                <Route exact path="/en/ministries" element={<MinistryEn />} />
                 <Route exact path="/en/pastors" element={<PastorsEn />} />
-                <Route exact path="/en/socials" element={<Socials_En />} />
                 <Route exact path="/en/ourservices" element={<JoinUsEn />} />
                 <Route
                   exact
@@ -66,7 +63,7 @@ class App extends Component {
                 />
                 <Route exact path="/en/OurBeliefs" element={<OurBeliefs />} />
                 {/* Spanish Routes */}
-                <Route exact path="/sp" element={<Main_Sp />} />
+                <Route exact path="/sp" element={<MainSp />} />
               </Routes>
             </Router>
           </div>

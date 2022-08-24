@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { createTheme, styled, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Button, Link } from '@mui/material';
+import { Link } from '@mui/material';
 import { IconFlagES } from 'material-ui-flags';
 import churchLogo from '../img/churchLogo.png';
-import Grid from '@mui/material/Grid';
 
 const mobilePages = [
   'Our Beliefs',
