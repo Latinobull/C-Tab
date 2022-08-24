@@ -90,7 +90,9 @@ export default function Appbar() {
       <MyAppBar position="static">
         <Toolbar>
           <Typography variant="h5" sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <AppBarHeader href="/en" src={churchLogo}></AppBarHeader>
+            <Link href="/en">
+              <AppBarHeader href="/en" src={churchLogo}></AppBarHeader>
+            </Link>
           </Typography>
           <Box
             sx={{

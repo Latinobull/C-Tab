@@ -41,8 +41,7 @@ class App extends Component {
       document.title = 'Tabernaculo Christiano';
       footer = <FooterSp />;
     } else {
-      appbar = <div></div>;
-      footer = <div></div>;
+      window.location.replace('/en');
     }
     return (
       <div className="page-container">
@@ -51,7 +50,6 @@ class App extends Component {
             <Router>
               {appbar}
               <Routes>
-                <Route exact path="/" element={<Welcome />} />
                 {/* English Routes */}
 
                 <Route exact path="/en" element={<Main_En />} />
