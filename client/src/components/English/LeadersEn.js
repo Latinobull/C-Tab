@@ -89,7 +89,10 @@ export default function Leaders_En() {
       <Grid
         container
         direction={'column'}
-        sx={{ backgroundColor: '#E8E3D6', marginBottom: '30px' }}
+        sx={{
+          backgroundColor: theme => theme.secondary.main,
+          marginBottom: '30px',
+        }}
         justifyContent="space-evenly"
       >
         <Typography

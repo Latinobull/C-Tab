@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, styled, Typography } from '@mui/material';
 import headImg from '../../img/headShot.jpg';
+import LeadersEn from './LeadersEn';
 const MainGrid = styled(Grid)`
   padding-bottom: 120px;
 `;
@@ -8,15 +9,15 @@ const Headers = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   fontWeight: '600',
   fontSize: '50px',
-}))
+}));
 
-const Text = styled(Typography)(({theme})=> ({
+const Text = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   fontWeight: '300',
   fontSize: '30px',
   maxWidth: '1400px',
   paddingBottom: '30px',
-}))
+}));
 const LeaderImg = styled('img')`
   padding-bottom: 25px;
 `;
@@ -39,9 +40,10 @@ export default function PastorsEn() {
   return (
     <div>
       <Headers>Meet the Pastors </Headers>
-      {pastors.map(pastor => (
-        <MainGrid container>
-          <Grid container item md={12} justifyContent="center">
+
+      <MainGrid container>
+        {pastors.map(pastor => (
+          <Grid container item md={6} justifyContent="center">
             <LeaderImg
               src={pastor.image}
               sx={{
@@ -49,15 +51,12 @@ export default function PastorsEn() {
                 height: { xs: '400px', md: '500px' },
               }}
             ></LeaderImg>
-          </Grid>
-          <Grid container item md={12} justifyContent="center">
             <Headers>{pastor.header}</Headers>
-          </Grid>
-          <Grid container item md={12} justifyContent="center">
             <Text>{pastor.content}</Text>
           </Grid>
-        </MainGrid>
-      ))}
+        ))}
+      </MainGrid>
+      <LeadersEn/>
     </div>
   );
 }

@@ -20,15 +20,18 @@ const MyVideo = styled('video')`
   max-height: 980px;
 `;
 const MyButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.accent.main,
-  color: 'black',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  color: 'white',
   padding: '20px 25px',
+  border: 'solid 3px white',
   borderRadius: '1px',
   marginTop: '15px',
   width: '250px',
   fontSize: '20px',
+  transition: 'border .07s',
   '&:hover': {
-    backgroundColor: theme.accent.second,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    border: 'solid 0px white',
   },
 }));
 const MissionGrid = styled(Grid)(({ theme }) => ({
@@ -72,7 +75,7 @@ const Headers = styled(Typography)(({ theme }) => ({
 }));
 const OpenText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
-  fontSize: '100px',
+  fontSize: '120px',
   color: theme.secondary.main,
 }));
 export default function Main_En() {
@@ -85,7 +88,6 @@ export default function Main_En() {
         <Grid item>
           <OpenText>A house on fire</OpenText>
           <MyButton
-            variant="contained"
             sx={{ width: '250px', height: '50px', fontSize: '20px' }}
             href="/en/ourservices"
           >
