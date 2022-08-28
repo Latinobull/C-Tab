@@ -121,6 +121,7 @@ export default function Leaders_En() {
             label="Team"
             value={team}
             onChange={handleChange}
+            MenuProps={{ disableScrollLock: true }}
             sx={{
               ':after': { borderBottomColor: theme => theme.primary.main },
             }}

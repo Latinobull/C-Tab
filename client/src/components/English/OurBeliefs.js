@@ -7,6 +7,10 @@ import {
   Button,
   styled,
   Grid,
+  Accordion,
+  AccordionSummary,
+  AccordionActions,
+  AccordionDetails,
 } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
@@ -55,8 +59,7 @@ const BeliefText = styled(Typography)(({ theme }) => ({
   fontSize: 30,
 }));
 const HeaderGrid = styled(Grid)(({ theme }) => ({
-  backgroundImage: `url(${BibleImg})`,
-  backgroundSize: '100% 400px',
+  backgroundColor: theme.primary.main,
   height: '40vh',
   alignItems: 'center',
   justifyContent: 'center',
@@ -72,8 +75,76 @@ const Headers = styled(Typography)(({ theme }) => ({
 const MyButton = styled(Button)(({ theme }) => ({
   color: theme.primary.main,
 }));
+const AccSummary = styled(AccordionSummary)(({ theme }) => ({
+  height: '500px',
+  width: '540px',
+  backgroundSize: 'cover',
+  color: 'white',
+  justifyContent: 'center',
+}));
+const AccDetails = styled(AccordionDetails)(({ theme }) => ({
+  width: '500px',
+  color: 'black',
+  justifyContent: 'center',
+}));
+const AccordionHeader = styled(Typography)(({ theme }) => ({
+  textAlign: 'center',
+  width: '100%',
+  fontSize: '100px',
+}));
+const AccordionText = styled(Typography)(({ theme }) => ({
+  textAlign: 'center',
+  width: '100%',
+  fontSize: '40px',
+}));
+
 export default function OurBeliefs() {
-  const theme = useTheme();
+  const allBeliefs = [
+    {
+      img: BibleImg,
+      title: 'God',
+      text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. ut',
+    },
+    {
+      img: BibleImg,
+      title: 'Jesus',
+      text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. ut',
+    },
+    {
+      img: BibleImg,
+      title: 'Holy Spirit',
+      text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. ut',
+    },
+    {
+      img: BibleImg,
+      title: 'Trinity',
+      text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. ut',
+    },
+  ];
+  return (
+    <div>
+      <HeaderGrid container>
+        <Headers>Our Beliefs</Headers>
+      </HeaderGrid>
+
+      <LiveGrid container>
+        {allBeliefs.map(belief => (
+          <Accordion style={{ marginBottom: '20px' }}>
+            <AccSummary sx={{ backgroundImage: `url(${belief.img})` }}>
+              <AccordionHeader>{belief.title}</AccordionHeader>
+            </AccSummary>
+            <AccDetails>
+              <AccordionText>{belief.text}</AccordionText>
+            </AccDetails>
+          </Accordion>
+        ))}
+      </LiveGrid>
+    </div>
+  );
+}
+
+// Incase we come back to this verison of our code
+/*   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const [beliefs, setBeliefs] = useState(images[0].text);
   const maxSteps = images.length;
@@ -102,11 +173,6 @@ export default function OurBeliefs() {
     setActiveStep(step);
     console.log('awdfkhASDkfgSDkhfSDhf');
   };
-  return (
-    <div>
-      <HeaderGrid container>
-        <Headers>Our Beliefs</Headers>
-      </HeaderGrid>
       <LiveGrid container>
         <Box sx={{ maxWidth: 600, flexGrow: 1 }}>
           <Paper
@@ -185,7 +251,4 @@ export default function OurBeliefs() {
           />
         </Box>
         {beliefs && <BeliefText>{beliefs}</BeliefText>}
-      </LiveGrid>
-    </div>
-  );
-}
+      </LiveGrid>*/

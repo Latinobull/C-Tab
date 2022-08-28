@@ -54,7 +54,7 @@ class App extends Component {
                 <Route exact path="/en/ourfounder" element={<FounderEn />} />
                 <Route exact path="/en/ourteam" element={<LeadersEn />} />
                 <Route exact path="/en/ministries" element={<MinistryEn />} />
-                <Route exact path="/en/pastors" element={<PastorsEn />} />
+                <Route exact path="/en/leaders" element={<PastorsEn />} />
                 <Route exact path="/en/ourservices" element={<JoinUsEn />} />
                 <Route
                   exact

@@ -21,7 +21,7 @@ const mobilePages = [
   'Ministries',
   'Pastors',
 ];
-const pages = ['Ministries', 'Pastors'];
+const pages = ['Ministries', 'Leaders'];
 const aboutDrop = ['Our Beliefs', 'Our Founder', 'Our Team'];
 const joinDrop = ['Our Services', 'Our Bible Studies'];
 const MyAppBar = styled(AppBar)(({ theme }) => ({
@@ -43,7 +43,7 @@ const AppBarHeaderMobile = styled('img')(({ theme }) => ({
 }));
 const AppbarContent = styled(Link)(({ theme }) => ({
   color: theme.primary.main,
-  marginRight: '35px',
+  marginRight: '30px',
   textDecoration: 'none',
   textAlign: 'center',
   fontWeight: 600,
