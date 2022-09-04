@@ -15,7 +15,7 @@ const Text = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   fontWeight: '300',
   fontSize: '30px',
-  maxWidth: '1400px',
+  maxWidth: '1000px',
   paddingBottom: '30px',
 }));
 const LeaderImg = styled('img')`
@@ -47,16 +47,16 @@ export default function PastorsEn() {
             <LeaderImg
               src={pastor.image}
               sx={{
-                width: { xs: '300px', md: '400px' },
+                width: { xs: '300px', md: '500px' },
                 height: { xs: '400px', md: '500px' },
               }}
             ></LeaderImg>
             <Headers>{pastor.header}</Headers>
-            <Text>{pastor.content}</Text>
+            <Text variant="h6">{pastor.content}</Text>
           </Grid>
         ))}
       </MainGrid>
-      <LeadersEn/>
+      <LeadersEn />
     </div>
   );
 }

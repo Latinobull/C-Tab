@@ -1,4 +1,4 @@
-import { Grid, Link, styled, Typography,} from '@mui/material';
+import { Grid, Link, styled, Typography } from '@mui/material';
 import React from 'react';
 import ministryStockImg from '../../img/ministryStockImg.jpg';
 
@@ -23,11 +23,13 @@ const BoldText = styled(Typography)(({ theme }) => ({
 const MinistryImg = styled('img')({});
 const ministries = [
   { name: 'Good News Choir', img: ministryStockImg },
-  { name: 'Healing Rooms', img: ministryStockImg },
+  { name: 'ROH Healing Rooms', img: ministryStockImg },
+  { name: 'Kids for Christ', img: ministryStockImg },
+  { name: 'Hands of Praise', img: ministryStockImg },
   { name: 'Family Ministry', img: ministryStockImg },
+  { name: 'Missions', img: ministryStockImg },
   { name: 'Kadosh', img: ministryStockImg },
-  { name: 'Other Ministry', img: ministryStockImg },
-  { name: '2nd Other Ministry', img: ministryStockImg },
+  { name: 'Youth Ministry', img: ministryStockImg },
 ];
 export default function Ministry_En() {
   console.log(ministries[0].img);

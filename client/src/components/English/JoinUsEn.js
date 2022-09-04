@@ -9,7 +9,7 @@ import {
   AccordionDetails,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
   backgroundColor: theme.accent.main,
@@ -51,6 +51,9 @@ const FAQGrid = styled(Grid)(({ theme }) => ({
 const MyAccordian = styled(Accordion)(({ theme }) => ({
   width: '800px',
 }));
+const MyMap = styled('iframe')(({ theme }) => ({
+  height: '600px',
+}));
 const faqContent = [
   {
     title: 'What should I wear',
@@ -66,12 +69,22 @@ const faqContent = [
   },
 ];
 export default function JoinUsEn() {
-  let test = document.querySelector('.Button');
-  console.log(test);
+  const [map, setMap] = useState('');
+  useEffect(() => {
+    fetch('api/fetch')
+      .then(response => response.json())
+      .then(response => setMap(response));
+  }, [setMap]);
   return (
     <div>
       <LiveGrid container direction="column">
         <Headers>Live Services</Headers>
+        <MyMap
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src={map}
+        ></MyMap>
         <Text>
           Join us at our temple in Brooklyn on <br />
           616 Jamaica Avenue,Brooklyn, NY 11208 <br />
