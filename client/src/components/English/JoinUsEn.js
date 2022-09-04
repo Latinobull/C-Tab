@@ -12,7 +12,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useEffect, useState } from 'react';
 const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
-  backgroundColor: theme.accent.main,
+  backgroundColor: theme.secondary.main,
+  margin: '50px 0',
 }));
 const VirtualGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
@@ -22,20 +23,24 @@ const VirtualGrid = styled(Grid)(({ theme }) => ({
 const Headers = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
   textAlign: 'center',
-  margin: '30px 0px',
-  fontSize: '50px',
+  padding: '70px 0px',
+  fontSize: '80px',
+  color: theme.secondary.main,
+  backgroundColor: theme.primary.main,
 }));
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 300,
   textAlign: 'center',
   fontSize: '25px',
   lineHeight: '60px',
+  color: theme.primary.main,
 }));
 const BoldText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   textAlign: 'center',
   fontSize: '23px',
   lineHeight: '60px',
+  color: theme.primary.main,
 }));
 const MyButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.accent.main,
@@ -52,7 +57,7 @@ const MyAccordian = styled(Accordion)(({ theme }) => ({
   width: '800px',
 }));
 const MyMap = styled('iframe')(({ theme }) => ({
-  height: '600px',
+  margin: '0px 50px',
 }));
 const faqContent = [
   {
@@ -77,29 +82,47 @@ export default function JoinUsEn() {
   }, [setMap]);
   return (
     <div>
+      <Headers>Live Services</Headers>
       <LiveGrid container direction="column">
-        <Headers>Live Services</Headers>
-        <MyMap
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src={map}
-        ></MyMap>
-        <Text>
-          Join us at our temple in Brooklyn on <br />
-          616 Jamaica Avenue,Brooklyn, NY 11208 <br />
-          For Live Worship services and to hear a message from God.
-          <br />
-        </Text>
-        <BoldText>
-          Services:
-          <br />
-          Sundays at 7pm: Evangelical Services
-          <br />
-          Wednesdays at 8pm: Prayer and Worship <br />
-          Fridays at 8pm: Kids and Teen alternating services
-        </BoldText>
+        <Grid container direction="row">
+          <Grid item md={7}>
+            <MyMap
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src={map}
+              sx={{
+                width: { sm: '200px', md: '1000px' },
+                height: { sm: '200px', md: '500px' },
+              }}
+            />
+          </Grid>
+          <Grid item md={5}>
+            <Text style={{ fontSize: '60px', letterSpacing: '1px' }}>
+              <br />
+              Join us at our temple in Brooklyn <br />
+              <br />
+              For live worship services and to hear a message from God.
+            </Text>
+          </Grid>
+        </Grid>
       </LiveGrid>
+      <Grid container direction="row">
+        <Grid item md={4}>
+          <BoldText variant="h6">
+            Wednesdays at 8pm: Prayer and Worship
+          </BoldText>
+        </Grid>
+        <Grid item md={4}>
+          <BoldText variant="h6">
+            Fridays at 8pm: Kids and Teen alternating services
+          </BoldText>
+        </Grid>
+        <Grid item md={4}>
+          <BoldText variant="h6">Sundays at 7pm: Evangelical Services</BoldText>
+        </Grid>
+      </Grid>
+
+      <Headers>Virtual Service</Headers>
       <VirtualGrid
         container
         direction="column"
@@ -107,7 +130,6 @@ export default function JoinUsEn() {
         alignItems="center"
       >
         <Grid item>
-          <Headers>Virtual Service</Headers>
           <Text>
             Join us via Facebook live to view all our services. <br />
           </Text>
