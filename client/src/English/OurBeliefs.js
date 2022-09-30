@@ -16,7 +16,8 @@ import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import BibleImg from '../../img/bible.jpg';
+import BibleImg from '../img/bible.jpg';
+import Header from '../components/Header';
 
 const images = [
   {
@@ -58,32 +59,15 @@ const BeliefText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   fontSize: 30,
 }));
-const HeaderGrid = styled(Grid)(({ theme }) => ({
-  backgroundColor: theme.primary.main,
-  height: '40vh',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-const Headers = styled(Typography)(({ theme }) => ({
-  fontWeight: 600,
-  textAlign: 'center',
-  fontSize: '120px',
-  letterSpacing: '5px',
-  color: 'white',
-  justifyContent: 'center',
-}));
-const MyButton = styled(Button)(({ theme }) => ({
-  color: theme.primary.main,
-}));
 const AccSummary = styled(AccordionSummary)(({ theme }) => ({
-  height: '500px',
-  width: '540px',
+  height: '200px',
+  width: '90vw',
   backgroundSize: 'cover',
   color: 'white',
   justifyContent: 'center',
 }));
 const AccDetails = styled(AccordionDetails)(({ theme }) => ({
-  width: '500px',
+  width: '88vw',
   color: 'black',
   justifyContent: 'center',
 }));
@@ -123,9 +107,7 @@ export default function OurBeliefs() {
   ];
   return (
     <div>
-      <HeaderGrid container>
-        <Headers>Our Beliefs</Headers>
-      </HeaderGrid>
+      <Header text={'Our Beliefs'} />
 
       <LiveGrid container>
         {allBeliefs.map(belief => (

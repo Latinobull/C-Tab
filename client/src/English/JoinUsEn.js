@@ -10,37 +10,31 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useEffect, useState } from 'react';
+import Header from '../components/Header';
 const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
   backgroundColor: theme.secondary.main,
-  margin: '50px 0',
+  padding: '50px 0',
 }));
 const VirtualGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
   backgroundColor: theme.secondary.main,
   paddingBottom: 100,
 }));
-const Headers = styled(Typography)(({ theme }) => ({
-  fontWeight: 600,
-  textAlign: 'center',
-  padding: '70px 0px',
-  fontSize: '80px',
-  color: theme.secondary.main,
-  backgroundColor: theme.primary.main,
-}));
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 300,
   textAlign: 'center',
   fontSize: '25px',
-  lineHeight: '60px',
   color: theme.primary.main,
+  paddingBottom: '50px',
 }));
 const BoldText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   textAlign: 'center',
-  fontSize: '23px',
-  lineHeight: '60px',
+  fontSize: '30px',
+  lineHeight: '65px',
   color: theme.primary.main,
+  paddingBottom: 40,
 }));
 const MyButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.accent.main,
@@ -82,8 +76,13 @@ export default function JoinUsEn() {
   }, [setMap]);
   return (
     <div>
-      <Headers>Live Services</Headers>
+      <Header text={'LiveServices'}></Header>
       <LiveGrid container direction="column">
+        <Text style={{ fontSize: '50px', letterSpacing: '1px' }}>
+          Join us at our temple in Brooklyn
+          <br />
+          For live worship services and to hear a message from God.
+        </Text>
         <Grid container direction="row">
           <Grid item md={7}>
             <MyMap
@@ -91,38 +90,37 @@ export default function JoinUsEn() {
               referrerpolicy="no-referrer-when-downgrade"
               src={map}
               sx={{
-                width: { sm: '200px', md: '1000px' },
+                width: { sm: '200px', md: '900px' },
                 height: { sm: '200px', md: '500px' },
               }}
             />
           </Grid>
           <Grid item md={5}>
-            <Text style={{ fontSize: '60px', letterSpacing: '1px' }}>
-              <br />
-              Join us at our temple in Brooklyn <br />
-              <br />
-              For live worship services and to hear a message from God.
-            </Text>
+            <Grid container direction="column">
+              <Grid>
+                <BoldText variant="h6">
+                  Wednesdays at 8pm: <br />
+                  Prayer and Worship
+                </BoldText>
+              </Grid>
+              <Grid>
+                <BoldText variant="h6">
+                  Fridays at 8pm: <br />
+                  Kids and Teen alternating services
+                </BoldText>
+              </Grid>
+              <Grid>
+                <BoldText variant="h6">
+                  Sundays at 7pm:
+                  <br /> Evangelical Services
+                </BoldText>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </LiveGrid>
-      <Grid container direction="row">
-        <Grid item md={4}>
-          <BoldText variant="h6">
-            Wednesdays at 8pm: Prayer and Worship
-          </BoldText>
-        </Grid>
-        <Grid item md={4}>
-          <BoldText variant="h6">
-            Fridays at 8pm: Kids and Teen alternating services
-          </BoldText>
-        </Grid>
-        <Grid item md={4}>
-          <BoldText variant="h6">Sundays at 7pm: Evangelical Services</BoldText>
-        </Grid>
-      </Grid>
 
-      <Headers>Virtual Service</Headers>
+      <Header text={'Virtual Service'}></Header>
       <VirtualGrid
         container
         direction="column"
@@ -155,7 +153,7 @@ export default function JoinUsEn() {
       </VirtualGrid>
 
       <FAQGrid>
-        <Headers>FAQ</Headers>
+        <Header text={'FAQ'}></Header>
         {faqContent.map(content => (
           <Grid container justifyContent="center">
             <MyAccordian>

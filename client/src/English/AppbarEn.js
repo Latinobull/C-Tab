@@ -10,7 +10,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from '@mui/material';
 import { IconFlagES } from 'material-ui-flags';
-import churchLogo from '../img/churchLogo.png';
+import churchLogo from '../img/ChurchLogo2.png';
 
 const mobilePages = [
   'Our Beliefs',
@@ -32,14 +32,14 @@ const MyAppBar = styled(AppBar)(({ theme }) => ({
 }));
 const AppBarHeader = styled('img')(({ theme }) => ({
   color: theme.primary.main,
-  width: '450px',
+  width: '300px',
   marginLeft: '150px',
-  height: '450px',
+  height: '300px',
 }));
 const AppBarHeaderMobile = styled('img')(({ theme }) => ({
   color: theme.primary.main,
-  width: '350px',
-  height: '350px',
+  width: '300px',
+  height: '300px',
 }));
 const AppbarContent = styled(Link)(({ theme }) => ({
   color: theme.primary.main,

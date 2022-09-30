@@ -1,14 +1,18 @@
 import React from 'react';
 import { Grid, styled, Typography } from '@mui/material';
-import headImg from '../../img/headShot.jpg';
+import headImg from '../img/headShot.jpg';
 import LeadersEn from './LeadersEn';
+import Header from '../components/Header';
 const MainGrid = styled(Grid)`
-  padding-bottom: 120px;
+  padding: 120px 0px;
+  background-color: white;
 `;
-const Headers = styled(Typography)(({ theme }) => ({
+const SubHeaders = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   fontWeight: '600',
   fontSize: '50px',
+  color: theme.primary.main,
+  padding: '80px 0',
 }));
 
 const Text = styled(Typography)(({ theme }) => ({
@@ -17,6 +21,7 @@ const Text = styled(Typography)(({ theme }) => ({
   fontSize: '30px',
   maxWidth: '1000px',
   paddingBottom: '30px',
+  color: theme.primary.main,
 }));
 const LeaderImg = styled('img')`
   padding-bottom: 25px;
@@ -39,7 +44,7 @@ const pastors = [
 export default function PastorsEn() {
   return (
     <div>
-      <Headers>Meet the Pastors </Headers>
+      <Header text={'Meet the Pastors'}></Header>
 
       <MainGrid container>
         {pastors.map(pastor => (
@@ -51,7 +56,7 @@ export default function PastorsEn() {
                 height: { xs: '400px', md: '500px' },
               }}
             ></LeaderImg>
-            <Headers>{pastor.header}</Headers>
+            <SubHeaders>{pastor.header}</SubHeaders>
             <Text variant="h6">{pastor.content}</Text>
           </Grid>
         ))}

@@ -1,13 +1,7 @@
 import { Grid, Link, styled, Typography } from '@mui/material';
 import React from 'react';
-import ministryStockImg from '../../img/ministryStockImg.jpg';
-
-const Headers = styled(Typography)(({ theme }) => ({
-  fontWeight: 600,
-  textAlign: 'center',
-  margin: '30px 0px 10px 0px',
-  fontSize: '50px',
-}));
+import ministryStockImg from '../img/ministryStockImg.jpg';
+import Header from '../components/Header';
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 300,
   textAlign: 'center',
@@ -36,7 +30,7 @@ export default function Ministry_En() {
   console.log(ministryStockImg);
   return (
     <div>
-      <Headers>Ministries</Headers>
+      <Header text={'Ministries'}></Header>
       <Text>
         Therefore, since through God’s mercy we have this ministry, we do not
         lose heart. 2 Cor. 4:1

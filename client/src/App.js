@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Appbar from './components/AppbarEn';
-import MainEn from './components/English/MainEn';
-import MainSp from './components/Spanish/Main_Sp';
-import Footer from './components/Footer';
-import LeadersEn from './components/English/LeadersEn';
-import MinistryEn from './components/English/MinistryEn';
-import FounderEn from './components/English/FounderEn';
-import AppbarSp from './components/AppbarSp';
-import FooterSp from './components/FooterSp';
-import PastorsEn from './components/English/PastorsEn';
-import JoinUsEn from './components/English/JoinUsEn';
-import ClassesEn from './components/English/ClassesEn';
+import Appbar from './English/AppbarEn';
+import MainEn from './English/MainEn';
+import MainSp from './Spanish/Main_Sp';
+import Footer from './English/Footer';
+import LeadersEn from './English/LeadersEn';
+import MinistryEn from './English/MinistryEn';
+import FounderEn from './English/FounderEn';
+import AppbarSp from './Spanish/AppbarSp';
+import FooterSp from './Spanish/FooterSp';
+import PastorsEn from './English/PastorsEn';
+import JoinUsEn from './English/JoinUsEn';
+import ClassesEn from './English/ClassesEn';
 import { createTheme, ThemeProvider } from '@mui/material';
-import OurBeliefs from './components/English/OurBeliefs';
+import OurBeliefs from './English/OurBeliefs';
 let location = window.location.href.split('/');
 
 const theme = createTheme({

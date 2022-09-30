@@ -8,7 +8,8 @@ import {
   Typography,
 } from '@mui/material';
 import React, { useState } from 'react';
-import headImg from '../../img/headShot.jpg';
+import headImg from '../img/headShot.jpg';
+import Header from '../components/Header';
 const DeaconText = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   maxWidth: '400px',
@@ -90,21 +91,11 @@ export default function Leaders_En() {
         container
         direction={'column'}
         sx={{
-          backgroundColor: theme => theme.secondary.main,
           marginBottom: '30px',
         }}
         justifyContent="space-evenly"
       >
-        <Typography
-          variant="h3"
-          align="center"
-          style={{
-            padding: '100px 0px',
-            fontWeight: 400,
-          }}
-        >
-          Meet Our {team}
-        </Typography>
+        <Header text={`Meet Our ${team}`}></Header>
         <FormControl variant="filled" sx={{ m: 2, width: '300px' }}>
           <InputLabel
             sx={{

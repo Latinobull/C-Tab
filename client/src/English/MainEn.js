@@ -3,9 +3,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import React from 'react';
-import churchImg from '../../img/churchBuilding.jpg';
+import churchImg from '../img/churchBuilding.jpg';
 import OptionEn from './OptionsEn';
-import backgroundImg from '../../videos/MainVideo.mp4';
+import backgroundImg from '../videos/MainVideo.mp4';
 
 const MainGrid = styled(Grid)(({ theme }) => ({
   height: '800px',

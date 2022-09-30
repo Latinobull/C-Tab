@@ -1,17 +1,12 @@
 import { Grid, styled, Typography } from '@mui/material';
-import laptopImg from '../../img/laptop.jpg';
+import laptopImg from '../img/laptop.jpg';
 import React from 'react';
+import Header from '../components/Header';
 const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
   backgroundColor: theme.accent.main,
   alignItems: 'center',
   padding: '70px 0px',
-}));
-const Headers = styled(Typography)(({ theme }) => ({
-  fontWeight: 600,
-  textAlign: 'center',
-  margin: '30px 0px',
-  fontSize: '50px',
 }));
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 300,
@@ -29,7 +24,7 @@ const Img = styled('img')({});
 export default function ClassesEn() {
   return (
     <div>
-      <Headers>Bible Studies (Virtual)</Headers>
+      <Header text={'Bible Studies (Virtual)'}></Header>
       <Text>
         All our Bible studies are currently ran on zoom until further notice
       </Text>
