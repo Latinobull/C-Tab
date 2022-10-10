@@ -76,7 +76,7 @@ export default function JoinUsEn() {
   }, [setMap]);
   return (
     <div>
-      <Header text={'LiveServices'}></Header>
+      <Header text={'Live Services'}></Header>
       <LiveGrid container direction="column">
         <Text style={{ fontSize: '50px', letterSpacing: '1px' }}>
           Join us at our temple in Brooklyn

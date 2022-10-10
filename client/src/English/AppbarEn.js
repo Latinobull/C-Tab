@@ -32,7 +32,7 @@ const MyAppBar = styled(AppBar)(({ theme }) => ({
 }));
 const AppBarHeader = styled('img')(({ theme }) => ({
   color: theme.primary.main,
-  width: '300px',
+  width: '250px',
   marginLeft: '150px',
   height: '300px',
 }));
