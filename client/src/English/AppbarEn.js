@@ -9,7 +9,6 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from '@mui/material';
-import { IconFlagES } from 'material-ui-flags';
 import churchLogo from '../img/ChurchLogo2.png';
 
 const mobilePages = [
@@ -230,9 +229,7 @@ export default function Appbar() {
                 <AppbarContent href={`/en/${page}`}>{page}</AppbarContent>
               </Typography>
             ))}
-            <IconButton href="/sp">
-              <IconFlagES />
-            </IconButton>
+            <IconButton href="/sp"> Flag</IconButton>
           </Box>
         </Toolbar>
       </MyAppBar>
