@@ -1,14 +1,22 @@
-import { styled, Typography } from '@mui/material';
+import { styled, Typography, Grid } from '@mui/material';
 import React from 'react';
 
+const MyGrid = styled(Grid)(({ theme }) => ({
+  backgroundColor: theme.primary.main,
+  alignContent: 'center',
+  justifyContent: 'center',
+  height: '550px',
+}));
 const MyHeader = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
   textAlign: 'center',
-  padding: '70px 0px',
-  fontSize: '80px',
+  fontSize: '150px',
   color: theme.secondary.main,
-  backgroundColor: theme.primary.main,
 }));
 export default function Header({ text }) {
-  return <MyHeader>{text}</MyHeader>;
+  return (
+    <MyGrid container>
+      <MyHeader>{text}</MyHeader>
+    </MyGrid>
+  );
 }
