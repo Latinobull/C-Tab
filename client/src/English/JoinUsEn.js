@@ -64,14 +64,6 @@ const LightButton = styled(Button)(({ theme }) => ({
   borderRadius: '10px',
   marginTop: '30px',
 }));
-const MyButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.accent.main,
-  color: 'black',
-  borderRadius: '1px',
-  width: '180px',
-  height: '60px',
-  textAlign: 'center',
-}));
 const ZoomClass = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   backgroundImage: `url(${churchBuilding})`,
@@ -95,15 +87,26 @@ const ZoomTextBold = styled(Typography)(({ theme }) => ({
   fontWeight: 800,
 }));
 const FAQGrid = styled(Grid)(({ theme }) => ({
-  margin: '100px 0px',
+  margin: '200px 0px',
+  backgroundColor: theme.primary.main,
+  padding: '200px',
+}));
+const FAQText = styled(Typography)(({ theme }) => ({
+  fontWeight: 400,
+  textAlign: 'center',
+  fontSize: '30px',
+  color: theme.secondary.main,
+  paddingBottom: 40,
+  margin: 'auto',
 }));
 const MyAccordian = styled(Accordion)(({ theme }) => ({
   width: '800px',
+  boxShadow: 'none',
 }));
 
 const faqContent = [
   {
-    title: 'What should I wear',
+    title: 'What should I do when I arrive',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
@@ -111,7 +114,7 @@ const faqContent = [
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
-    title: 'What should I wear',
+    title: 'What about my kids',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
 ];
@@ -307,15 +310,28 @@ export default function JoinUsEn() {
         </ZoomClass>
       </Box>
       <FAQGrid>
-        <Header text={'FAQ'}></Header>
+        <Text
+          sx={{
+            color: theme => theme.secondary.main,
+            fontSize: '120px',
+          }}
+        >
+          What to expect
+        </Text>
         {faqContent.map(content => (
           <Grid container justifyContent="center">
             <MyAccordian>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <BoldText>{content.title}</BoldText>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
+                sx={{
+                  backgroundColor: theme => theme.primary.main,
+                  textAlign: 'center',
+                }}
+              >
+                <FAQText variant="h6">{content.title}</FAQText>
               </AccordionSummary>
               <AccordionDetails>
-                <Text>{content.desc}</Text>
+                <Text variant="h6">{content.desc}</Text>
               </AccordionDetails>
             </MyAccordian>
           </Grid>
