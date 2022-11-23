@@ -16,6 +16,17 @@ const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-around',
   padding: '130px 0',
 }));
+
+const ServiceTextBold = styled(Typography)(({ theme }) => ({
+  fontWeight: 800,
+  fontSize: '40px',
+  color: theme.primary.main,
+}));
+const ServiceText = styled(Typography)(({ theme }) => ({
+  fontWeight: 400,
+  fontSize: '18px',
+  color: theme.primary.main,
+}));
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 300,
   textAlign: 'center',
@@ -28,7 +39,6 @@ const BoldText = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   fontSize: '30px',
   color: theme.primary.main,
-  paddingBottom: 40,
 }));
 const Headline = styled(Typography)(({ theme }) => ({
   backgroundColor: theme.primary.main,
@@ -90,11 +100,17 @@ const FAQGrid = styled(Grid)(({ theme }) => ({
   margin: '200px 0px',
   backgroundColor: theme.primary.main,
   padding: '200px',
+  maxWidth: '88%',
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: '200px auto',
+  padding: '100px',
+  borderRadius: '40px',
 }));
 const FAQText = styled(Typography)(({ theme }) => ({
-  fontWeight: 400,
+  fontWeight: 600,
   textAlign: 'center',
-  fontSize: '30px',
+  fontSize: '45px',
   color: theme.secondary.main,
   paddingBottom: 40,
   margin: 'auto',
@@ -117,6 +133,10 @@ const faqContent = [
     title: 'What about my kids',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
+  {
+    title: 'What do we believe in',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
 ];
 export default function JoinUsEn() {
   const [map, setMap] = useState('');
@@ -128,27 +148,36 @@ export default function JoinUsEn() {
   return (
     <div>
       <Header text={'Welcome Home'} />
-      <LiveGrid container direction="row" justifyContent={'space-between'}>
+      <LiveGrid
+        container
+        direction="row"
+        justifyContent={'space-between'}
+        alignItems={'center'}
+      >
         <Grid item>
           <Grid container direction="column">
+            <BoldText sx={{ fontSize: '120px' }}>Live Services</BoldText>
             <Grid>
-              <BoldText sx={{ fontSize: 100 }}>Live Services</BoldText>
-              <BoldText variant="h6">
-                Wednesdays at 8pm: <br />
-                Prayer and Worship
-              </BoldText>
+              <Grid container justifyContent={'space-between'}>
+                <ServiceTextBold variant="h6">Sundays </ServiceTextBold>
+                <ServiceTextBold variant="h6">7:00pm</ServiceTextBold>
+              </Grid>
+              <ServiceText variant="h6">Worship Serivce</ServiceText>
+            </Grid>
+
+            <Grid>
+              <Grid container justifyContent={'space-between'}>
+                <ServiceTextBold variant="h6">Wednesday </ServiceTextBold>
+                <ServiceTextBold variant="h6">8:00pm</ServiceTextBold>
+              </Grid>
+              <ServiceText variant="h6">Prayer Serivce</ServiceText>
             </Grid>
             <Grid>
-              <BoldText variant="h4">
-                Fridays at 8pm: <br />
-                Kids and Teen alternating services
-              </BoldText>
-            </Grid>
-            <Grid>
-              <BoldText variant="h6">
-                Sundays at 7pm:
-                <br /> Evangelical Services
-              </BoldText>
+              <Grid container justifyContent={'space-between'}>
+                <ServiceTextBold variant="h6">Friday </ServiceTextBold>
+                <ServiceTextBold variant="h6">8:00pm</ServiceTextBold>
+              </Grid>
+              <ServiceText variant="h6">Youth/Kids Service</ServiceText>
             </Grid>
           </Grid>
         </Grid>
