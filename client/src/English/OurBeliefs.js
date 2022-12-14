@@ -1,65 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Typography,
-  Paper,
-  Box,
-  MobileStepper,
-  Button,
   styled,
   Grid,
   Accordion,
   AccordionSummary,
-  AccordionActions,
   AccordionDetails,
 } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import BibleImg from '../img/bible.jpg';
 import Header from '../components/Header';
 
-const images = [
-  {
-    label: 'God',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-    text: 'Our Beliefs on God',
-  },
-  {
-    label: 'Holy Spirit',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-    text: 'Our Beliefs on Holy Spirit',
-  },
-  {
-    label: 'Trinity',
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
-    text: 'Our Beliefs on Trinity',
-  },
-  {
-    label: 'The Bible',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-    text: 'Our Beliefs on The Bible',
-  },
-];
 const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
   alignItems: 'center',
   margin: '100px 0',
 }));
-const Text = styled(Typography)(({ theme }) => ({
-  fontWeight: 400,
-  textAlign: 'center',
-  fontSize: '25px',
-}));
-const BeliefText = styled(Typography)(({ theme }) => ({
-  fontWeight: 400,
-  fontSize: 30,
-}));
 const AccSummary = styled(AccordionSummary)(({ theme }) => ({
-  height: '200px',
+  height: '60vh',
   width: '90vw',
   backgroundSize: 'cover',
   color: 'white',

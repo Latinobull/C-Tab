@@ -6,7 +6,7 @@ import React from 'react';
 import churchImg from '../img/churchBuilding.jpg';
 import OptionEn from './OptionsEn';
 import backgroundImg from '../videos/MainVideo.mp4';
-
+import Carousel from './Carousel';
 const MainGrid = styled(Grid)(({ theme }) => ({
   height: '800px',
   textAlign: 'center',
@@ -109,6 +109,7 @@ export default function Main_En() {
           </MissionText>
         </Grid>
       </MissionGrid>
+      <Carousel />
       <OptionEn />
       <MyQuote container>
         <QuoteText variant="h5">
