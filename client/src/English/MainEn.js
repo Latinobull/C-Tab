@@ -45,6 +45,7 @@ const MissionText = styled(Typography)(({ theme }) => ({
   fontSize: '30px',
   textAlign: 'center',
   color: theme.primary.main,
+  fontWeight: '800',
 }));
 const MyQuote = styled(Grid)(({ theme }) => ({
   backgroundImage: `url(${churchImg})`,
