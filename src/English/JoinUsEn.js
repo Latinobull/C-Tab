@@ -141,10 +141,20 @@ const faqContent = [
 export default function JoinUsEn() {
   const [map, setMap] = useState('');
   useEffect(() => {
-    fetch('api/fetch')
-      .then(response => response.json())
-      .then(response => setMap(response));
-  }, [setMap]);
+    fetch(
+      `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_KEY}&q=616+Jamaica+Ave,+Brooklyn,+NY+11208`
+    )
+      .then(response => {
+        console.log(response);
+        return response.json();
+      })
+      .then(response => {
+        console.log('hello');
+        console.log(response);
+        setMap(response);
+      });
+  }, []);
+  console.log(map);
   return (
     <div>
       <Header text={'Welcome Home'} />
@@ -188,11 +198,15 @@ export default function JoinUsEn() {
       <Headline variant="h6">
         We're located at 616 Jamaica Ave. Brooklyn NY 11208{' '}
       </Headline>
-      <MyMap
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src={map}
-      />
+
+      {map && (
+        <MyMap
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src={map}
+        />
+      )}
+
       <UnableGrid container direction={'column'}>
         <Typography sx={{ fontSize: '100px', textAlign: 'center' }}>
           Unable to make it in person?
@@ -347,8 +361,8 @@ export default function JoinUsEn() {
         >
           What to expect
         </Text>
-        {faqContent.map(content => (
-          <Grid container justifyContent="center">
+        {faqContent.map((content, idx) => (
+          <Grid container justifyContent="center" key={idx}>
             <MyAccordian>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}

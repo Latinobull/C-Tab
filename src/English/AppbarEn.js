@@ -20,20 +20,19 @@ const mobilePages = [
   'Ministries',
   'Pastors',
 ];
-const pages = ['Ministries', 'Leaders'];
-const aboutDrop = ['Our Beliefs', 'Our Founder', 'Our Team'];
+const pages = ['HOME', 'MINISTRIES', 'BELIEFS', 'LEADERS', 'JOIN US'];
 const joinDrop = ['Our Services', 'Our Bible Studies'];
 const MyAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.secondary.main,
   boxSizing: 'border-box',
-  maxHeight: '300px',
+  maxHeight: '200px',
   padding: '10px 0px',
 }));
 const AppBarHeader = styled('img')(({ theme }) => ({
   color: theme.primary.main,
-  width: '250px',
+  width: '125px',
   marginLeft: '150px',
-  height: '300px',
+  height: '150px',
 }));
 const AppBarHeaderMobile = styled('img')(({ theme }) => ({
   color: theme.primary.main,
@@ -57,9 +56,7 @@ const MyIconButton = styled(IconButton)(({ theme }) => ({
   color: theme.primary.main,
 }));
 export default function Appbar() {
-  // const classes = useStyles();
   const [anchorElHome, setAnchorElHome] = useState(null);
-  const [aboutAnchor, setAboutAnchor] = useState(null);
   const [joinAnchor, setJoinAnchor] = useState(null);
 
   const handleOpenHome = event => {
@@ -152,58 +149,10 @@ export default function Appbar() {
           <Box
             sx={{
               display: { xs: 'none', md: 'inherit' },
-              marginRight: '220px',
+              marginRight: '100px',
             }}
           >
             <Box>
-              <Typography key={'About'} variant="h6">
-                <AppbarContent
-                  aria-owns={aboutAnchor ? 'simple-menu' : null}
-                  aria-haspopup="true"
-                  onMouseOver={handleOpenAbout}
-                  onClick={handleOpenAbout}
-                >
-                  {'About'}
-                </AppbarContent>
-              </Typography>
-              <Menu
-                id="menu-appbar2"
-                anchorEl={aboutAnchor}
-                open={Boolean(aboutAnchor)}
-                onClose={handleCloseAbout}
-                MenuListProps={{
-                  onMouseLeave: handleCloseAbout,
-                }}
-                disableScrollLock={true}
-              >
-                {aboutDrop.map(about => (
-                  <NavContent
-                    key={about}
-                    underline="none"
-                    href={`/en/${about.replace(/\s/g, '')}`}
-                  >
-                    <MenuItem
-                      onClick={handleCloseAbout}
-                      href={'/en'}
-                      dense={true}
-                    >
-                      <Typography textAlign="center">{about}</Typography>
-                    </MenuItem>
-                  </NavContent>
-                ))}
-              </Menu>
-            </Box>
-            <Box>
-              <Typography key={'Join'} variant="h6">
-                <AppbarContent
-                  aria-owns={joinAnchor ? 'simple-menu' : null}
-                  aria-haspopup="true"
-                  onMouseOver={handleOpenJoin}
-                  onClick={handleOpenJoin}
-                >
-                  {'Join Us'}
-                </AppbarContent>
-              </Typography>
               <Menu
                 id="menu-appbar3"
                 anchorEl={joinAnchor}
@@ -226,7 +175,11 @@ export default function Appbar() {
             </Box>
             {pages.map(page => (
               <Typography key={page} variant="h6">
-                <AppbarContent href={`/en/${page}`}>{page}</AppbarContent>
+                <AppbarContent
+                  href={page === 'HOME' ? '/en' : `/en/${page.toLowerCase()}`}
+                >
+                  {page}
+                </AppbarContent>
               </Typography>
             ))}
             <IconButton href="/sp"> Flag</IconButton>

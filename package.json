@@ -1,31 +1,31 @@
 {
   "name": "mern",
-  "version": "1.0.0",
-  "description": "Mern Demo",
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "cd server && node server.js",
-    "start:dev": "concurrently \"cd server && nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install --force && cd ../server && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "engines": {
-    "node": ">=16.0.0 < 17.0.0"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
-  },
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.2",
+    "@mui/material": "^5.8.4",
     "@mui/styles": "^5.8.4",
-    "express": "^4.16.3",
-    "if-env": "^1.0.4",
-    "react-router-dom": "^6.3.0"
-  }
+    "material-ui-flags": "^1.2.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "react-swipeable-views": "^0.14.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
