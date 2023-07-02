@@ -45,7 +45,7 @@ const MissionText = styled(Typography)(({ theme }) => ({
   fontSize: '30px',
   textAlign: 'center',
   color: theme.primary.main,
-  fontWeight: '800',
+  fontWeight: '400',
 }));
 const MyQuote = styled(Grid)(({ theme }) => ({
   backgroundImage: `url(${churchImg})`,
@@ -69,15 +69,24 @@ const QuoteText2 = styled(Typography)(({ theme }) => ({
   fontSize: '30px',
 }));
 const Headers = styled(Typography)(({ theme }) => ({
-  fontWeight: 700,
+  fontWeight: 400,
   textAlign: 'center',
   fontSize: '120px',
   color: theme.primary.main,
 }));
 const OpenText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
-  fontSize: '120px',
+  fontSize: '260px',
   color: theme.secondary.main,
+  letterSpacing: '2px',
+}));
+
+const MainContainer = styled(Grid)(({ theme }) => ({
+  height: '550px',
+  background: '#8B0000',
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center',
 }));
 export default function Main_En() {
   return (
@@ -87,30 +96,34 @@ export default function Main_En() {
       </MyVideo>
       <MainGrid container alignItems="center">
         <Grid item>
-          <OpenText>A house on fire</OpenText>
-          <MyButton
-            sx={{ width: '250px', height: '50px', fontSize: '20px' }}
-            href="/en/ourservices"
-          >
-            Join us
-          </MyButton>
+          <OpenText>A House On Fire</OpenText>
         </Grid>
       </MainGrid>
       <MissionGrid container direction="row" alignItems="center">
         <Grid item>
           <Headers>Our Mission</Headers>
           <MissionText variant="h6">
-            Here at Christian Tabernacle we believe that we are not just a
-            church but a home and a hospital for the broken. Everything we do is
-            guided by the power of the Holy Spirit and the love that Christ has
-            shown us. Christian Tabernacle was established in 1984 by our
-            founder Josefina De La Rosa. Her vision still stands true to this
-            day with her daughter and our pastor, Reverend Dr. Damaris Torres,
-            continuing the legacy.
+            We believe that we are not just a church but a home and a hospital
+            for the broken. Everything we do is guided by the power of the Holy
+            Spirit and the love that Christ has shown us. Christian Tabernaclue
+            was established in 1984 by our founder Josefina De La Rosa. Her
+            vision still stands true to this day with her daughter and out
+            pastor, Reverend Dr.Damaris Perez, continuing the legacy.
           </MissionText>
         </Grid>
       </MissionGrid>
-      <Carousel />
+      <MainContainer>
+        <h1>Worship With US</h1>
+        <h1>IMAGE GOES HERE</h1>
+        <div>
+          <h6>
+            We're here for you & we'd love to have you! Find out more about our
+            location, bible study & more
+          </h6>
+          <button>Click Here</button>
+        </div>
+      </MainContainer>
+      {/* <Carousel /> */}
       <OptionEn />
       <MyQuote container>
         <QuoteText variant="h5">

@@ -41,7 +41,7 @@ const AppBarHeaderMobile = styled('img')(({ theme }) => ({
 }));
 const AppbarContent = styled(Link)(({ theme }) => ({
   color: theme.primary.main,
-  marginRight: '30px',
+  marginRight: '70px',
   textDecoration: 'none',
   textAlign: 'center',
   fontWeight: 600,
@@ -66,16 +66,7 @@ export default function Appbar() {
   const handleCloseHome = () => {
     setAnchorElHome(null);
   };
-  const handleOpenAbout = event => {
-    setAboutAnchor(event.currentTarget);
-  };
-  const handleCloseAbout = e => {
-    setAboutAnchor(null);
-  };
 
-  const handleOpenJoin = event => {
-    setJoinAnchor(event.currentTarget);
-  };
   const handleCloseJoin = e => {
     setJoinAnchor(null);
   };
@@ -149,7 +140,7 @@ export default function Appbar() {
           <Box
             sx={{
               display: { xs: 'none', md: 'inherit' },
-              marginRight: '100px',
+              marginRight: '20px',
             }}
           >
             <Box>
@@ -182,7 +173,7 @@ export default function Appbar() {
                 </AppbarContent>
               </Typography>
             ))}
-            <IconButton href="/sp"> Flag</IconButton>
+            {/* <IconButton href="/sp"> Flag</IconButton> */}
           </Box>
         </Toolbar>
       </MyAppBar>
