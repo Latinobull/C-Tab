@@ -61,7 +61,7 @@ class App extends Component {
                   path="/en/ourbiblestudies"
                   element={<ClassesEn />}
                 />
-                <Route exact path="/en/OurBeliefs" element={<OurBeliefs />} />
+                <Route exact path="/en/beliefs" element={<OurBeliefs />} />
                 {/* Spanish Routes */}
                 <Route exact path="/sp" element={<MainSp />} />
               </Routes>

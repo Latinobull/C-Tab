@@ -7,186 +7,72 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from '@mui/material';
-import BibleImg from '../img/bible.jpg';
 import Header from '../components/Header';
+import Cross from '../img/TheCross.png';
 
-const LiveGrid = styled(Grid)(({ theme }) => ({
+const Belief = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-evenly',
-  alignItems: 'center',
-  margin: '100px 0',
+  padding: '100px 0px',
 }));
-const AccSummary = styled(AccordionSummary)(({ theme }) => ({
-  height: '60vh',
-  width: '90vw',
-  backgroundSize: 'cover',
-  color: 'white',
-  justifyContent: 'center',
+const BeliefContent = styled(Grid)(({ theme }) => ({
+  flexDirection: 'column',
+  alignContent: 'center',
+  width: '50%',
 }));
-const AccDetails = styled(AccordionDetails)(({ theme }) => ({
-  width: '88vw',
-  color: 'black',
-  justifyContent: 'center',
+const BeliefHeader = styled(Typography)(({ theme }) => ({
+  fontSize: '120px',
 }));
-const AccordionHeader = styled(Typography)(({ theme }) => ({
-  textAlign: 'center',
+const BeliefText = styled(Typography)(({ theme }) => ({
   width: '100%',
-  fontSize: '100px',
-}));
-const AccordionText = styled(Typography)(({ theme }) => ({
-  textAlign: 'center',
-  width: '100%',
-  fontSize: '40px',
+  fontSize: '44px',
 }));
 
 export default function OurBeliefs() {
   const allBeliefs = [
     {
-      img: BibleImg,
       title: 'God',
-      text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. ut',
+      text: 'He is our father, the great creator of the universe. This is where we wll include what we believe about him and add some bible verse to prove what we believe in him. These are just filler words.',
     },
     {
-      img: BibleImg,
       title: 'Jesus',
-      text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. ut',
+      text: 'He is our father, the great creator of the universe. This is where we wll include what we believe about him and add some bible verse to prove what we believe in him. These are just filler words.',
     },
     {
-      img: BibleImg,
-      title: 'Holy Spirit',
-      text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. ut',
+      title: ' the Holy Spirit',
+      text: 'He is our father, the great creator of the universe. This is where we wll include what we believe about him and add some bible verse to prove what we believe in him. These are just filler words.',
     },
     {
-      img: BibleImg,
-      title: 'Trinity',
-      text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. ut',
+      title: 'the Bible',
+      text: 'He is our father, the great creator of the universe. This is where we wll include what we believe about him and add some bible verse to prove what we believe in him. These are just filler words.',
+    },
+    {
+      title: 'Water Baptisms',
+      text: 'He is our father, the great creator of the universe. This is where we wll include what we believe about him and add some bible verse to prove what we believe in him. These are just filler words.',
     },
   ];
   return (
     <div>
-      <Header text={'Our Beliefs'} />
+      <Header text={'Our Beliefs'} image={Cross} />
 
-      <LiveGrid container>
-        {allBeliefs.map(belief => (
-          <Accordion style={{ marginBottom: '20px' }}>
-            <AccSummary sx={{ backgroundImage: `url(${belief.img})` }}>
-              <AccordionHeader>{belief.title}</AccordionHeader>
-            </AccSummary>
-            <AccDetails>
-              <AccordionText>{belief.text}</AccordionText>
-            </AccDetails>
-          </Accordion>
+      <Grid>
+        {allBeliefs.map((belief, idx) => (
+          <Belief
+            container
+            key={idx}
+            sx={{
+              color: theme => (idx % 2 === 0 ? theme.primary.main : 'white'),
+              backgroundColor: theme =>
+                idx % 2 === 0 ? 'white' : theme.primary.main,
+            }}
+          >
+            <BeliefHeader>{'0' + (idx + 1)}</BeliefHeader>
+            <BeliefContent container>
+              <BeliefHeader>About {belief.title}</BeliefHeader>
+              <BeliefText variant="h6">{belief.text}</BeliefText>
+            </BeliefContent>
+          </Belief>
         ))}
-      </LiveGrid>
+      </Grid>
     </div>
   );
 }
-
-// Incase we come back to this verison of our code
-/*   const theme = useTheme();
-  const [activeStep, setActiveStep] = useState(0);
-  const [beliefs, setBeliefs] = useState(images[0].text);
-  const maxSteps = images.length;
-  const handleNext = () => {
-    if (activeStep + 1 === maxSteps) {
-      setActiveStep(-1);
-      setBeliefs(images[0].text);
-    } else {
-      setBeliefs(images[activeStep + 1].text);
-    }
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    if (activeStep <= 0) {
-      setActiveStep(maxSteps);
-      setBeliefs(images[maxSteps - 1].text);
-    } else {
-      console.log('what up');
-      setBeliefs(images[activeStep - 1].text);
-    }
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
-  };
-
-  const handleStepChange = step => {
-    setActiveStep(step);
-    console.log('awdfkhASDkfgSDkhfSDhf');
-  };
-      <LiveGrid container>
-        <Box sx={{ maxWidth: 600, flexGrow: 1 }}>
-          <Paper
-            square
-            elevation={0}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              height: 50,
-              pl: 2,
-              bgcolor: 'background.default',
-            }}
-          >
-            <Text>Our Beliefs on...</Text>
-          </Paper>
-          <SwipeableViews
-            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-            index={activeStep}
-            onChangeIndex={handleStepChange}
-            enableMouseEvents
-          >
-            {images.map((step, index) => (
-              <Grid
-                key={step.label}
-                container
-                alignItems="center"
-                justifyContent="center"
-                sx={{
-                  height: 255,
-                  maxWidth: 600,
-                  overflow: 'hidden',
-                  width: '100%',
-                }}
-                src={step.imgPath}
-                alt={step.label}
-              >
-                {Math.abs(activeStep - index) <= 2 ? (
-                  <Typography style={{ fontSize: '50px' }}>
-                    {step.label}
-                  </Typography>
-                ) : null}
-              </Grid>
-            ))}
-          </SwipeableViews>
-          <MobileStepper
-            variant="dots"
-            steps={maxSteps}
-            position="static"
-            activeStep={activeStep}
-            nextButton={
-              <MyButton size="small" onClick={handleNext}>
-                Next
-                {theme.direction === 'rtl' ? (
-                  <KeyboardArrowLeft />
-                ) : (
-                  <KeyboardArrowRight />
-                )}
-              </MyButton>
-            }
-            backButton={
-              <MyButton size="small" onClick={handleBack}>
-                {theme.direction === 'rtl' ? (
-                  <KeyboardArrowRight />
-                ) : (
-                  <KeyboardArrowLeft />
-                )}
-                Back
-              </MyButton>
-            }
-            sx={{
-              '& .MuiMobileStepper-dotActive': {
-                backgroundColor: '#751E25',
-                borderRadius: '3px',
-              },
-            }}
-          />
-        </Box>
-        {beliefs && <BeliefText>{beliefs}</BeliefText>}
-      </LiveGrid>*/

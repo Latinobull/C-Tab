@@ -76,7 +76,7 @@ const Headers = styled(Typography)(({ theme }) => ({
 }));
 const OpenText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
-  fontSize: '260px',
+  fontSize: '180px',
   color: theme.secondary.main,
   letterSpacing: '2px',
 }));

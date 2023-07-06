@@ -13,9 +13,15 @@ const MyHeader = styled(Typography)(({ theme }) => ({
   fontSize: '150px',
   color: theme.secondary.main,
 }));
-export default function Header({ text }) {
+export default function Header({ text, image }) {
   return (
-    <MyGrid container>
+    <MyGrid
+      container
+      sx={{
+        backgroundImage: image ? `url(${image})` : '',
+        backgroundColor: image && 'black',
+      }}
+    >
       <MyHeader>{text}</MyHeader>
     </MyGrid>
   );
