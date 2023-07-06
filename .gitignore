@@ -3,3 +3,4 @@ package-lock.json
 instructions.md
 build
 .env
+.env.local
