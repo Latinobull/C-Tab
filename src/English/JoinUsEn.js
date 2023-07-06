@@ -139,22 +139,10 @@ const faqContent = [
   },
 ];
 export default function JoinUsEn() {
-  const [map, setMap] = useState('');
-  useEffect(() => {
-    fetch(
-      `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_KEY}&q=616+Jamaica+Ave,+Brooklyn,+NY+11208`
-    )
-      .then(response => {
-        console.log(response);
-        return response.json();
-      })
-      .then(response => {
-        console.log('hello');
-        console.log(response);
-        setMap(response);
-      });
-  }, []);
-  console.log(map);
+  const [map, setMap] = useState(
+    `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_KEY}&q=616+Jamaica+Ave,+Brooklyn,+NY+11208`
+  );
+
   return (
     <div>
       <Header text={'Welcome Home'} />
