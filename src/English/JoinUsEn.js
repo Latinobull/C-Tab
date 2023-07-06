@@ -15,6 +15,7 @@ import joinUsImage from '../img/JoinUsImage.png';
 import LiveServices from '../components/LiveServices';
 import PraiseHands from '../img/PraiseHands.png';
 import Classes from '../components/Classes';
+import Appbar from './AppbarEn';
 
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 300,
@@ -106,7 +107,7 @@ export default function JoinUsEn() {
         <LightButton>Click Here</LightButton>
       </UnableGrid>
       <Classes />
-     
+
       <FAQGrid>
         <Text
           sx={{

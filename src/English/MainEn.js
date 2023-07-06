@@ -7,6 +7,7 @@ import churchImg from '../img/churchBuilding.jpg';
 import OptionEn from './OptionsEn';
 import backgroundImg from '../videos/MainVideo.mp4';
 import Carousel from './Carousel';
+import Appbar from './AppbarEn';
 const MainGrid = styled(Grid)(({ theme }) => ({
   height: '800px',
   textAlign: 'center',

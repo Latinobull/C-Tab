@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,8 +8,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from '@mui/material';
+import { Link, Grid } from '@mui/material';
 import churchLogo from '../img/ChurchLogo2.png';
+import Header from '../components/Header';
+import { useRef } from 'react';
 
 const mobilePages = [
   'Our Beliefs',
@@ -22,25 +24,32 @@ const mobilePages = [
 ];
 const pages = ['HOME', 'MINISTRIES', 'BELIEFS', 'LEADERS', 'JOIN US'];
 const joinDrop = ['Our Services', 'Our Bible Studies'];
+
+const GlobalDiv = styled('div')``;
 const MyAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: theme.secondary.main,
+  backgroundColor: 'rgba(0,0,0,0)',
   boxSizing: 'border-box',
-  maxHeight: '200px',
   padding: '10px 0px',
+  position: 'fixed',
+  overflow: 'hidden',
+  transition: '.7s',
+  top: 0,
+  zIndex: 99,
+  boxShadow: '0 0 0 black',
 }));
 const AppBarHeader = styled('img')(({ theme }) => ({
-  color: theme.primary.main,
+  color: 'white',
   width: '125px',
   marginLeft: '150px',
   height: '150px',
 }));
 const AppBarHeaderMobile = styled('img')(({ theme }) => ({
-  color: theme.primary.main,
+  color: 'white',
   width: '300px',
   height: '300px',
 }));
 const AppbarContent = styled(Link)(({ theme }) => ({
-  color: theme.primary.main,
+  color: 'white',
   marginRight: '70px',
   textDecoration: 'none',
   textAlign: 'center',
@@ -53,12 +62,29 @@ const NavContent = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
 }));
 const MyIconButton = styled(IconButton)(({ theme }) => ({
-  color: theme.primary.main,
+  color: 'white',
 }));
-export default function Appbar() {
+export default function Appbar({ image, text }) {
   const [anchorElHome, setAnchorElHome] = useState(null);
   const [joinAnchor, setJoinAnchor] = useState(null);
-
+  const navbarRef = useRef(null);
+  const globalRef = useRef(null);
+  useEffect(() => {
+    window.addEventListener('scroll', scrollFunction);
+    return () => {
+      window.removeEventListener('scroll', scrollFunction);
+    };
+  }, []);
+  const scrollFunction = () => {
+    if (
+      document.body.scrollTop > 80 ||
+      document.documentElement.scrollTop > 80
+    ) {
+      navbarRef.current.style.height = '200px';
+    } else {
+      navbarRef.current.style.height = '700px';
+    }
+  };
   const handleOpenHome = event => {
     setAnchorElHome(event.currentTarget);
   };
@@ -71,8 +97,12 @@ export default function Appbar() {
     setJoinAnchor(null);
   };
   return (
-    <div>
-      <MyAppBar position="static">
+    <GlobalDiv ref={globalRef}>
+      <MyAppBar
+        position="static"
+        ref={navbarRef}
+        sx={{ height: { xs: 'auto', md: '700px' } }}
+      >
         <Toolbar>
           <Typography variant="h5" sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Link href="/en">
@@ -177,6 +207,8 @@ export default function Appbar() {
           </Box>
         </Toolbar>
       </MyAppBar>
-    </div>
+    </GlobalDiv>
   );
 }
+
+// Margin is crashing page
