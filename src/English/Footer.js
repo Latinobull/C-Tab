@@ -1,56 +1,54 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import { Link } from '@mui/material';
-import churchLogo from '../img/churchLogo.png';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { Twitter } from '@mui/icons-material';
+import { YouTube } from '@mui/icons-material';
 const MyFooter = styled('footer')(({ theme }) => ({
   marginTop: 'auto',
   backgroundColor: theme.secondary.main,
   padding: '50px',
 }));
-const FooterText = styled(Typography)(({ theme }) => ({
-  fontWeight: 400,
-  color: theme.primary.main,
+const FooterGrid = styled(Grid)(({ theme }) => ({
+  justifyContent: 'center',
 }));
 const FooterLink = styled(Link)(({ theme }) => ({
   color: theme.primary.main,
-}));
-const Logo = styled('img')(({ theme }) => ({
-  color: theme.primary.main,
-  width: '150px',
-  height: '100px',
+  textDecorationColor: theme.secondary.main,
+  marginLeft: '50px',
+  marginBottom: '30px',
 }));
 export default function Footer() {
+  const allLinks = [
+    'Home',
+    'Experience',
+    'News',
+    'About Us',
+    'Jobs',
+    'Contact',
+  ];
   return (
     <div>
       <MyFooter>
-        <Logo src={churchLogo} />
-        <Grid container justifyContent="space-between" textAlign="center">
-          <Grid item marginBottom="30px">
-            <FooterText variant="h5">CHRISTIAN TABERNACLE CHURCH</FooterText>
-            <FooterText variant="h6">
-              616 JAMAICA AVENUE
-              <br />
-              BROOKLYN,NY 11208
-              <br />
-              (555) 555-5555
-            </FooterText>
-          </Grid>
-          <Grid item lg={2} xs={12}>
-            <FooterText variant="h5">Follow Us</FooterText>
-
-            <FooterLink
-              href="https://www.facebook.com/christiantabernacle.church.7"
-              target="_blank"
-              underline="none"
-            >
-              <FacebookIcon />
+        <FooterGrid container>
+          {allLinks.map(link => (
+            <FooterLink href="#" variant="h6" key={link}>
+              {link}
             </FooterLink>
-            <FooterText>InsertEmail@gmail.com</FooterText>
-          </Grid>
-        </Grid>
+          ))}
+        </FooterGrid>
+        <FooterGrid container sx={{ color: theme => theme.primary.main }}>
+          <FooterLink href="#">
+            <FacebookIcon />
+          </FooterLink>
+          <FooterLink href="#">
+            <Twitter />
+          </FooterLink>
+          <FooterLink href="#">
+            <YouTube />
+          </FooterLink>
+        </FooterGrid>
       </MyFooter>
     </div>
   );
