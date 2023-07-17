@@ -34,8 +34,10 @@ const MyAppBar = styled(AppBar)(({ theme }) => ({
   overflow: 'hidden',
   transition: '.7s',
   top: 0,
-  zIndex: 99,
+  zIndex: 0,
   boxShadow: '0 0 0 black',
+  mixBlendMode: 'difference',
+  color: 'white',
 }));
 const AppBarHeader = styled('img')(({ theme }) => ({
   color: 'white',
@@ -56,6 +58,13 @@ const AppbarContent = styled(Link)(({ theme }) => ({
   fontWeight: 600,
   fontSize: '25px',
   boxSizing: 'border-box',
+  position: 'relative',
+  '&:after': {
+    content: '""',
+    position: 'absolute',
+    background: 'green',
+    mixBlendMode: 'difference',
+  },
 }));
 const NavContent = styled(Link)(({ theme }) => ({
   color: 'black',

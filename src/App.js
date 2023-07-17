@@ -45,27 +45,30 @@ class App extends Component {
       <div className="page-container">
         <ThemeProvider theme={theme}>
           <div className="content-wrap">
-            <Router>
-              {appbar}
-              <Routes>
-                {/* English Routes */}
+            <div className="background">
+              <Router>
+                {appbar}
 
-                <Route exact path="/en" element={<MainEn />} />
-                <Route exact path="/en/ourfounder" element={<FounderEn />} />
-                <Route exact path="/en/ourteam" element={<LeadersEn />} />
-                <Route exact path="/en/ministries" element={<MinistryEn />} />
-                <Route exact path="/en/leaders" element={<PastorsEn />} />
-                <Route exact path="/en/join us" element={<JoinUsEn />} />
-                <Route
-                  exact
-                  path="/en/ourbiblestudies"
-                  element={<ClassesEn />}
-                />
-                <Route exact path="/en/beliefs" element={<OurBeliefs />} />
-                {/* Spanish Routes */}
-                <Route exact path="/sp" element={<MainSp />} />
-              </Routes>
-            </Router>
+                <Routes>
+                  {/* English Routes */}
+
+                  <Route exact path="/en" element={<MainEn />} />
+                  <Route exact path="/en/ourfounder" element={<FounderEn />} />
+                  <Route exact path="/en/ourteam" element={<LeadersEn />} />
+                  <Route exact path="/en/ministries" element={<MinistryEn />} />
+                  <Route exact path="/en/leaders" element={<PastorsEn />} />
+                  <Route exact path="/en/join us" element={<JoinUsEn />} />
+                  <Route
+                    exact
+                    path="/en/ourbiblestudies"
+                    element={<ClassesEn />}
+                  />
+                  <Route exact path="/en/beliefs" element={<OurBeliefs />} />
+                  {/* Spanish Routes */}
+                  <Route exact path="/sp" element={<MainSp />} />
+                </Routes>
+              </Router>
+            </div>
           </div>
           {footer}
         </ThemeProvider>

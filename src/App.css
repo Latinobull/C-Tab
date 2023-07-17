@@ -39,3 +39,21 @@ body {
 .content-wrap {
   flex: 1;
 }
+
+.background::before,
+.background::after {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.background::before {
+  z-index: 1;
+}
+.background::after {
+
+  z-index: -1;
+}
