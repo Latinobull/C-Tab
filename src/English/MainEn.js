@@ -6,8 +6,12 @@ import React from 'react';
 import churchImg from '../img/churchBuilding.jpg';
 import OptionEn from './OptionsEn';
 import backgroundImg from '../videos/MainVideo.mp4';
-import Carousel from './Carousel';
-import Appbar from './AppbarEn';
+import churchSVG from '../img/svg/church.svg';
+import crossSVG from '../img/svg/cross.svg';
+import geoSVG from '../img/svg/geo.svg';
+import handSVG from '../img/svg/hand.svg';
+import video2 from '../videos/video2.png';
+import { Link } from 'react-router-dom';
 const MainGrid = styled(Grid)(({ theme }) => ({
   height: '800px',
   textAlign: 'center',
@@ -19,6 +23,7 @@ const MyVideo = styled('video')`
   object-fit: cover;
   min-width: 100%;
   max-height: 980px;
+  filter: brightness(75%);
 `;
 const MyButton = styled(Button)(({ theme }) => ({
   backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -40,18 +45,19 @@ const MissionGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'center',
   fontSize: '50px',
   padding: '160px 0px',
+  height: '1000px',
 }));
 const MissionText = styled(Typography)(({ theme }) => ({
-  maxWidth: '1300px',
-  fontSize: '30px',
+  maxWidth: '1500px',
+  fontSize: '45px',
   textAlign: 'center',
   color: theme.primary.main,
   fontWeight: '400',
 }));
 const MyQuote = styled(Grid)(({ theme }) => ({
-  backgroundImage: `url(${churchImg})`,
+  backgroundImage: `url(${churchImg}) `,
   maxWidth: '99vw',
-  minHeight: '70vh',
+  height: '660px',
   backgroundSize: 'cover',
   alignItems: 'center',
   justifyContent: 'center',
@@ -72,7 +78,7 @@ const QuoteText2 = styled(Typography)(({ theme }) => ({
 const Headers = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
   textAlign: 'center',
-  fontSize: '120px',
+  fontSize: '180px',
   color: theme.primary.main,
 }));
 const OpenText = styled(Typography)(({ theme }) => ({
@@ -82,12 +88,31 @@ const OpenText = styled(Typography)(({ theme }) => ({
   letterSpacing: '2px',
 }));
 
-const MainContainer = styled(Grid)(({ theme }) => ({
-  height: '550px',
-  background: '#8B0000',
+const InvitedContainer = styled(Grid)(({ theme }) => ({
+  height: '1000px',
+  background: theme.secondary.main,
+  textAlign: 'center',
+  display: 'grid',
+  justifyContent: 'center',
+  alignContent: 'center',
+}));
+
+const InvitedHeader = styled(Typography)(({ theme }) => ({
+  color: theme.primary.main,
+  fontSize: '170px',
+}));
+const LinkContainer = styled(Grid)(({ theme }) => ({
   display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
+  justifyContent: 'space-between',
+}));
+const SecondLink = styled(Link)(({ theme }) => ({
+  color: theme.primary.main,
+  margin: '0px 40px',
+  fontSize: '40px',
+  textDecoration: 'none',
+  '&:hover': {
+    transform: 'scale(0.9)',
+  },
 }));
 export default function Main_En() {
   return (
@@ -100,32 +125,55 @@ export default function Main_En() {
           <OpenText>A House On Fire</OpenText>
         </Grid>
       </MainGrid>
+      <InvitedContainer>
+        <InvitedHeader>You're Invited!</InvitedHeader>
+
+        <LinkContainer>
+          <SecondLink href="">
+            <img src={geoSVG} alt="navigate" />
+            <p>JOIN US</p>
+          </SecondLink>
+          <SecondLink href="">
+            <img src={handSVG} alt="hands out" />
+            <p>MINISTRIES</p>
+          </SecondLink>
+          <SecondLink href="">
+            <img src={crossSVG} alt="beliefs" />
+            <p>BELIEFS</p>
+          </SecondLink>
+          <SecondLink href="">
+            <img src={churchSVG} alt="church" />
+            <p>LEADERS</p>
+          </SecondLink>
+        </LinkContainer>
+      </InvitedContainer>
+      {/* <Carousel /> */}
+      <div
+        style={{
+          backgroundImage: `url(${video2})`,
+          width: '100vw',
+          height: '630px',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'brightness(0.7)',
+        }}
+      ></div>
+      {/* <OptionEn /> */}
       <MissionGrid container direction="row" alignItems="center">
         <Grid item>
           <Headers>Our Mission</Headers>
           <MissionText variant="h6">
-            We believe that we are not just a church but a home and a hospital
-            for the broken. Everything we do is guided by the power of the Holy
-            Spirit and the love that Christ has shown us. Christian Tabernaclue
-            was established in 1984 by our founder Josefina De La Rosa. Her
-            vision still stands true to this day with her daughter and out
-            pastor, Reverend Dr.Damaris Perez, continuing the legacy.
+            We believe that we are not just a church but a <b>home</b> and a{' '}
+            <b>hospital</b> for the broken. Everything we do is guided by the
+            power of the <b>Holy Spirit</b> and the love that <b>Christ</b> has
+            shown us. Christian Tabernacle was established in <b>1984</b> by our
+            founder <b>Josefina De La Rosa</b>. Her vision still stands true to
+            this day with her daughter and our pastors,{' '}
+            <b>Pastor Damaris & Frank Perez</b>, continuing the legacy.
           </MissionText>
         </Grid>
       </MissionGrid>
-      <MainContainer>
-        <h1>Worship With US</h1>
-        <h1>IMAGE GOES HERE</h1>
-        <div>
-          <h6>
-            We're here for you & we'd love to have you! Find out more about our
-            location, bible study & more
-          </h6>
-          <button>Click Here</button>
-        </div>
-      </MainContainer>
-      {/* <Carousel /> */}
-      <OptionEn />
       <MyQuote container>
         <QuoteText variant="h5">
           “Then have them make a sanctuary for me, and I will dwell among them."

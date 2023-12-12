@@ -18,8 +18,8 @@ import OurBeliefs from './English/OurBeliefs';
 let location = window.location.href.split('/');
 
 const theme = createTheme({
-  primary: { main: '#8B0000', second: '#9E2832' },
-  secondary: { main: '#F4F2EC' },
+  primary: { main: '#B90000', second: '#9E2832' },
+  secondary: { main: '#FFFBF6' },
   accent: { main: '#E8E3D6', second: '#D6CDB5' },
   typography: {
     h6: { fontFamily: 'Poppins, sans-serif' },
