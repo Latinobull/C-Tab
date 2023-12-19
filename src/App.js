@@ -23,7 +23,7 @@ const theme = createTheme({
   accent: { main: '#E8E3D6', second: '#D6CDB5' },
   typography: {
     h6: { fontFamily: 'AirbnbCereal, sans-serif' },
-    fontFamily: 'QuincyCF, sans-serif',
+    fontFamily: 'FontSpring, sans-serif',
   },
 });
 class App extends Component {
