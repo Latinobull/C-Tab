@@ -4,6 +4,11 @@
   src: local(QuincyCF-RegularItalic),
     url('./utils/fonts/QuincyCF-RegularItalic.otf') format('truetype');
 }
+@font-face {
+  font-family: 'AirbnbCereal';
+  src: local(AirbnbCerealBook),
+    url('./utils/fonts/AirbnbCerealBook.ttf') format(truetype);
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body {
   margin: 0;
@@ -54,6 +59,18 @@ body {
   z-index: 1;
 }
 .background::after {
-
   z-index: -1;
+}
+
+.fadeIn {
+  animation: fadeIn 3s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

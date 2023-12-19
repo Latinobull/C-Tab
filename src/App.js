@@ -22,7 +22,7 @@ const theme = createTheme({
   secondary: { main: '#FFFBF6' },
   accent: { main: '#E8E3D6', second: '#D6CDB5' },
   typography: {
-    h6: { fontFamily: 'Poppins, sans-serif' },
+    h6: { fontFamily: 'AirbnbCereal, sans-serif' },
     fontFamily: 'QuincyCF, sans-serif',
   },
 });

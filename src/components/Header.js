@@ -5,7 +5,8 @@ const MyGrid = styled(Grid)(({ theme }) => ({
   backgroundColor: theme.primary.main,
   alignContent: 'center',
   justifyContent: 'center',
-  height: '800px',
+  height: '1000px',
+  backgroundSize: 'cover',
 }));
 const MyHeader = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
