@@ -102,7 +102,9 @@ export default function OurBeliefs() {
           >
             <BeliefHeader>
               {' '}
-              <b>{'0' + (idx + 1)}</b>
+              <Typography fontSize="120px" variant="h6" fontWeight="700">
+                {'0' + (idx + 1)}
+              </Typography>
             </BeliefHeader>
             <BeliefContent container>
               <BeliefHeader>About {belief.title}</BeliefHeader>

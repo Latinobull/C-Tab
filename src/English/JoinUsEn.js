@@ -12,19 +12,35 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import joinUsImage from '../img/JoinUsImage.png';
+import WorshipUsImage from '../img/WorshipImage.png';
 import LiveServices from '../components/LiveServices';
 import PraiseHands from '../img/PraiseHands.png';
-import Classes from '../components/Classes';
-import Appbar from './AppbarEn';
 
 const Text = styled(Typography)(({ theme }) => ({
-  fontWeight: 300,
-  textAlign: 'center',
-  fontSize: '25px',
+  fontWeight: 600,
   color: theme.primary.main,
-  paddingBottom: '50px',
 }));
 
+const WorhsipContainer = styled(Grid)(({ theme }) => ({
+  backgroundColor: theme.secondary.main,
+  width: '100%',
+  padding: '200px 40px',
+}));
+const WorshipHeader = styled(Typography)(({ theme }) => ({
+  fontSize: '150px',
+  color: theme.primary.main,
+  fontWeight: 700,
+}));
+const WorshipText = styled(Typography)(({ theme }) => ({
+  fontSize: '45px',
+  color: theme.primary.main,
+  fontWeight: 500,
+}));
+
+const WorshipImage = styled('img')(({ theme }) => ({
+  height: '640px',
+  width: '1000px',
+}));
 const UnableGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
@@ -35,6 +51,7 @@ const UnableGrid = styled(Grid)(({ theme }) => ({
   maxWidth: '100%',
   margin: '0 auto 0px',
   padding: '100px',
+  height: '700px',
 }));
 const LightButton = styled(Button)(({ theme }) => ({
   backgroundColor: 'white',
@@ -51,44 +68,41 @@ const LightButton = styled(Button)(({ theme }) => ({
 }));
 
 const FAQGrid = styled(Grid)(({ theme }) => ({
-  margin: '200px 0px',
-  backgroundColor: theme.primary.main,
-  padding: '200px',
-  maxWidth: '88%',
-  alignItems: 'center',
-  justifyContent: 'center',
-  margin: '200px auto',
-  padding: '100px',
-  borderRadius: '40px',
+  backgroundColor: theme.secondary.main,
+  alignItems: 'flex-start',
+  flexWrap: 'nowrap',
+  justifyContent: 'space-around',
+  padding: '200px 0',
 }));
 const FAQText = styled(Typography)(({ theme }) => ({
   fontWeight: 600,
   textAlign: 'center',
-  fontSize: '45px',
-  color: theme.secondary.main,
-  paddingBottom: 40,
+  fontSize: '64px',
+  color: theme.primary.main,
   margin: 'auto',
 }));
 const MyAccordian = styled(Accordion)(({ theme }) => ({
-  width: '800px',
+  width: '1200px',
   boxShadow: 'none',
+  borderBottom: `solid 2px ${theme.primary.main}`,
+  marginBottom: '0',
 }));
 
 const faqContent = [
   {
-    title: 'What should I do when I arrive',
+    title: 'Is there a place for my kids?',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
-    title: 'What should I wear',
+    title: 'Who will greet me?',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
-    title: 'What about my kids',
+    title: 'Are the services bilingual?',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
-    title: 'What do we believe in',
+    title: 'Are there a lot of young people?',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
 ];
@@ -96,46 +110,89 @@ export default function JoinUsEn() {
   return (
     <div>
       <Header text={'Welcome Home'} image={joinUsImage} />
+      <WorhsipContainer
+        container
+        justifyContent="space-evenly"
+        alignItems="center"
+        flexWrap="nowrap"
+      >
+        <div>
+          <WorshipHeader>Worship With Us</WorshipHeader>
+          <WorshipText variant="h6">
+            We welcome you & we'd love to have you!
+          </WorshipText>
+        </div>
+
+        <WorshipImage src={WorshipUsImage} alt="worship" />
+      </WorhsipContainer>
       <LiveServices />
+
+      {/* <Classes /> */}
+
+      <FAQGrid container>
+        <div>
+          <Text
+            sx={{
+              color: theme => theme.primary.main,
+              fontSize: '120px',
+            }}
+          >
+            FAQ
+          </Text>
+          <Text
+            sx={{
+              color: theme => theme.primary.main,
+              fontSize: '35px',
+            }}
+            variant="h6"
+          >
+            We have the answers!
+          </Text>
+        </div>
+        <div>
+          {faqContent.map((content, idx) => (
+            <Grid container justifyContent="center" key={idx}>
+              <MyAccordian>
+                <AccordionSummary
+                  expandIcon={
+                    <ExpandMoreIcon
+                      sx={{
+                        color: 'white',
+                        backgroundColor: 'black',
+                        borderRadius: '50px',
+                        fontSize: '50px',
+                      }}
+                    />
+                  }
+                  sx={{
+                    backgroundColor: theme => theme.secondary.main,
+                    textAlign: 'center',
+                    paddingBottom: '0',
+                  }}
+                >
+                  <FAQText sx={{ paddingTop: idx !== 0 ? '40px' : '0px' }}>
+                    {content.title}
+                  </FAQText>
+                </AccordionSummary>
+                <AccordionDetails
+                  sx={{ backgroundColor: theme => theme.secondary.main }}
+                >
+                  <Text variant="h6">{content.desc}</Text>
+                </AccordionDetails>
+              </MyAccordian>
+            </Grid>
+          ))}
+        </div>
+      </FAQGrid>
       <UnableGrid container direction={'column'}>
         <Typography sx={{ fontSize: '100px', textAlign: 'center' }}>
-          Unable to make it?
+          Can't make it?
         </Typography>
         <Typography sx={{ fontSize: '45px', textAlign: 'center' }} variant="h6">
           You can stil catch our Facebook Live!
         </Typography>
         <LightButton>Click Here</LightButton>
       </UnableGrid>
-      <Classes />
-
-      <FAQGrid>
-        <Text
-          sx={{
-            color: theme => theme.secondary.main,
-            fontSize: '120px',
-          }}
-        >
-          What to expect
-        </Text>
-        {faqContent.map((content, idx) => (
-          <Grid container justifyContent="center" key={idx}>
-            <MyAccordian>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
-                sx={{
-                  backgroundColor: theme => theme.primary.main,
-                  textAlign: 'center',
-                }}
-              >
-                <FAQText variant="h6">{content.title}</FAQText>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Text variant="h6">{content.desc}</Text>
-              </AccordionDetails>
-            </MyAccordian>
-          </Grid>
-        ))}
-      </FAQGrid>
     </div>
   );
 }

@@ -1,37 +1,46 @@
 import { Grid, Typography, styled } from '@mui/material';
+import ServiceHands from '../img/ServiceHands.png';
+
 const LiveGrid = styled(Grid)(({ theme }) => ({
   justifyContent: 'space-around',
   padding: '130px 0',
+  height: '600px',
+  backgroundSize: 'cover',
+  backgroundColor: theme.primary.main,
+  backgroundImage: `url(${ServiceHands})`,
+  // filter: 'brightness(90%)',
 }));
 
-const ServiceTextBold = styled(Typography)(({ theme }) => ({
-  fontWeight: 800,
-  fontSize: '40px',
-  color: theme.primary.main,
+const ServiceDay = styled(Typography)(({ theme }) => ({
+  fontWeight: 600,
+  fontSize: '110px',
+  color: theme.secondary.main,
+  textAlign: 'center',
 }));
 const ServiceText = styled(Typography)(({ theme }) => ({
   fontWeight: 400,
-  fontSize: '18px',
-  color: theme.primary.main,
-}));
-const BoldText = styled(Typography)(({ theme }) => ({
-  fontWeight: 400,
+  fontSize: '45px',
+  color: theme.secondary.main,
   textAlign: 'center',
-  fontSize: '30px',
-  color: theme.primary.main,
+}));
+const ServiceTime = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  textAlign: 'center',
+  fontSize: '60px',
+  color: theme.secondary.main,
 }));
 const Headline = styled(Typography)(({ theme }) => ({
-  backgroundColor: theme.primary.main,
+  backgroundColor: theme.secondary.main,
   padding: '20px 0',
   width: '100vw',
-  color: 'white',
+  color: theme.primary.main,
   textAlign: 'center',
-  fontSize: '35px',
+  fontSize: '90px',
   fontWeight: 600,
 }));
 const MyMap = styled('iframe')(({ theme }) => ({
   width: '99vw',
-  height: 500,
+  height: 800,
 }));
 export default function LiveServices() {
   const map = `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_KEY}&q=616+Jamaica+Ave,+Brooklyn,+NY+11208`;
@@ -41,40 +50,30 @@ export default function LiveServices() {
       <LiveGrid
         container
         direction="row"
-        justifyContent={'space-between'}
+        justifyContent={'space-evenly'}
         alignItems={'center'}
       >
-        <Grid item>
-          <Grid container direction="column">
-            <BoldText sx={{ fontSize: '120px' }}>Live Services</BoldText>
-            <Grid>
-              <Grid container justifyContent={'space-between'}>
-                <ServiceTextBold variant="h6">Sundays </ServiceTextBold>
-                <ServiceTextBold variant="h6">7:00pm</ServiceTextBold>
-              </Grid>
-              <ServiceText variant="h6">Worship Serivce</ServiceText>
-            </Grid>
-
-            <Grid>
-              <Grid container justifyContent={'space-between'}>
-                <ServiceTextBold variant="h6">Wednesday </ServiceTextBold>
-                <ServiceTextBold variant="h6">8:00pm</ServiceTextBold>
-              </Grid>
-              <ServiceText variant="h6">Prayer Serivce</ServiceText>
-            </Grid>
-            <Grid>
-              <Grid container justifyContent={'space-between'}>
-                <ServiceTextBold variant="h6">Friday </ServiceTextBold>
-                <ServiceTextBold variant="h6">8:00pm</ServiceTextBold>
-              </Grid>
-              <ServiceText variant="h6">Youth/Kids Service</ServiceText>
-            </Grid>
-          </Grid>
-        </Grid>
+        {/* <Grid item>
+          <Grid container direction="row"> */}
+        <div>
+          <ServiceDay>Wednesday</ServiceDay>
+          <ServiceText variant="h6">Prayer Service</ServiceText>
+          <ServiceTime variant="h6">8:00pm</ServiceTime>
+        </div>
+        <div>
+          <ServiceDay>Friday</ServiceDay>
+          <ServiceText variant="h6">Kids/Youth Service</ServiceText>
+          <ServiceTime variant="h6">8:00pm</ServiceTime>
+        </div>
+        <div>
+          <ServiceDay>Sunday</ServiceDay>
+          <ServiceText variant="h6">Worship Service</ServiceText>
+          <ServiceTime variant="h6">7:00pm</ServiceTime>
+        </div>
+        {/* </Grid>
+        </Grid> */}
       </LiveGrid>
-      <Headline variant="h6">
-        We're located at 616 Jamaica Ave. Brooklyn NY 11208{' '}
-      </Headline>
+      <Headline variant="h6">616 Jamaica Ave. Brooklyn NY 11208</Headline>
       {map && (
         <MyMap
           loading="lazy"
