@@ -23,7 +23,7 @@ const mobilePages = [
   'Pastors',
 ];
 const pages = ['HOME', 'MINISTRIES', 'BELIEFS', 'LEADERS', 'JOIN US'];
-const joinDrop = ['Our Services', 'Our Bible Studies'];
+const joinDrop = ['Services', 'Bible Studies'];
 
 const GlobalDiv = styled('div')``;
 const MyAppBar = styled(AppBar)(({ theme }) => ({
@@ -101,8 +101,12 @@ export default function Appbar({ image, text }) {
   const handleCloseHome = () => {
     setAnchorElHome(null);
   };
-
+  const handleOpenJoin = event => {
+    console.log('join');
+    setJoinAnchor(event.currentTarget);
+  };
   const handleCloseJoin = e => {
+    console.log('leave');
     setJoinAnchor(null);
   };
   return (
@@ -184,12 +188,12 @@ export default function Appbar({ image, text }) {
           >
             <Box>
               <Menu
-                id="menu-appbar3"
+                // id="menu-appbar3"
                 anchorEl={joinAnchor}
                 open={Boolean(joinAnchor)}
                 onClose={handleCloseJoin}
                 MenuListProps={{ onMouseLeave: handleCloseJoin }}
-                disableScrollLock={true}
+                // disableScrollLock={true}
               >
                 {joinDrop.map(join => (
                   <NavContent
@@ -207,6 +211,8 @@ export default function Appbar({ image, text }) {
               <Typography key={page} variant="h6">
                 <AppbarContent
                   href={page === 'HOME' ? '/en' : `/en/${page.toLowerCase()}`}
+                  onMouseEnter={page === 'JOIN US' ? handleOpenJoin : undefined}
+                  onClick={page === 'JOIN US' ? handleOpenJoin : undefined}
                 >
                   {page}
                 </AppbarContent>
@@ -219,5 +225,3 @@ export default function Appbar({ image, text }) {
     </GlobalDiv>
   );
 }
-
-// Margin is crashing page

@@ -73,7 +73,9 @@ export default function LiveServices() {
         {/* </Grid>
         </Grid> */}
       </LiveGrid>
-      <Headline variant="h6">616 Jamaica Ave. Brooklyn NY 11208</Headline>
+      <Headline variant="h6" sx={{ color: 'black' }}>
+        616 Jamaica Ave. Brooklyn NY 11208
+      </Headline>
       {map && (
         <MyMap
           loading="lazy"
