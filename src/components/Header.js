@@ -14,7 +14,7 @@ const MyHeader = styled(Typography)(({ theme }) => ({
   fontSize: '150px',
   color: theme.secondary.main,
 }));
-export default function Header({ text, image }) {
+export default function Header({ text, image, children }) {
   return (
     <MyGrid
       id="header"
@@ -24,7 +24,10 @@ export default function Header({ text, image }) {
         backgroundColor: image && 'black',
       }}
     >
-      <MyHeader id="text">{text}</MyHeader>
+      <MyHeader id="text">
+        {text}
+        {children ? <p>{children}</p> : ''}
+      </MyHeader>
     </MyGrid>
   );
 }

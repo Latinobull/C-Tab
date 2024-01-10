@@ -95,7 +95,6 @@ export default function Leaders_En() {
         }}
         justifyContent="space-evenly"
       >
-        <Header text={`Meet Our ${team}`}></Header>
         <FormControl variant="filled" sx={{ m: 2, width: '300px' }}>
           <InputLabel
             sx={{
